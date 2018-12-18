@@ -230,24 +230,96 @@ body{
     border-radius: 0 0 10px 10px;
 }
 
-.titulo_pag{
+.titulo_cat{
     font-family: Segoe UI;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 30px;
+    font-style: italic;
     color: rgba(250, 0, 0, 0.72);
-    
 }
 
 .borda_titulo_pag{
-    border-bottom: 2px solid rgba(10, 10, 10, 0.28);
-    padding: 3px;
-    margin: 15px 20px 15px 20px;
-    width: 270px;
+    border-left: 5px solid rgba(250, 0, 0, 0.45);
+    padding: 0px 5px 3px;
+    margin: 60px 0 0 0;
 }
 
-.carrosel{
-    transition: 2s;
+.cards_group{
+    position: relative;
+    width: auto;
+    margin: 50 100 25 100;
+    padding: 0 80px;
 }
+
+.footer{
+    height: 300px;
+    width: 100%;
+    margin: 30px 0 0 0;
+    background-color: #00D1FF;
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    color: #fff;
+}
+
+.footer_list{
+    margin: 20px 50px 0px 30px;
+    float: left;
+}
+
+.footer_link{
+    text-decoration: none;
+    font-size: 15px;
+    color: red;
+}
+
+.footer_link:focus{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+.footer_link:hover{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+.footer_link:active{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+
+.footer_parca{
+    margin: 20px 50px 0px 100px;
+}
+
+.footer_pgto{
+    margin: 20px 100px 0px 100px;
+}
+
+.img_pgto{
+    margin: 15 0 0 35;
+}
+
+.mercado{
+    height: 65px;
+    background-color: rgba(250, 0, 0, 0.72);
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-size: 13px;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.texto_mercado{
+    padding: 21;
+}
+
+.borda_mercado{
+    border-right: 1px solid;
+}
+
+
 
 
 
