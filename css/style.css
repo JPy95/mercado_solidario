@@ -50,6 +50,23 @@ body{
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.2);
 }
 
+#register{
+    background-color: #fff;
+    display: block;
+    width: 600px;
+    margin: 20px auto 20px auto;
+    border: 1px solid;
+}
+
+#register_form{
+    margin: 0px 35px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 15px;
+    color: #000000ab;
+}
+
 .logo{
     width: 160px;
     height: 63px;
@@ -349,7 +366,7 @@ body{
     font-size: 19px;
 }
 
-.login_input{
+.format_input{
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 10px;
     width: 250px;
@@ -359,13 +376,13 @@ body{
     color: rgb(128, 128, 128);
 }
 
-.login_input::-webkit-input-placeholder { 
+.format_input::-webkit-input-placeholder { 
     color: rgba(128, 128, 128, 0.342);
     font-weight: 600;
     font-style: italic;
 }
 
-.login_input:focus{
+.format_input:focus{
     border-radius: 10px;
     color: grey;
     font-weight: 600;
@@ -375,7 +392,7 @@ body{
     outline: 0;
 }
 
-.login_input:active{
+.format_input:active{
     border-radius: 10px;
     color: grey;
     font-weight: 600;
@@ -384,7 +401,7 @@ body{
     border: 1px solid grey;
 }
 
-.login_input:hover{
+.format_input:hover{
     border-radius: 10px;
     color: grey;
     font-weight: 600;
@@ -393,7 +410,7 @@ body{
     border: 1px solid grey;
 }
 
-.login_btn{
+.format_btn{
     background-color: rgba(250, 0, 0, 0.72);
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 10px;
@@ -408,16 +425,16 @@ body{
     color: #fff;
 }
 
-.login_btn:focus{
+.format_btn:focus{
     background-color: #00D1FF;
     color: #fff;
     outline: 0;
 }
-.login_btn:active{
+.format_btn:active{
     background-color: #00D1FF;
     color: #fff;
 }
-.login_btn:hover{
+.format_btn:hover{
     background-color: #00D1FF;
     color: #fff;
 }
@@ -446,6 +463,69 @@ body{
     font-weight: 500;
     font-style: normal;
     font-size: 10px;
+}
+
+.register_banner{
+    height: 50px;
+    width: 100%;
+    background-color: rgba(250, 0, 0, 0.72);
+    text-align: center;
+    padding: 10px 0 0 0;
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 20px;
+    color: #fff;
+}
+
+.register_btn_gourp{
+    display: block;
+    margin: 0 0 0 155px;
+}
+
+.resgiter_btn_pf{
+    background-color: rgba(250, 0, 0, 0.72);
+    border: 1px solid rgba(128, 128, 128, 0.28);
+    border-radius: 10px 0px 0px 10px;
+    width: 150px;
+    height: 35px;
+    margin: 35px -4px 20px 0px;
+    padding: 0 0 5 0px;
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 20px;
+    color: #fff;
+}
+
+.register_btn_inst{
+    background-color: rgba(250, 0, 0, 0.72);
+    border: 1px solid rgba(128, 128, 128, 0.28);
+    border-radius: 0px 10px 10px 0px;
+    width: 150px;
+    height: 35px;
+    margin: 35px -4px 20px 0px;
+    padding: 0 0 5 0px;
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 20px;
+    color: #fff;
+}
+
+.register_titulo{
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+    color: black;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.28);
+    width: 282px;
+    margin: 0 0 15 0;
+}
+
+.form_user{
+    margin: 0 0 0 25px;
 }
 
 
@@ -572,4 +652,12 @@ body{
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+}
+
+.w-100{
+    width: 100%;    
+}
+
+.w-35{
+    width: 35%;
 }
