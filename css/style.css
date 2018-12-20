@@ -71,7 +71,7 @@ body{
 
 #perfil{
     display: flex;
-    height: 550px;
+    height: auto;
 }
 
 #sidebar_perfil{
@@ -85,15 +85,28 @@ body{
     position: relative;
     margin: 20px 75px;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
+    height: 500;
+}
+
+#silede_perfil_anuncio{
+    position: relative;
+    margin: 20px 25px;
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    width: 45%;
+    height: 650;
 }
 
 #star_perfil{
-    margin: 104px 0px 0 -40px;
+    margin: 104px auto 0 auto;
     position: relative;
 }
 
 #slide{
     margin: 0 100;
+}
+
+#slide_anuncio{
+    margin: 0 60 20 60;
 }
 
 .logo{
@@ -319,10 +332,15 @@ body{
     font-weight: 500;
     font-style: italic;
     color: #fff;
+    display: flex;
+}
+
+.footer_menu{
+    position: relative;
 }
 
 .footer_list{
-    margin: 20px 50px 0px 30px;
+    margin: 20px 60px 0px 60px;
     float: left;
 }
 
@@ -346,14 +364,6 @@ body{
     text-decoration: none;
     font-size: 15px;
     color: white;
-}
-
-.footer_parca{
-    margin: 20px 50px 0px 100px;
-}
-
-.footer_pgto{
-    margin: 20px 100px 0px 100px;
 }
 
 .img_pgto{
@@ -639,30 +649,61 @@ body{
 }
 
 .sidebar_item_group{
-    display: flow-root;
-    padding: 40px 0px 0px 30px;
+    padding: 5px 0px 0px 30px;
+    border-top: 1px solid rgba(128, 128, 128, 0.42);
 }
 
 .sidebar_titulo{
-    position: absolute;
+    margin: 8px 0px 10px 10px;
+    display: flex;
+}
+
+.sidebar_perfil{
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
-    font-size: 19px;
+    font-size: 24px;
     color: white;
-    padding: 8px 0px 0 20px;
+    padding: 4px 0 0px 16px;
 }
 
 .sidebar_img{
-    width: 40px;
+    width: 35px;
+    height: 35px;
 }
 
 .sidebar_menu{
+    display: flex;
     margin-bottom: 10px;
 }
 
+.btn_sidebar{
+    display: flex;
+    border: none;
+    background-color: transparent;
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 16px;
+    color: white;
+    padding: 0 12px;
+
+}
+
+.btn_sidebar:focus{
+    color: grey;
+    outline: 0;
+}
+
+.btn_sidebar:hover{
+    color: grey;
+}
+.btn_sidebar:active{
+    color: grey;
+}
+
 .titulo_slide{
-    margin: 15px 0px 60px 60px;
+    margin: 15px 0px 45px 60px;;
 }
 
 .slide_group{
@@ -736,6 +777,64 @@ body{
     margin-bottom: 5px;
 }
 
+.anuncios{
+    display: flex;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 10px;
+    width: 450;
+    margin: 0 0 10px 0;
+}
+
+.img_prod{
+    width: 145px;
+    height: 145px;
+}
+
+.borda_img{
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #fff;
+}
+
+.desc_anuncio{
+    background-color: #fff;
+    width: 100%;
+}
+
+.subtitulo_prod{
+    font-size: 20px;
+    padding: 5 5 5 20px;
+}
+
+.borda_subtitulo{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    width: 215px;
+}
+
+.descricao_anun{
+    padding: 12px 35px;
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+}
+
+.descricao_anun_valor{
+    color: rgba(250, 0, 0, 0.72);
+}
+
+.validacao{
+    background-color: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.img_validacao{
+    width: 30px;
+    height: auto;
+    padding: 5px;
+}
 
 
 
