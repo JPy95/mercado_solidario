@@ -1,13 +1,14 @@
 *{
-    margin: 0;
+    margin: 0; 
     padding: 0;
 }
 
 body{
-    background-color: rgb(232, 250, 255);
+    background-color: rgb(232, 250, 255) !important;
 }
 
 #navegacao{
+    display: flex;
     background-color: #00D1FF;
     width: auto;
     height: 70px;
@@ -27,8 +28,9 @@ body{
 }
 
 #categoria{
+    display: -webkit-inline-box;
     background-color: #00D1FF;
-    width: auto;
+    width: 100%;
     height: 60px;
     padding: 0 90px;
     font-family: Segoe UI;
@@ -69,6 +71,14 @@ body{
     color: #000000ab;
 }
 
+#register_form_projeto{
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 15px;
+    color: #000000ab;
+}
+
 #perfil{
     display: flex;
     height: auto;
@@ -83,9 +93,9 @@ body{
 
 #slide_perfil{
     position: relative;
-    margin: 20px 75px;
+    margin: 20px 30px;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
-    height: 500;
+    height: auto;
 }
 
 #silede_perfil_anuncio{
@@ -93,7 +103,7 @@ body{
     margin: 20px 25px;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
     width: 45%;
-    height: 650;
+    height: auto;
 }
 
 #star_perfil{
@@ -107,6 +117,26 @@ body{
 
 #slide_anuncio{
     margin: 0 60 20 60;
+}
+
+#perfil_inst{
+    position: relative;
+    margin: 0 0 20 140px;
+    display: inline-block;
+}
+
+#projeto{
+    margin: 20px;
+}
+
+#register_form_edit_inst{
+    width: 75%;
+    margin: 0 -300px 0 75px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 15px;
+    color: #000000ab;
 }
 
 .logo{
@@ -190,6 +220,7 @@ body{
     font-style: italic;
     font-size: 15px;
     color: #fff;
+    padding: 0;
 }
 
 .link_nav:focus{
@@ -249,13 +280,15 @@ body{
 }
 
 .cards{
+    margin-top: 10;
     background-color: #fff;
     width: 230px;
-    height: 410px;
-    margin: 10px;
+    height: auto;
+    margin: 10 0 0 0;
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.2);
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.2);
+    display: inline-block;
 }
 
 .borda_img_card{
@@ -320,7 +353,7 @@ body{
 .cards_group{
     position: relative;
     width: auto;
-    margin: 50 100 25 100;
+    margin: 50 100 50 100;
     padding: 0 80px;
 }
 
@@ -367,7 +400,7 @@ body{
 }
 
 .img_pgto{
-    margin: 15 0 0 35;
+    margin: 5px 0 0 35px;
 }
 
 .mercado{
@@ -381,7 +414,7 @@ body{
 }
 
 .texto_mercado{
-    padding: 21;
+    padding: 21 21 0 21;
 }
 
 .borda_mercado{
@@ -509,7 +542,7 @@ body{
     width: 100%;
     background-color: rgba(250, 0, 0, 0.72);
     text-align: center;
-    padding: 10px 0 0 0;
+    padding-top: 5px;
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
@@ -591,15 +624,15 @@ body{
 }
 
 .formart_input_group{
-    margin: 0 0 0 15;
-    width: 46%;
+    display: flex;
+    margin-right: 10px;
 }
 
 .format_textearea{
     display: inline-block;
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 10px;
-    width: 94%;
+    width: 100%;
     height: 130px;
     margin: 0px -10;
     padding: 0 20;
@@ -678,6 +711,7 @@ body{
 }
 
 .btn_sidebar{
+    margin: 5;
     display: flex;
     border: none;
     background-color: transparent;
@@ -687,19 +721,22 @@ body{
     font-size: 16px;
     color: white;
     padding: 0 12px;
-
+    text-decoration: none;
 }
 
 .btn_sidebar:focus{
     color: grey;
     outline: 0;
+    text-decoration: none;
 }
 
 .btn_sidebar:hover{
     color: grey;
+    text-decoration: none;
 }
 .btn_sidebar:active{
     color: grey;
+    text-decoration: none;
 }
 
 .titulo_slide{
@@ -716,8 +753,9 @@ body{
 
 .subtitulo_slide{
     position: absolute;
-    margin: 7px 0px 0px 14px;
+    margin-left: 15px;
     font-size: 18px;
+    color: black;
 }
 
 .text_slide{
@@ -814,7 +852,7 @@ body{
 }
 
 .descricao_anun{
-    padding: 12px 35px;
+    padding-left: 35px;
     font-size: 14px;
     font-weight: 400;
     color: grey;
@@ -836,148 +874,104 @@ body{
     padding: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
-.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
-.col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
-.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
-.col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
-.col-xl-auto {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+.cadastro{
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
-.col {
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  max-width: 100%;
+label {
+    display: inline-block;
+    margin-bottom: 0;
 }
 
-.col-auto {
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: auto;
-  max-width: none;
-}
-
-.col-1 {
-  -ms-flex: 0 0 8.333333%;
-  flex: 0 0 8.333333%;
-  max-width: 8.333333%;
-}
-
-.col-dif {
-  -ms-flex: 0 0 6%;
-  flex: 0 0 6%;
-  max-width: 6%;
-}
-
-.col-2 {
-  -ms-flex: 0 0 16.666667%;
-  flex: 0 0 16.666667%;
-  max-width: 16.666667%;
-}
-
-.col-3 {
-  -ms-flex: 0 0 25%;
-  flex: 0 0 25%;
-  max-width: 25%;
-}
-
-.col-4 {
-  -ms-flex: 0 0 33.333333%;
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
-}
-
-.col-5 {
-  -ms-flex: 0 0 41.666667%;
-  flex: 0 0 41.666667%;
-  max-width: 41.666667%;
-}
-
-.col-6 {
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-.col-7 {
-  -ms-flex: 0 0 58.333333%;
-  flex: 0 0 58.333333%;
-  max-width: 58.333333%;
-}
-
-.col-8 {
-  -ms-flex: 0 0 66.666667%;
-  flex: 0 0 66.666667%;
-  max-width: 66.666667%;
-}
-
-.col-9 {
-  -ms-flex: 0 0 75%;
-  flex: 0 0 75%;
-  max-width: 75%;
-}
-
-.col-10 {
-  -ms-flex: 0 0 83.333333%;
-  flex: 0 0 83.333333%;
-  max-width: 83.333333%;
-}
-
-.col-11 {
-  -ms-flex: 0 0 91.666667%;
-  flex: 0 0 91.666667%;
-  max-width: 91.666667%;
-}
-
-.col-12 {
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.row {
-    display: -ms-flexbox;
+.icone_perfil{
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    float: left;
+    text-align: center;
+    margin: 0 5;
 }
 
-.w-100{
-    width: 100%;    
+.text_icone{
+    margin: 0;
+    padding: 0;
 }
 
-.w-75{
-    width: 75%;
+input[type='file'] {
+    display: none;
 }
 
-.w-35{
-    width: 35%;
+.inputfile_projeto{
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    text-align: center;
+    width: 113px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.inputfile_projeto:focus{
+    border-radius: 10px;
+    color: grey;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid grey;
+    outline: 0;
+}
+
+.inputfile_projeto:hover{
+    border-radius: 10px;
+    color: grey;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid grey;
+}
+
+.inputfile_projeto:active{
+    border-radius: 10px;
+    color: grey;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid grey;
+}
+
+.btn_proj{
+    margin: 30px;
+}
+
+.inputfile_inst{
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    text-align: center;
+    width: 113px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 27px;
+    margin-top: 20px;
+}
+
+.inputfile_inst:focus{
+    border-radius: 10px;
+    color: grey;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid grey;
+    outline: 0;
+}
+
+.inputfile_inst:hover{
+    border-radius: 10px;
+    color: grey;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid grey;
+}
+
+.inputfile_inst:active{
+    border-radius: 10px;
+    color: grey;
+    font-weight: 600;
+    font-style: italic;
+    border: 1px solid grey;
 }

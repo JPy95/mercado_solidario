@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css\style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+
+    <title>Hello, world!</title>
   </head>
   <body>
     <nav>
@@ -42,55 +44,35 @@
         </div>
         <div id="slide_perfil">
             <div class="titulo_slide">
-                <h1>Dashboard - Insitiução X</h1>
-            </div>
-            <div id="perfil_inst">
-                <div class="icone_perfil">
-                    <div class="info_icone">
-                        <label for="" class="text_icone" style="color: #00D1FF">1000</label><br>
-                        <label for="" class="text_icone" style="color: rgba(250, 0, 0, 0.72)">Seguidores</label><br>
-                        <img src="img\icones\follows.png" class="img_slide">
-                    </div>
-                </div>
-                <div class="icone_perfil">
-                    <div class="info_icone">
-                        <label for="" class="text_icone" style="color: #00D1FF">1000</label><br>
-                        <label for="" class="text_icone" style="color: rgba(250, 0, 0, 0.72)">Visualizações</label><br>
-                        <img src="img\icones\views.png" class="img_slide">
-                    </div>
-                </div>
-                <div class="icone_perfil">
-                    <div class="info_icone">
-                        <label for="" class="text_icone" style="color: #00D1FF">1000</label><br>
-                        <label for="" class="text_icone" style="color: rgba(250, 0, 0, 0.72)">Curtidas</label><br>
-                        <img src="img\icones\like.png" class="img_slide">
-                    </div>
-                </div>
+                <h2>Adicionar Novo Projeto</h2>
             </div>
             <div id="slide">
-                <div class="slide_group">
-                    <div class="borda_slide">
-                        <img src="img\icones\ask.png" class="img_slide"><span class="subtitulo_slide"><h3>Comentários:</h3></span>
+                <div id="register_form_projeto">
+                    <div>
+                        <label for="">Titulo do Projeto:</label><br>
+                        <input type="text" class="format_input">
                     </div>
-                    <div class="text_slide">
-                        <span>Você possui x comentários não respondidos.</span>
+                    <div>
+                        <label for="">Descrição:</label><br>
+                        <textarea name="" id="" cols="30" rows="10" class="format_textearea"></textarea>
                     </div>
-                </div>
-                <div class="slide_group">
-                    <div class="borda_slide">
-                        <img src="img\icones\anuncios.png" class="img_slide"><span class="subtitulo_slide"><h4>Anúncios:</h4></span>
+                    <div class="col">
+                        <div class="row">
+                            <div>
+                                <label for="">Custo:</label><br>
+                                <input type="text" class="format_input"><br>
+                                <label for="">Duração do Projeto:</label><br>
+                                <input type="text" class="format_input">
+                            </div>
+                            <div class="inputfile_projeto">
+                                <label for="foto" ><img src="img\icones\foto.png"></label>
+                                <input id="foto" type="file" class="format_input"><br>
+                                <span>Anexar Foto</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text_slide">
-                        <span>Você possui x anúncios ativos.</span>
-                        <span>Você possui x anúncios finalizados.</span>
-                    </div>
-                </div>
-                <div class="slide_group">
-                    <div class="borda_slide">
-                        <img src="img\icones\checkout.png" class="img_slide"><span class="subtitulo_slide"><h4>Operações:</h4></span>
-                    </div>
-                    <div class="text_slide">
-                        <span>Você possui x vendas pendentes de concretização.</span>
+                    <div class="btn_proj">
+                        <button class="format_btn">Adicionar</button>
                     </div>
                 </div>
             </div>
