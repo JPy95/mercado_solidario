@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.bg-light{
+    background-color: #00D1FF !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2) !important;
+}
+
 body{
     background-color: rgb(232, 250, 255) !important;
 }
@@ -170,19 +175,15 @@ body{
 .logo{
     width: 160px;
     height: 63px;
-    margin: 3px 0 0 100;
 }
 
 .buscar-nav{
-    border-radius: 20px;
-    width: 400px;
-    height: 35px;
+    border-radius: 10px 0px 0px 10px;
     border: 1px solid #00D1FF;
     color: grey;
     font-weight: 600;
     font-style: italic;
-    padding: 0 0 0 20;
-    margin: 18px 90px 0px 90px;
+    width: 100% !important;
 }
 
 .buscar-nav::-webkit-input-placeholder { 
@@ -192,32 +193,21 @@ body{
     padding: 10px;
 }
 
-.buscar-nav:focus{
-    border-radius: 20px;
+.buscar-nav:focus, .buscar-nav:active{
+    border-radius: 10px 0px 0px 10px;
+    border: 1px solid #00D1FF;
     color: grey;
     font-weight: 600;
     font-style: italic;
-    padding: 0 0 0 20;
-    border: 1px solid grey;
-    outline: 0;
-}
-
-.buscar-nav:active{
-    border-radius: 20px;
-    color: grey;
-    font-weight: 600;
-    font-style: italic;
-    padding: 0 0 0 20;
-    border: 1px solid grey;
+    outline: 0 !important;
 }
 
 .buscar-nav:hover{
-    border-radius: 20px;
+    border-radius: 10px 0px 0px 10px;
     color: grey;
     font-weight: 600;
     font-style: italic;
-    padding: 0 0 0 20;
-    border: 1px solid grey;
+    border: 1px solid #00D1FF;
 }
 
 .buscar-nav:visited{
@@ -314,11 +304,10 @@ body{
 }
 
 .cards{
-    margin-top: 10;
     background-color: #fff;
+    margin: 10px 5px;
     width: 230px;
     height: auto;
-    margin: 10 0 0 0;
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.2);
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.2);
@@ -342,12 +331,20 @@ body{
     margin: 5px;
 }
 
+.title_cards{
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px 5px 0px 5px;
+}
+
 .descricao{
     font-family: Segoe UI;
     font-weight: 400;
     font-size: 15px;
     color: rgba(128, 128, 128, 0.68);
     padding: 5px 5px 0px 5px;
+    height: 70px;
 }
 
 .valor{
@@ -395,9 +392,9 @@ body{
     margin: 60px 0 0 0;
 }
 
-.cards_group{
+.principal{
     position: relative;
-    width: auto;
+    width: 90%;
     margin: 50 100 50 100;
     padding: 0 80px;
 }
@@ -493,13 +490,18 @@ body{
     color: rgb(128, 128, 128);
 }
 
+.format_input.error{
+    border-color:red;
+    
+}
+
 .format_input::-webkit-input-placeholder { 
     color: rgba(128, 128, 128, 0.342);
     font-weight: 600;
     font-style: italic;
 }
 
-.format_input:focus{
+.format_input:active, .format_input:focus{
     border-radius: 10px;
     color: grey;
     font-weight: 600;
@@ -509,23 +511,6 @@ body{
     outline: 0;
 }
 
-.format_input:active{
-    border-radius: 10px;
-    color: grey;
-    font-weight: 600;
-    font-style: italic;
-    padding: 0 0 0 20;
-    border: 1px solid grey;
-}
-
-.format_input:hover{
-    border-radius: 10px;
-    color: grey;
-    font-weight: 600;
-    font-style: italic;
-    padding: 0 0 0 20;
-    border: 1px solid grey;
-}
 
 .format_btn{
     background-color: rgba(250, 0, 0, 0.72);
@@ -1367,4 +1352,45 @@ input[type='file'] {
     font-weight: 400;
     font-style: italic;
     margin-top: 11px;
+}
+
+.cards_group{
+    padding: 5px;
+}
+
+.carousel-control-prev {
+    left: 0;
+    width: 5%;
+    margin-left: -50px;
+}
+.carousel-control-next {
+    right: 0;
+    width: 5%;
+    margin-right: -50px;
+}
+
+#carouselBanner{
+    height: 500px;
+}
+
+.btn_busca{
+    border-radius: 0 10px 10px 0 !important;
+    border: 1px solid #00D1FF;
+    margin: 0 0 0 -30px;
+}
+
+.nav_bar_links{
+    display: block;
+}
+
+.nav_bar_principal{
+    display: inline-flex;
+}
+
+.span_nav{
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 15px;
+    color: #fff;
 }
