@@ -1,29 +1,9 @@
 <html lang="pt-br">
     <head>
-        <!-- Required meta tags -->
-        <title>Mercado Solidário</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css\style.css">
+        <?php include_once('php\estruturas_base\head.php')?>
     </head>
     <body>
-        <nav>
-            <div class="col-12 " id="navegacao">
-                <div class="row">
-                    <a href="index.html"><img class="logo" src="img\mercado\logo.png"></a>
-                    <input class="buscar-nav" type="search" placeholder="Buscar produtos, marcas, instituições...">
-                    <a href="login.html"><img class="user borda-nav" src="img\icones\avatar.png"></a> 
-                    <div class="col">
-                        <a href="login.html" class="link_nav">Entrar</a><span>/Bem Vindo Usuário</span><br>
-                        <a href="perfil_user.html" class="link_nav">Meu Perfil</a><br>
-                        <a href="" class="link_nav">Sair</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <?php include_once('php\estruturas_base\nav_principal.php')?>
         <img src="img\banners\banner1.jpg" class="banner">
         <div class="register_banner">
             <h2>Cadastro de Usuário</h2>

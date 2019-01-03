@@ -1381,6 +1381,7 @@ input[type='file'] {
 
 .nav_bar_links{
     display: block;
+    margin-left: 10px;
 }
 
 .nav_bar_principal{

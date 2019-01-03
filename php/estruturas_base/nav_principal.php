@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand col-2" href="index.php"><img class="logo" src="img\mercado\logo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +20,7 @@
             <a href="login.html"><img class="user borda-nav" src="img\icones\avatar.png"></a>
             <div class="nav_bar_links">
                 <li class="nav-item active">
-                    <a href="login.html" class="link_nav">Entrar</a><span class="span_nav">/Bem Vindo Usuário</span><br>
+                    <a href="login.php" class="link_nav">Entrar</a><span class="span_nav">/Bem Vindo Usuário</span><br>
                 </li>
                 <li class="nav-item">
                     <a href="perfil_user.html" class="link_nav">Meu Perfil</a><br>
