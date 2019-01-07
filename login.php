@@ -7,23 +7,28 @@
         <nav>
             <?php include_once('php\estruturas_base\nav_principal.php')?>
         </nav>
-        <div id="login">
-            <div class="login_titulo">
-                <h2>Login</h2>
-            </div>
-            <div class="retorno">
-                <p id="retorno"></p>
-            </div>
-            <div class="login_form">
-                <form action="php\formularios\_login.php" method="post">
-                    <label for="email">E-mail:</label><br>
-                    <input class="format_input" id="email" name="email" type="email" placeholder="exemplo@gmail.com"><br>
-                    <label for="pass">Senha</label><br>
-                    <input class="format_input" id="pass" name="pass" type="password">
-                    <a href="" class="login_link"><span>Esqueceu a senha?</span></a><br>
-                    <span class="login_span">Ainda não possui cadastro? </span><a href="register.php" class="login_link">Cadastre-se aqui.</a><br><br>
-                    <button type="button" class="format_btn" onclick="validacao_login() ">Acessar</button>
-                </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-8 col-xl-4" id="login">
+                    <div class="row login">
+                        <h1 class="login_titulo">Login</h1>
+                    </div>
+                    <div class="login_form">
+                        <form action="php\formularios\_login.php" method="post">
+                            <div class="form_login col-12">
+                                <label for="email" class="login_form_text">E-mail:</label><br>
+                                <input type="email" id="email" class="format_input col-12"><br>
+                                <label for="pass" class="login_form_text">Senha:</label><br>
+                                <input type="password" id="pass" class="format_input col-12">
+                                <span><a href="#" class="login_link">Esqueceu a Senha?</a></span><br>
+                                <span class="login_span">Não possui cadastro? </span><a href="register.php" class="login_link"> Cadastre-se</a>
+                            </div>
+                            <div class="btn_form_login">
+                                <input type="submit" value="Acessar" class="format_btn" onclick="validacao_login()">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <!--Rodapé-->

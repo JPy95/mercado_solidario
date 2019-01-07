@@ -1,55 +1,11 @@
 <html lang="pt-br">
-  <head>
-    <!-- Required meta tags -->
-    <title>Mercado Solidário</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css\style.css">
-  </head>
-  <body>
-        <nav>
-            <div class="col-12 " id="navegacao">
-                <div class="row">
-                    <a href="index.html"><img class="logo" src="img\mercado\logo.png"></a>
-                    <input class="buscar-nav" type="search" placeholder="Buscar produtos, marcas, instituições...">
-                    <a href="login.html"><img class="user borda-nav" src="img\icones\avatar.png"></a> 
-                    <div class="col">
-                        <a href="login.html" class="link_nav">Entrar</a><span>/Bem Vindo Usuário</span><br>
-                        <a href="perfil_user.html" class="link_nav">Meu Perfil</a><br>
-                        <a href="" class="link_nav">Sair</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <head>
+        <?php include_once('php\estruturas_base\head.php')?>
+    </head>
+    <body>
+        <?php include_once('php\estruturas_base\nav_principal.php')?>
         <div id="perfil">
-            <div id="sidebar_perfil">
-                <div class="sidebar_titulo">
-                    <img src="img\icones\menu.png" class="sidebar_img"><span class="sidebar_perfil">Meu Perfil</span>
-                </div>
-                <div class="sidebar_item_group">
-                    <div class="sidebar_menu">
-                        <img src="img\icones\dash.png" class="sidebar_img">
-                        <button class="btn_sidebar">
-                            <span class="">Dashboard</span>
-                        </button>
-                    </div>
-                    <div class="sidebar_menu">
-                        <img src="img\icones\compras.png" class="sidebar_img">
-                        <button class="btn_sidebar">
-                            <span class="">Compras</span>
-                        </button>
-                    </div>
-                    <div class="sidebar_menu">
-                        <img src="img\icones\vendas.png" class="sidebar_img">
-                        <button class="btn_sidebar">
-                            <span class="">Vendas</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <?php include_once('php\estruturas_base\sidebar_menu.php')?>
             <div id="slide_perfil">
                 <div class="titulo_slide">
                     <h1>Dashboard - Usuário X</h1>

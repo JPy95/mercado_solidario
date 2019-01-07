@@ -1,5 +1,4 @@
 function validacao_login() {
-    console.log('AAA');
     var email = document.getElementById('email');
     var pass = document.getElementById('pass');
     if (email.value == "") {

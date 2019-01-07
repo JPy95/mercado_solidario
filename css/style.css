@@ -12,6 +12,8 @@ body{
     background-color: rgb(232, 250, 255) !important;
 }
 
+
+
 #navegacao{
     display: flex;
     background-color: #00D1FF;
@@ -36,12 +38,19 @@ body{
     display: -webkit-inline-box;
     background-color: #00D1FF;
     width: 100%;
+    max-width: 100%;
     height: 60px;
-    padding: 0 90px;
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
     color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    #categoria {
+        overflow: scroll hidden;
+        padding: 0;
+    }
 }
 
 #login{
@@ -68,7 +77,6 @@ body{
 }
 
 #register_form{
-    margin: 0px 35px;
     font-family: Segoe UI;
     font-weight: 400;
     font-style: italic;
@@ -314,6 +322,12 @@ body{
     display: inline-block;
 }
 
+@media only screen and (max-width: 600px) {
+    .cards {
+        width: 150px;
+    }
+}
+
 .borda_img_card{
     border-bottom: 1px solid rgba(128, 128, 128, 0.404);
 }
@@ -322,6 +336,13 @@ body{
     margin: 1px 15px 5px 15px;
     width: 200px;
     height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .img_cards {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 .favorito_cards{
@@ -338,6 +359,12 @@ body{
     padding: 5px 5px 0px 5px;
 }
 
+@media only screen and (max-width: 600px) {
+    .title_cards {
+        font-size: 15px;
+    }
+}
+
 .descricao{
     font-family: Segoe UI;
     font-weight: 400;
@@ -347,12 +374,25 @@ body{
     height: 70px;
 }
 
+@media only screen and (max-width: 600px) {
+    .descricao {
+        font-size: 11px;
+    }
+}
+
 .valor{
     font-family: Segoe UI;
     font-weight: 600;
     font-size: 25px;
     color: rgba(250, 0, 0, 0.72);
     padding: 10px 5px 15px 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .valor {
+        font-size: 20px;
+        padding: 0px 0px 5px 5px;
+    }
 }
 
 .btn_cards{
@@ -365,6 +405,13 @@ body{
     font-size: 20px;
     color: #fff;
     border-radius: 0 0 10px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn_cards {
+        font-size: 16px;
+        height: 30px
+    }
 }
 
 .btn_cards:active{
@@ -390,13 +437,21 @@ body{
     border-left: 5px solid rgba(250, 0, 0, 0.45);
     padding: 0px 5px 3px;
     margin: 60px 0 0 0;
+    width: max-content;
 }
 
 .principal{
     position: relative;
     width: 90%;
-    margin: 50 100 50 100;
+    margin: -30px 0 30px 45px;
     padding: 0 80px;
+}
+
+@media only screen and (max-width: 600px) {
+    .principal {
+        margin: -30px 0 30px 0;
+        padding: 0 55px;
+    }
 }
 
 .footer{
@@ -407,7 +462,13 @@ body{
     font-weight: 500;
     font-style: italic;
     color: #fff;
-    display: flex;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        display: inline-table;
+    }
 }
 
 .footer_menu{
@@ -455,6 +516,12 @@ body{
     color: #ffffff;
 }
 
+@media only screen and (max-width: 600px) {
+    .mercado {
+        height: fit-content;
+    }
+}
+
 .texto_mercado{
     padding: 21 21 0 21;
 }
@@ -463,20 +530,35 @@ body{
     border-right: 1px solid;
 }
 
-.login_titulo{
+.login{
     background-color: rgba(250, 0, 0, 0.72);
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     height: 40px;
+}
+
+.btn_form_login{
+    margin: 20px auto;
     text-align: center;
-    color: #fff;
+}
+
+.login_titulo{
+    font-size: 30px;
+    margin: 0px auto;
+    color: white;
 }
 
 .login_form{
     display: block;
-    margin: 20px 80px;
+    margin: 30px auto;
     font-size: 19px;
+}
+
+.login_form_text{
+    margin: 0px 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .format_input{
@@ -485,9 +567,15 @@ body{
     border-radius: 10px;
     width: 100%;
     height: 35px;
-    margin: 0px -10;
-    padding: 0 20;
     color: rgb(128, 128, 128);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+.format_input.ok{
+    border: 2px solid rgba(2, 230, 2, 0.918);
 }
 
 .format_input.error{
@@ -499,6 +587,8 @@ body{
     color: rgba(128, 128, 128, 0.342);
     font-weight: 600;
     font-style: italic;
+    font-size: 13px;
+    padding-left: 15px;
 }
 
 .format_input:active, .format_input:focus{
@@ -506,9 +596,10 @@ body{
     color: grey;
     font-weight: 600;
     font-style: italic;
-    padding: 0 0 0 20;
+    font-size: 13px;
     border: 1px solid grey;
     outline: 0;
+    padding-left: 15px;
 }
 
 
@@ -517,14 +608,12 @@ body{
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 10px;
     width: 150px;
-    height: 35px;
-    margin: 0 43px;
-    padding: 0 0 5 0;
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
     font-size: 20px;
     color: #fff;
+    text-align: center;
 }
 
 .format_btn:focus{
@@ -585,19 +674,30 @@ body{
     margin: 0 0 0 155px;
 }
 
+.register_btn_pf_inst{
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
 .resgiter_btn_pf{
     background-color: rgba(250, 0, 0, 0.72);
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 10px 0px 0px 10px;
-    width: 150px;
+    width: auto;
     height: 35px;
-    margin: 35px -4px 20px 0px;
-    padding: 0 0 5 0px;
+    padding: 0 5px;
+    margin: 0 -5px;
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
     font-size: 20px;
     color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .resgiter_btn_pf {
+        font-size: 14px;
+    }
 }
 
 .resgiter_btn_pf:focus{
@@ -617,15 +717,29 @@ body{
     background-color: rgba(250, 0, 0, 0.72);
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 0px 10px 10px 0px;
-    width: 150px;
+    width: auto;
     height: 35px;
-    margin: 35px -4px 20px 0px;
-    padding: 0 0 5 0px;
+    padding: 0 5px;
+    text-align: center;
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
     font-size: 20px;
     color: #fff;
+}
+
+.subtitle_register{
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .register_btn_inst {
+        font-size: 14px;
+    }
+
+    .subtitle_register{
+        font-size: 12px;
+    }
 }
 
 .register_btn_inst:focus{
@@ -642,15 +756,24 @@ body{
     color: #fff;
 }
 
-.register_titulo{
+.title_register{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.28);
+    margin-top: 15px;
+}
+
+.style_title_register{
     font-family: Segoe UI;
     font-weight: 500;
     font-style: italic;
     font-size: 20px;
     color: grey;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.28);
-    width: auto;
-    margin: 15px 0 15 0;
+    padding: 0 10;
+}
+
+@media only screen and (max-width: 600px) {
+    .style_title_register {
+        font-size: 14px;
+    }
 }
 
 .formart_input_group{
@@ -663,8 +786,6 @@ body{
     border: 1px solid rgba(128, 128, 128, 0.28);
     border-radius: 10px;
     width: 100%;
-    height: 130px;
-    margin: 0px -10;
     padding: 0 20;
     color: rgb(128, 128, 128);
     font-weight: 600;
@@ -702,13 +823,12 @@ body{
     border-radius: 10px;
     width: 100%;
     height: 35px;
-    margin: 0px -10;
-    padding: 0 20;
+    padding: 0px 15px;
     color: rgb(128, 128, 128);
 }
 
 .btn_cad{
-    margin: 25px 135px;
+    margin: 15px auto 25px auto;
 }
 
 .sidebar_item_group{
@@ -905,8 +1025,7 @@ body{
 }
 
 .cadastro{
-    padding-left: 20px;
-    padding-bottom: 20px;
+    margin: 15px auto;
 }
 
 label {
@@ -1147,7 +1266,6 @@ input[type='file'] {
     width: 150px;
     height: 35px;
     border-radius: 10px;
-    margin-left: 15px;
     font-family: Segoe UI;
     font-style: italic;
     font-weight: 500;
@@ -1394,4 +1512,9 @@ input[type='file'] {
     font-style: italic;
     font-size: 15px;
     color: #fff;
+}
+
+.erro_form{
+    font-size: 10px;
+    color: red;
 }

@@ -4,11 +4,9 @@
     </head>
     <body>
         <!--Barra de Navegação Principal-->
-        <nav>
-            <?php include_once('php\estruturas_base\nav_principal.php')?>
-            <!--Barra de Navegação Categoria-->
-            <?php include_once('php\estruturas_base\nav_categoria.php')?>
-        </nav>
+        <?php include_once('php\estruturas_base\nav_principal.php')?>
+        <!--Barra de Navegação Categoria-->
+        <?php include_once('php\estruturas_base\nav_categoria.php')?>
         <!--Carrosel Banner-->
         <?php include_once('php\objetos\carousel_banner.php')?>
         <!--Apresentação de Produtos-->

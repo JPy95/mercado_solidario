@@ -23,7 +23,7 @@
                     <a href="login.php" class="link_nav">Entrar</a><span class="span_nav">/Bem Vindo Usuário</span><br>
                 </li>
                 <li class="nav-item">
-                    <a href="perfil_user.html" class="link_nav">Meu Perfil</a><br>
+                    <a href="perfil_user.php" class="link_nav">Meu Perfil</a><br>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="" class="link_nav">Sair</a>
