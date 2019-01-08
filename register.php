@@ -18,7 +18,7 @@
                             <!--Botão Collapse para abertura de formulario de Instituições-->
                             <div class="col-12 register_btn_pf_inst">
                                 <span>
-                                    <button class="resgiter_btn_pf" type="button">Pessoa Física</button>
+                                    <button class="resgiter_btn_pf" type="button" >Pessoa Física</button>
                                     <button class="register_btn_inst" type="button" data-toggle="collapse" data-target="#form_inst" aria-expanded="false" aria-controls="form_inst">Instituições</button>
                                 </span>
                             </div>
@@ -32,7 +32,7 @@
                                 <!--Dados Obrigatorios (Dados Cadastrais)-->
                                 <div class="col-xl-11 cadastro">
                                     <div class="col-xl-12">
-                                        <label for="nome" class="subtitle_register">Nome:</label><br>
+                                        <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
                                         <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
                                         <p id="erro-nome" class="erro_form"></p>
                                     </div>
