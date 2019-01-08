@@ -1,10 +1,10 @@
 <html lang="pt-br">
     <head>
-        <?php include_once('php\estruturas_base\head.php')?>
+        <?php include_once('php\estruturas_base\head.php') ?>
         <script type="text/javascript" src="js\validacao_resgister.js"></script>
     </head>
     <body>
-        <?php include_once('php\estruturas_base\nav_principal.php')?>
+        <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <img src="img\banners\banner1.jpg" class="banner">
         <div class="register_banner">
             <h2>Cadastro de Usuário</h2>
@@ -40,13 +40,13 @@
                                         <div class="row">
                                             <div class="col-xl-4">
                                                 <label for="cpf" class="subtitle_register">CPF:</label><br>
-                                                <input onblur="valida_cpf()" type="text" class="format_input" id="cpf" name="cpf">
+                                                <input onkeydown="fMasc( this, mCPF )"  onblur="valida_cpf()" type="text" class="format_input" id="cpf" name="cpf">
                                                 <p id="erro-cpf" class="erro_form"></p>
                                             </div>
                                             <div class="col-xl-6">
                                                 <label for="email" class="subtitle_register">E-mail:</label><br>
                                                 <input onblur="valida_email()" type="email" class="format_input" id="email" name="email">
-                                                <p id="erro-email" class="erro_form"></p>
+                                                <p id="erro-email" class="erro_form"></p>0
                                             </div>
                                         </div>
                                     </div>
