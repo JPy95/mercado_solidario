@@ -12,7 +12,9 @@
     <?php include_once('php\estruturas_base\sidebar_menu.php') ?>  
       <!--AQUI TERÁ QUE SER MODIFICADO-->
       <div id="silede_perfil_anuncio">
-        <div class="titulo_slide"><h1>Anúncios</h1></div>
+        <div class="title_slide">
+          <h1 class="style_title_slide">Anúncios</h1>
+        </div>
         <div id="slide_anuncio">
           <div class="anuncios">
             <div class="borda_img">
