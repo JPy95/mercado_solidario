@@ -97,13 +97,6 @@ body{
     height: auto;
 }
 
-#sidebar_perfil{
-    position: relative;
-    width: 16%;
-    height: auto;
-    background-color: rgba(250, 0, 0, 0.72);
-}
-
 #slide_perfil{
     position: relative;
     margin: 20px 30px;
@@ -1049,6 +1042,7 @@ input[type='file'] {
     display: none;
 }
 
+
 .inputfile_projeto{
     border: 1px solid rgba(128, 128, 128, 0.2);
     text-align: center;
@@ -1517,4 +1511,97 @@ input[type='file'] {
 .erro_form{
     font-size: 10px;
     color: red;
+}
+
+#sidebar_menu{
+    background-color: #b6bfc2;
+    display: block;
+    width: 15%;
+}
+
+.title_sidebar{
+    background-color: red;
+    display: block;
+    height: 135px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.img_side{
+    width: 75px;
+}
+
+.texte_title_side{
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 20px;;
+    color: #fff;
+}
+
+.btn_dropdown{
+    display: inline-block;
+    text-align: center;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+    background-color: #00D1FF;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_dropdown:active {
+    background-color: #00D1FF;
+    color: #FF4F5D;
+    text-decoration: none;
+}
+
+.btn_dropdown:focus {
+    background-color: #00D1FF;
+    color: #FF4F5D;
+    text-decoration: none;
+    outline: 0px;
+}
+
+.btn_dropdown:hover {
+    background-color: #00D1FF;
+    color: #FF4F5D;
+    text-decoration: none;
+    outline: 0px;
+}
+
+.dropdown-item_sidebar {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 5px 15px 6px 0px;
+    margin: 0 27px 0 -5px !important;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0px;
+    border-radius: 0px;
 }
