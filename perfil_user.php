@@ -1,12 +1,12 @@
 <html lang="pt-br">
     <head>
-        <?php include_once('php\estruturas_base\head.php')?>
+        <?php include_once('php\estruturas_base\head.php') ?>
         <script type="text/javascript" src="js\progressbar.js"></script>
     </head>
     <body>
-        <?php include_once('php\estruturas_base\nav_principal.php')?>
+        <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <div id="perfil">
-            <?php include_once('php\estruturas_base\sidebar_menu.php')?>
+            <?php include_once('php\estruturas_base\sidebar_menu.php') ?>
             <div id="slide_perfil">
                 <div class="title_slide">
                     <h1 class="style_title_slide">Olá Usuário!</h1>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="slide_group">
                         <div class="borda_slide">
-                            <img src="img\icones\anuncios.png" class="img_slide"><a href="anuncios.html"><span><h4 class="style_subtitle_slide subtitle_slide">Anúncios:</h4></span></a> 
+                            <img src="img\icones\anuncios.png" class="img_slide"><a href="anuncios.php"><span><h4 class="style_subtitle_slide subtitle_slide">Anúncios:</h4></span></a> 
                         </div>
                         <div class="text_slide">
                             <span>Você possui <label class="desc_slide">x</label> anúncios ativos.</span>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!--Score Solidarius-->
-            <?php include_once('php\estruturas_base\solidario_score.php')?>
+            <?php include_once('php\estruturas_base\solidario_score.php') ?>
         </div>
         <footer class="footer">
             <div class="footer_menu">
