@@ -1516,7 +1516,6 @@ input[type="file"] {
   border-right: 1px solid rgba(128, 128, 128, 0.45);
 }
 
-<<<<<<< HEAD
 @media only screen and (max-width: 600px) {
     #sidebar_menu {
         width: 15%;
@@ -1530,15 +1529,6 @@ input[type="file"] {
     text-align: center;
     padding-top: 10px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-=======
-.title_sidebar {
-  background-color: red;
-  display: block;
-  height: 135px;
-  text-align: center;
-  padding-top: 10px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
->>>>>>> 40e2aacff6d43210412c1665712ab54e82dd1c89
 }
 
 .img_side {
