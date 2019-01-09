@@ -2,7 +2,6 @@
     <head>
         <?php include_once('php\estruturas_base\head.php')?>
         <script type="text/javascript" src="js\progressbar.js"></script>
-        <script type="text/javascript" src="https://rawgit.com/imagitama/nodelist-foreach-polyfill/master/index.js"></script>
     </head>
     <body>
         <?php include_once('php\estruturas_base\nav_principal.php')?>

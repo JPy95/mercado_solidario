@@ -1,4 +1,5 @@
 <div id="sidebar_menu">
+    <button class="">sidebar</button>
     <div class="title_sidebar">
         <div class="">
             <img class="img_side foto_user" src="img\icones\avatar_side.png">

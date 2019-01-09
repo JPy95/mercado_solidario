@@ -1523,6 +1523,12 @@ input[type='file'] {
     border-right: 1px solid rgba(128, 128, 128, 0.45);
 }
 
+@media only screen and (max-width: 600px) {
+    #sidebar_menu {
+        width: 15%;
+    }
+}
+
 .title_sidebar{
     background-color: red;
     display: block;
@@ -1625,10 +1631,14 @@ input[type='file'] {
     margin-right: 25px;
 }
 
+.btn_sidebar{
+    
+}
+
 /*Classe para ProgressBar*/
 svg path {
     will-change: auto;
     stroke-width: 20px;
     stroke-miterlimit: round;
     transition: stroke-dashoffset 850ms ease-in-out;
-}  
+} 
