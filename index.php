@@ -2,6 +2,7 @@
     <head>
         <?php include_once('php\estruturas_base\head.php')?>
     </head>
+    <a href="php\objetos\progressbar.php">dasdasd</a>
     <body>
         <!--Barra de Navegação Principal-->
         <?php include_once('php\estruturas_base\nav_principal.php')?>

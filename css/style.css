@@ -94,7 +94,7 @@ body{
 
 #perfil{
     display: flex;
-    height: auto;
+    height: 500px;
 }
 
 #slide_perfil{
@@ -882,10 +882,6 @@ body{
     text-decoration: none;
 }
 
-.titulo_slide{
-    margin: 15px 0px 45px 60px;;
-}
-
 .slide_group{
     margin-bottom: 30px;
 }
@@ -1119,11 +1115,11 @@ input[type='file'] {
     border: 1px solid grey;
 }
 
-.title_perfil_inst{
-    font-size: 35px;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-    padding-bottom: 5px;
-    margin-bottom: 0px;
+.title_slide{
+    margin: 15px 50px 45px 50px;
+}
+
+.style_title_slide{
     color: #FF4F5D;
 }
 
@@ -1141,13 +1137,20 @@ input[type='file'] {
     margin-bottom: 60px;
 }
 
-.subtitle_perfil_inst{
-    font-size: 20px;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-    width: 30%;
-    padding-bottom: 3px;
+.subtitle_slide{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.style_subtitle_slide{
+    font-size: 21px;
     color: #00D1FF;
-    padding-left: 5;
+}
+
+.desc_slide{
+    color: #FF4F5D;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .desc_perfil_inst{
@@ -1514,9 +1517,10 @@ input[type='file'] {
 }
 
 #sidebar_menu{
-    background-color: #b6bfc2;
+    background-color: #00d1ff4a;
     display: block;
     width: 15%;
+    border-right: 1px solid rgba(128, 128, 128, 0.45);
 }
 
 .title_sidebar{
@@ -1525,10 +1529,13 @@ input[type='file'] {
     height: 135px;
     text-align: center;
     padding-top: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .img_side{
     width: 75px;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .texte_title_side{
@@ -1541,7 +1548,6 @@ input[type='file'] {
 
 .btn_dropdown{
     display: inline-block;
-    text-align: center;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -1551,6 +1557,7 @@ input[type='file'] {
     background-color: #00D1FF;
     color: white;
     text-decoration: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .btn_dropdown:active {
@@ -1593,6 +1600,7 @@ input[type='file'] {
     z-index: 1000;
     display: none;
     float: left;
+    width: 100%;
     min-width: 10rem;
     padding: 5px 15px 6px 0px;
     margin: 0 27px 0 -5px !important;
@@ -1605,3 +1613,22 @@ input[type='file'] {
     border: 0px;
     border-radius: 0px;
 }
+
+.foto_user{
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 18px 4px #dcdcdc;
+}
+
+.img_menu_dropdown{
+    width: 35px;
+    margin-right: 25px;
+}
+
+/*Classe para ProgressBar*/
+svg path {
+    will-change: auto;
+    stroke-width: 20px;
+    stroke-miterlimit: round;
+    transition: stroke-dashoffset 850ms ease-in-out;
+}  

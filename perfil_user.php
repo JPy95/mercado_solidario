@@ -1,61 +1,47 @@
 <html lang="pt-br">
     <head>
         <?php include_once('php\estruturas_base\head.php')?>
+        <script type="text/javascript" src="js\progressbar.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/imagitama/nodelist-foreach-polyfill/master/index.js"></script>
     </head>
     <body>
         <?php include_once('php\estruturas_base\nav_principal.php')?>
         <div id="perfil">
             <?php include_once('php\estruturas_base\sidebar_menu.php')?>
             <div id="slide_perfil">
-                <div class="titulo_slide">
-                    <h1>Dashboard - Usuário X</h1>
+                <div class="title_slide">
+                    <h1 class="style_title_slide">Olá Usuário!</h1>
                 </div>
                 <div id="slide">
                     <div class="slide_group">
                         <div class="borda_slide">
-                            <img src="img\icones\ask.png" class="img_slide"><span class="subtitulo_slide"><h3>Comentários:</h3></span>
+                            <img src="img\icones\ask.png" class="img_slide"><span><h3 class="style_subtitle_slide subtitle_slide">Comentários:</h3></span>
                         </div>
                         <div class="text_slide">
-                            <span>Você possui x comentários não respondidos.</span>
+                            <span>Você possui <label class="desc_slide">x</label> comentários não respondidos.</span>
                         </div>
                     </div>
                     <div class="slide_group">
                         <div class="borda_slide">
-                            <img src="img\icones\anuncios.png" class="img_slide"><a href="anuncios.html"><span class="subtitulo_slide"><h4>Anúncios:</h4></span></a> 
+                            <img src="img\icones\anuncios.png" class="img_slide"><a href="anuncios.html"><span><h4 class="style_subtitle_slide subtitle_slide">Anúncios:</h4></span></a> 
                         </div>
                         <div class="text_slide">
-                            <span>Você possui x anúncios ativos.</span>
-                            <span>Você possui x anúncios finalizados.</span>
+                            <span>Você possui <label class="desc_slide">x</label> anúncios ativos.</span>
+                            <span>Você possui <label class="desc_slide">x</label> anúncios finalizados.</span>
                         </div>
                     </div>
                     <div class="slide_group">
                         <div class="borda_slide">
-                            <img src="img\icones\checkout.png" class="img_slide"><span class="subtitulo_slide"><h4>Operações:</h4></span>
+                            <img src="img\icones\checkout.png" class="img_slide"><span><h4 class="style_subtitle_slide subtitle_slide">Operações:</h4></span>
                         </div>
                         <div class="text_slide">
-                            <span>Você possui x vendas pendentes de concretização.</span>
+                            <span>Você possui <label class="desc_slide">x</label> vendas pendentes de concretização.</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="star_perfil">
-                <div class="score_title">
-                    <h3>Solidariu's King</h3>
-                </div>
-                <div class="score_perfil">
-                    <div class="score">
-                        <svg height="150" width="150">
-                            <circle cx="75" cy="75" r="70" stroke="rgba(128, 128, 128, 0.2)" stroke-width="1" fill="rgba(128, 128, 128, 0.48)"></circle>
-                            <circle cx="75" cy="75" r="57" stroke="rgba(128, 128, 128, 0.2)" stroke-width="1" fill="rgb(232, 250, 255)"></circle>
-                        </svg>
-                    </div>
-                    <div class="text_score">
-                        <span class="lvl_score">Nivel X</span><br>
-                        <span class="lvl_title">Titulo do nivel</span><br>
-                        <span class="lvl_point">Quantidade total de ponto (ex.:0/1000)</span>
-                    </div>
-                </div>
-            </div>
+            <!--Score Solidarius-->
+            <?php include_once('php\estruturas_base\solidario_score.php')?>
         </div>
         <footer class="footer">
             <div class="footer_menu">
