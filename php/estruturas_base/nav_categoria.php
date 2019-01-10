@@ -50,7 +50,7 @@
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="src_inst.html">
+            <a class="link_cat" href="#">
                 <i><img class="img_cat" src="img\categoria\instituicao.png" width="50"></i>Pesquisar Instituições
             </a>
         </li>

@@ -1,12 +1,12 @@
 <html lang="pt-br">
     <head>
-        <?php include_once('php\estruturas_base\head.php') ?>
+        <?php include_once('php\estruturas_base\head.php')?>
         <script type="text/javascript" src="js\progressbar.js"></script>
     </head>
     <body>
-        <?php include_once('php\estruturas_base\nav_principal.php') ?>
+        <?php include_once('php\estruturas_base\nav_principal.php')?>
         <div id="perfil">
-            <?php include_once('php\estruturas_base\sidebar_menu.php') ?>
+            <?php include_once('php\estruturas_base\sidebar_menu.php')?>
             <div id="slide_perfil">
                 <div class="title_slide">
                     <h1 class="style_title_slide">Olá Usuário!</h1>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!--Score Solidarius-->
-            <?php include_once('php\estruturas_base\solidario_score.php') ?>
+            <?php include_once('php\estruturas_base\solidario_score.php')?>
         </div>
         <footer class="footer">
             <div class="footer_menu">

@@ -11,7 +11,7 @@
     <div id="perfil">
       <?php include_once('php\estruturas_base\sidebar_menu.php') ?>  
       <!--AQUI TERÁ QUE SER MODIFICADO-->
-      <div id="silede_perfil_anuncio">
+      <div id="slide_perfil">
         <div class="title_slide">
           <h1 class="style_title_slide">Anúncios</h1>
         </div>
