@@ -57,7 +57,7 @@
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="register.html">
+            <a class="link_cat" href="register.php">
                 <i>
                     <img class="img_cat" src="img\categoria\instituição+.png" width="50">
                 </i>
