@@ -1,5 +1,5 @@
 <html lang="en">
-  <!--HEAD POSSUI PHP PRONTO-->
+  <!--HEAD -->
   <head>
     <?php include_once('php\estruturas_base\head.php') ?>
     <script type="text/javascript" src="js\progressbar.js"></script>

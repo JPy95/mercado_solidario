@@ -1,29 +1,11 @@
 <html lang="pt-br">
   <head>
-    <title>Mercado Solidário</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css\style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--HEAD -->
+    <?php include_once('php\estruturas_base\head.php') ?>
   </head>
   <body>
-    <nav>
-        <div class="col-12 " id="navegacao">
-            <div class="row">
-                <a href="index.html"><img class="logo" src="img\mercado\logo.png"></a>
-                <input class="buscar-nav" type="search" placeholder="Buscar produtos, marcas, instituições...">
-                <a href="login.html"><img class="user borda-nav" src="img\icones\avatar.png"></a> 
-                <div class="col">
-                    <a href="login.html" class="link_nav">Entrar</a><span>/Bem Vindo Usuário</span><br>
-                    <a href="perfil_user.html" class="link_nav">Meu Perfil</a><br>
-                    <a href="" class="link_nav">Sair</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!--NAV -->
+    <?php include_once('php\estruturas_base\nav_principal.php') ?>
     <div id="produto">
         <div class="gourp_img_produto">
             <div class="gourp_img_pequeno_produto">
@@ -107,45 +89,7 @@
             </div>
         </div>
     </div>
-
-
-    <footer class="footer">
-        <div class="footer_menu">
-            <div class="footer_list">
-                <h5>Mercado Solidário</h5><br>
-                <a href="" class="footer_link">Quem somos</a><br>
-                <a href="" class="footer_link">Politica de Privacidade</a><br>
-                <a href="" class="footer_link">Politica de Troca</a>
-            </div>
-            <div class="footer_list">
-                <h5>Instituições</h5><br>
-                <a href="" class="footer_link">Cadastre-se</a><br>
-                <a href="" class="footer_link">Pesquisar</a>
-            </div>
-            <div class="footer_list">
-                <h5>Forma de Pagamento</h5><br>
-                <span><img src="img\icones\master.png"><img src="img\icones\visa.png"><img src="img\icones\paypal.png"></span><br>
-                <span><img src="img\icones\boleto.png"></span><br>
-                <h5>Compra Segura</h5>
-                <span><img src="img\icones\cadeado.png" class="img_pgto"></span>
-            </div>
-            <div class="footer_list">
-                <h5>Empresas Parceiras</h5><br>
-                <span>
-                </span>
-            </div>
-        </div>
-    </footer>
-    <div class="mercado">
-        <span>
-            <h6 class="texto_mercado">Quando ajudamos o proximo, estamos plantando o bem para podermos colher um mundo melhor! Todos os direitos reservados.</h6>
-        </span>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <!--Rodapé-->
+   <?php include_once('php\estruturas_base\footer.php') ?>
   </body>
 </html>
