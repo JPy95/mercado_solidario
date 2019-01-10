@@ -9,7 +9,7 @@
     <?php include_once('php\estruturas_base\nav_principal.php') ?>
     <!--SIDEBAR-->
     <div id="perfil">
-    <?php include_once('php\estruturas_base\sidebar_menu.php') ?>  
+      <?php include_once('php\estruturas_base\sidebar_menu.php') ?>  
       <!--AQUI TERÁ QUE SER MODIFICADO-->
       <div id="silede_perfil_anuncio">
         <div class="title_slide">
