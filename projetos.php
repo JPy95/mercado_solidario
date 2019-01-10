@@ -7,7 +7,6 @@
   <body>
     <!--NAV -->
     <?php include_once('php\estruturas_base\nav_principal.php') ?>
-    <!--SIDEBAR-->
     <div id="perfil">
       <div id="sidebar_perfil">
         <div class="sidebar_titulo">

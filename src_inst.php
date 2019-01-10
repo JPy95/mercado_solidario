@@ -7,8 +7,7 @@
     <body>
         <!--NAV -->
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
-        <!--SIDEBAR-->
-        <div id="busca_inst">
+         <div id="busca_inst">
             <div class="title_busca_inst">
                 <h1 class="title_perfil_inst">Conheça a Instituição que deseja ajudar</h1>
             </div>
