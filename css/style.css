@@ -600,10 +600,24 @@ body {
 
 .format_input.ok {
   border: 2px solid rgba(2, 230, 2, 0.918);
+  background-image: url(../img/icones/check.png);
+  background-repeat: no-repeat;
+  background-size: 28px;
+  background-position-x: 98%;
+  background-position-y: 48%;
+  background-color: #05ff050f;
+  float: right;
 }
 
 .format_input.error {
   border-color: red;
+  background-image: url(../img/icones/error_form.png);
+  background-repeat: no-repeat;
+  background-size: 23px;
+  background-position-x: 98%;
+  background-position-y: 48%;
+  background-color: #ff000005;
+  float: right;
 }
 
 .format_input::-webkit-input-placeholder {
@@ -1352,6 +1366,7 @@ input[type="file"] {
 }
 
 .format_inputs_busca_inst {
+  margin-top: 20px;
   display: inline-flex;
 }
 
@@ -1578,6 +1593,8 @@ input[type="file"] {
 .erro_form {
   font-size: 10px;
   color: red;
+  display: unset;
+  margin-left: 8px;
 }
 
 #sidebar_menu {
@@ -1841,12 +1858,52 @@ input[type="file"] {
   margin: 0 0 0 20;
 }
 
+.format_buscar_inst{
+  display: inline-flex;
+  margin-top: 35px;
+}
+
+.format_input_src_inst{
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  padding-left: 10px;
+  width: 400;
+  height: 38px;
+}
+
+.format_btn_src_inst{
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  height: 38px;
+  width: 90px;
+  margin: 1 0 0 -5px;
+}
+
 @media only screen and (max-width: 600px) {
   .format_img {
     width: 300px;
     height: 200px;
     margin: 10 0 0 0;
   } 
+}
+
+.btn_src_inst{
+  background-color: #ff4f5d;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin: 0px 5px 6px 10px;
+  font-weight: 600;
+  font-style: italic;
+  font-family: Segoe UI;
+}
+
+.btn_src_inst:focus, .btn_src_inst:hover, .btn_src_inst:active{
+  background-color: #00d1ff;
+  border: 1px solid #00d1ff;
+
+}
+
+.border_bottom_src_inst{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 /*Classe para ProgressBar*/

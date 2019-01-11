@@ -1,0 +1,28 @@
+.carrosel_ul {
+    width: 500px;
+    border: solid 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0;
+}
+  
+.carrosel_li {
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+}
+  
+.carrosel_li:first-child {
+    background: yellow;
+}
+  
+.carrosel_li:last-child {
+    background: red;
+}
+  
+.carrosel_a {
+    color: #333;
+    text-decoration: none;
+    margin: 20px;
+    transition: opacity 0.5s;
+}

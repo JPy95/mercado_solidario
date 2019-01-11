@@ -12,6 +12,7 @@ function valida_nome() {
   return false;
 }
 //Bloqueia o usuario digitar um cpf menor ou maior que 14 digitos.
+function valida_cpf(){
   var cpf = document.getElementById("cpf");
   if (cpf.value.length == 14) {
     cpf.classList.add("ok");
@@ -22,6 +23,7 @@ function valida_nome() {
   }
   return false;
 }
+
 //Valida email com o caractere "@" e "."
 function valida_email() {
   var email = document.getElementById("email");

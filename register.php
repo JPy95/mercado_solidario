@@ -46,7 +46,7 @@
                                             <div class="col-xl-6">
                                                 <label for="email" class="subtitle_register">E-mail:</label><br>
                                                 <input onblur="valida_email()" type="email" class="format_input" id="email" name="email">
-                                                <p id="erro-email" class="erro_form"></p>0
+                                                <p id="erro-email" class="erro_form"></p>
                                             </div>
                                         </div>
                                     </div>
