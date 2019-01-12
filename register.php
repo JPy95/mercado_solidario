@@ -18,8 +18,7 @@
                             <!--Botão Collapse para abertura de formulario de Instituições-->
                             <div class="col-12 register_btn_pf_inst">
                                 <span>
-                                    <button class="resgiter_btn_pf" type="button" >Pessoa Física</button>
-                                    <button class="register_btn_inst" type="button" data-toggle="collapse" data-target="#form_inst" aria-expanded="false" aria-controls="form_inst">Instituições</button>
+                                    <button id="btnInst" class="register_btn_inst" onclick="alterarNome()" type="button" data-toggle="collapse"  data-target="#form_inst" aria-expanded="false" aria-controls="form_inst">Instituições</button>
                                 </span>
                             </div>
                         </div>
@@ -39,7 +38,7 @@
                                     <div class="col-xl-12">
                                         <div class="row">
                                             <div class="col-xl-4">
-                                                <label for="cpf" class="subtitle_register">CPF:</label><br>
+                                                <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
                                                 <input onkeydown="fMasc( this, mCPF )"  onblur="valida_cpf()" type="text" class="format_input" id="cpf" name="cpf">
                                                 <p id="erro-cpf" class="erro_form"></p>
                                             </div>

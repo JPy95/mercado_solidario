@@ -1,18 +1,18 @@
 //Função não deixa usuario escrever somente o primeiro nome
 function valida_nome() {
   var nome = document.getElementById("nome");
-  if (nome.value.length >= 8) {
+  if (limparCamposVazios(nome.value).length >= 8) {
+    nome.classList.remove("error");
     nome.classList.add("ok");
-    return true;
+    document.getElementById("erro-nome").innerHTML = "";
   } else {
-    nome.classList.add("error");
     document.getElementById("erro-nome").innerHTML =
       "Favor preencher seu nome e sobrenome.";
+    nome.classList.add("error");
   }
-  return false;
 }
 //Bloqueia o usuario digitar um cpf menor ou maior que 14 digitos.
-function valida_cpf(){
+function valida_cpf() {
   var cpf = document.getElementById("cpf");
   if (cpf.value.length == 14) {
     cpf.classList.add("ok");
@@ -78,12 +78,22 @@ function valida_form() {
   }
 }
 
-//Função de correção de nome
-
-function corrigirNome(){
+//função para nome
+function alterarNome() {
+  var btnIntituicoes = document.getElementById("btnInst");
+  if (btnIntituicoes.attributes[6].value == "false") {
     document.getElementById("lblNome").innerHTML = "Razão Social:";
+    document.getElementById("lblCpf").innerHTML = "CNPJ:";
+  } else {
+    document.getElementById("lblNome").innerHTML = "Nome:";
+    document.getElementById("lblCpf").innerHTML = "CPF:";
+  }
 }
 
+//Função para eliminar campos vazios
+function limparCamposVazios(string) {
+  return string.trim();
+}
 
 //Funções para mascara
 
