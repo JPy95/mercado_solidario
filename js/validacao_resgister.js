@@ -1,15 +1,15 @@
 //Função não deixa usuario escrever somente o primeiro nome
 function valida_nome() {
   var nome = document.getElementById("nome");
-  if (nome.value.length >= 8) {
+  if (limparCamposVazios(nome.value).length >= 8) {
+    nome.classList.remove("error");
     nome.classList.add("ok");
-    return true;
+    document.getElementById("erro-nome").innerHTML = "";
   } else {
-    nome.classList.add("error");
     document.getElementById("erro-nome").innerHTML =
       "Favor preencher seu nome e sobrenome.";
+    nome.classList.add("error");
   }
-  return false;
 }
 //Bloqueia o usuario digitar um cpf menor ou maior que 14 digitos.
 function valida_cpf() {
@@ -88,6 +88,11 @@ function alterarNome() {
     document.getElementById("lblNome").innerHTML = "Nome:";
     document.getElementById("lblCpf").innerHTML = "CPF:";
   }
+}
+
+//Função para eliminar campos vazios
+function limparCamposVazios(string) {
+  return string.trim();
 }
 
 //Funções para mascara
