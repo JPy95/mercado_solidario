@@ -1,28 +1,58 @@
+.card_inst_group{
+    position: relative;
+    display: inline-flex;
+    margin: 15px 25px 0 25px;
+}
+
 .carrosel_ul {
-    width: 500px;
-    border: solid 1px;
+    width: 865px;
     overflow: hidden;
     white-space: nowrap;
-    padding: 0;
 }
-  
+
 .carrosel_li {
-    display: inline-block;
-    width: 160px;
+    display: inline-flex;
+    width: auto;
     text-align: center;
+    margin: 5;
 }
-  
-.carrosel_li:first-child {
-    background: yellow;
-}
-  
-.carrosel_li:last-child {
-    background: red;
-}
-  
+
 .carrosel_a {
-    color: #333;
-    text-decoration: none;
-    margin: 20px;
-    transition: opacity 0.5s;
+  color: #333;
+  text-decoration: none;
+  margin: 20px;
+  transition: opacity 0.5s;
+}
+
+.btn_carousel{
+    width: 50px;
+    height: 50px;
+    margin: 115px 10px;
+    display: block;
+    border: none;
+    border-radius: 50%;
+}
+
+.btn_carousel:focus, .btn_carousel:active {
+    transition: 0.5s;
+    box-shadow: 0px 0px 15px 1px red;
+    outline: 0 !important;
+}
+
+.btn_carousel:hover{
+    transition: 0.5s;
+    box-shadow: 0px 0px 15px 1px red;
+}
+
+
+.btn_next{
+    background-image: url(../img/icones/right.png);
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+
+.btn_previous{
+    background-image: url(../img/icones/left.png);
+    background-size: 50px;
+    background-repeat: no-repeat;
 }

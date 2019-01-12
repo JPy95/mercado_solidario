@@ -1245,20 +1245,14 @@ input[type="file"] {
   color: #ff4f5d;
 }
 
-.desc_proj_inst {
-  margin-left: 10px;
-}
-
 .card_proj_inst {
-  margin-top: 10;
   background-color: #fff;
   width: 202px;
   height: auto;
-  margin: 10 0 0 0;
   border-radius: 10px;
   border: 1px solid rgba(128, 128, 128, 0.2);
   box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.2);
-  display: inline-block;
+  display: block;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1906,6 +1900,11 @@ input[type="file"] {
   border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
+.card_inst_group{
+  position: relative;
+  display: inline-flex;
+}
+
 /*Classe para ProgressBar*/
 svg path {
     will-change: auto;
@@ -1913,3 +1912,34 @@ svg path {
     stroke-miterlimit: round;
     transition: stroke-dashoffset 850ms ease-in-out;
 }
+
+
+/*
+.carrosel_ul {
+  width: 500px;
+  border: solid 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.carrosel_li {
+  display: inline-flex;
+  width: 160px;
+  text-align: center;
+}
+
+.carrosel_li:first-child {
+  background: yellow;
+}
+
+.carrosel_li:last-child {
+  background: red;
+}
+
+.carrosel_a {
+  color: #333;
+  text-decoration: none;
+  margin: 20px;
+  transition: opacity 0.5s;
+}*/
