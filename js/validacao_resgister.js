@@ -12,7 +12,7 @@ function valida_nome() {
   return false;
 }
 //Bloqueia o usuario digitar um cpf menor ou maior que 14 digitos.
-function valida_cpf(){
+function valida_cpf() {
   var cpf = document.getElementById("cpf");
   if (cpf.value.length == 14) {
     cpf.classList.add("ok");
@@ -78,12 +78,17 @@ function valida_form() {
   }
 }
 
-//Função de correção de nome
-
-function corrigirNome(){
+//função para nome
+function alterarNome() {
+  var btnIntituicoes = document.getElementById("btnInst");
+  if (btnIntituicoes.attributes[6].value == "false") {
     document.getElementById("lblNome").innerHTML = "Razão Social:";
+    document.getElementById("lblCpf").innerHTML = "CNPJ:";
+  } else {
+    document.getElementById("lblNome").innerHTML = "Nome:";
+    document.getElementById("lblCpf").innerHTML = "CPF:";
+  }
 }
-
 
 //Funções para mascara
 
