@@ -1,20 +1,23 @@
-.card_inst_group{
+.carousel_tot{
+    width: 2500px;
     position: relative;
     display: inline-flex;
-    margin: 15px 25px 0 25px;
-}
+    margin-top: 15px;
+  }
 
 .carrosel_ul {
-    width: 865px;
+    width: 833px;
     overflow: hidden;
     white-space: nowrap;
+    margin-left: 80px;
+    transition: 2s;
 }
 
 .carrosel_li {
     display: inline-flex;
     width: auto;
     text-align: center;
-    margin: 5;
+    width: 833px;
 }
 
 .carrosel_a {
@@ -27,20 +30,24 @@
 .btn_carousel{
     width: 50px;
     height: 50px;
-    margin: 115px 10px;
     display: block;
-    border: none;
+    border: 1px solid #00d1ff;
+    position: absolute;
     border-radius: 50%;
 }
 
 .btn_carousel:focus, .btn_carousel:active {
     transition: 0.5s;
+    border: none;
     box-shadow: 0px 0px 15px 1px red;
+    opacity: 1;
     outline: 0 !important;
 }
 
 .btn_carousel:hover{
     transition: 0.5s;
+    opacity: 1;
+    border: none;
     box-shadow: 0px 0px 15px 1px red;
 }
 
@@ -49,10 +56,14 @@
     background-image: url(../img/icones/right.png);
     background-size: 50px;
     background-repeat: no-repeat;
+    top: 43%;
+    left: 35.5%;
 }
 
 .btn_previous{
     background-image: url(../img/icones/left.png);
     background-size: 50px;
     background-repeat: no-repeat;
+    top: 43%;
+    right: 95.5%;
 }
