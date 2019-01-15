@@ -1,23 +1,14 @@
-.carousel_tot{
-    width: 2500px;
-    position: relative;
-    display: inline-flex;
-    margin-top: 15px;
-  }
-
 .carrosel_ul {
-    width: 833px;
+    width: 865px;
     overflow: hidden;
     white-space: nowrap;
-    margin-left: 80px;
-    transition: 2s;
 }
 
 .carrosel_li {
     display: inline-flex;
     width: auto;
     text-align: center;
-    width: 833px;
+    margin: 5;
 }
 
 .carrosel_a {
@@ -57,7 +48,7 @@
     background-size: 50px;
     background-repeat: no-repeat;
     top: 43%;
-    left: 35.5%;
+    left: 97%;
 }
 
 .btn_previous{
@@ -65,5 +56,6 @@
     background-size: 50px;
     background-repeat: no-repeat;
     top: 43%;
-    right: 95.5%;
+    right: 97%;
+    opacity: 0;
 }

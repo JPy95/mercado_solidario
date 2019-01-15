@@ -1252,7 +1252,6 @@ input[type="file"] {
   border: 1px solid rgba(128, 128, 128, 0.2);
   box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.2);
   display: block;
-  margin-left: 5px;
 }
 
 .card_alinha{
