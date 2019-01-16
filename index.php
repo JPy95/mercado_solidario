@@ -1,6 +1,8 @@
 <html lang="pt-br">
     <head>
         <?php include_once('php\estruturas_base\head.php')?>
+        <link rel="stylesheet" type="text/css" href="css\carrosel.css">
+        <link rel="stylesheet" type="text/css" href="css\cards.css">
     </head>
     <body>
         <!--Barra de Navegação Principal-->
@@ -14,4 +16,10 @@
         <!--Rodapé-->
         <?php include_once('php\estruturas_base\footer.php')?>
     </body>
+    <script>
+        $('.carousel').carousel({
+            pause: true,
+            interval: false
+        });
+    </script>
 </html>

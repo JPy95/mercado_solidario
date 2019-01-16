@@ -32,6 +32,39 @@
                         <button class="btn_cards">Saiba Mais</button>
                     </div>
                 </div>
+                <div class="card_proj_inst">
+                    <div class="borda_img_card">
+                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                    </div>
+                    <div class="desc_projt_card_prfil_inst">
+                        <h5>Nome Fantasia2</h5>
+                    </div>
+                    <div >
+                        <button class="btn_cards">Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="card_proj_inst">
+                    <div class="borda_img_card">
+                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                    </div>
+                    <div class="desc_projt_card_prfil_inst">
+                        <h5>Nome Fantasia2</h5>
+                    </div>
+                    <div >
+                        <button class="btn_cards">Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="card_proj_inst">
+                    <div class="borda_img_card">
+                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                    </div>
+                    <div class="desc_projt_card_prfil_inst">
+                        <h5>Nome Fantasia2</h5>
+                    </div>
+                    <div >
+                        <button class="btn_cards">Saiba Mais</button>
+                    </div>
+                </div>
             </li>
             <li class="carrosel_li">
                 <div class="card_proj_inst">
@@ -53,32 +86,6 @@
                     </div>
                     <div class="desc_projt_card_prfil_inst">
                         <h5>Nome Fantasia4</h5>
-                    </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
-                    </div>
-                </div>
-            </li>
-            <li class="carrosel_li">
-                <div class="card_proj_inst">
-                    <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
-                    </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia5</h5>
-                    </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
-                    </div>
-                </div>
-            </li>
-            <li class="carrosel_li">
-                <div class="card_proj_inst">
-                    <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
-                    </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia5</h5>
                     </div>
                     <div >
                         <button class="btn_cards">Saiba Mais</button>

@@ -5,6 +5,7 @@ function Carousel(){
         this.botoes = document.querySelectorAll('button.btn_carousel');
         this.voltar = this.botoes[0];
         this.avancar = this.botoes[1];
+        this.movimento = 0;
     };
 
     this.bindEvents = function(){
@@ -36,6 +37,7 @@ function Carousel(){
     
     this.mover = function(direcao){
         this.carouselCards.scrollLeft += 50 * direcao.target.id;
+        this.carouselCards.style.transform = "translate3d("+(-1*(this.carouselCards.scrollLeft))+"px,0,0)";
     };
 
     this.validaTamanho = function(){

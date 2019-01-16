@@ -336,119 +336,6 @@ body {
   height: 500px;
 }
 
-.cards {
-  background-color: #fff;
-  margin: 10px 5px;
-  width: 230px;
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.2);
-  display: inline-block;
-}
-
-@media only screen and (max-width: 600px) {
-  .cards {
-    width: 150px;
-  }
-}
-
-.borda_img_card {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.404);
-}
-
-.img_cards {
-  margin: 1px 15px 5px 15px;
-  width: 200px;
-  height: 200px;
-}
-
-@media only screen and (max-width: 600px) {
-  .img_cards {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-.favorito_cards {
-  background-color: #fff;
-  border: none;
-  float: right;
-  margin: 5px;
-}
-
-.title_cards {
-  font-family: Segoe UI;
-  font-weight: 500;
-  font-size: 18px;
-  padding: 5px 5px 0px 5px;
-}
-
-@media only screen and (max-width: 600px) {
-  .title_cards {
-    font-size: 15px;
-  }
-}
-
-.descricao {
-  font-family: Segoe UI;
-  font-weight: 400;
-  font-size: 15px;
-  color: rgba(128, 128, 128, 0.68);
-  padding: 5px 5px 0px 5px;
-  height: 70px;
-}
-
-@media only screen and (max-width: 600px) {
-  .descricao {
-    font-size: 11px;
-  }
-}
-
-.valor {
-  font-family: Segoe UI;
-  font-weight: 600;
-  font-size: 25px;
-  color: rgba(250, 0, 0, 0.72);
-  padding: 10px 5px 15px 5px;
-}
-
-@media only screen and (max-width: 600px) {
-  .valor {
-    font-size: 20px;
-    padding: 0px 0px 5px 5px;
-  }
-}
-
-.btn_cards {
-  width: 100%;
-  height: 40px;
-  background-color: rgba(250, 0, 0, 0.72);
-  border: none;
-  font-family: Segoe UI;
-  font-weight: 500;
-  font-size: 20px;
-  color: #fff;
-  border-radius: 0 0 10px 10px;
-}
-
-@media only screen and (max-width: 600px) {
-  .btn_cards {
-    font-size: 16px;
-    height: 30px;
-  }
-}
-
-.btn_cards:active {
-  background-color: #00d1ff;
-}
-.btn_cards:focus {
-  background-color: #00d1ff;
-  outline: 0;
-}
-.btn_cards:hover {
-  background-color: #00d1ff;
-}
 
 .titulo_cat {
   font-family: Segoe UI;
@@ -1547,17 +1434,6 @@ input[type="file"] {
 
 .cards_group {
   padding: 5px;
-}
-
-.carousel-control-prev {
-  left: 0;
-  width: 5%;
-  margin-left: -50px;
-}
-.carousel-control-next {
-  right: 0;
-  width: 5%;
-  margin-right: -50px;
 }
 
 #carouselBanner {
