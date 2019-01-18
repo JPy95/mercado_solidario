@@ -16,10 +16,5 @@
         <!--Rodapé-->
         <?php include_once('php\estruturas_base\footer.php')?>
     </body>
-    <script>
-        $('.carousel').carousel({
-            pause: true,
-            interval: false
-        });
-    </script>
+    <script type="text/javascript" src="js\carrosel.js"></script>
 </html>

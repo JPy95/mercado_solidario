@@ -12,7 +12,7 @@
 
 @media only screen and (max-width: 600px) {
     .cards {
-      width: 130px;
+      width: 150px;;
     }
 }
 
@@ -111,34 +111,4 @@
 }
 .btn_cards:hover {
     background-color: #00d1ff;
-}
-
-.carousel-control-prev {
-    left: 0;
-    width: 5%;
-    margin-left: -50px;
-}
-
-.carousel-control-next {
-    right: 0;
-    width: 5%;
-    margin-right: -50px;
-}
-
-@media only screen and (max-width: 600px) {
-    .carousel-control-prev {
-        position: absolute;
-        left: -13%;
-        width: 35px;
-        opacity: 1;
-        margin-left: 0;
-    }
-
-    .carousel-control-next{
-        position: absolute;
-        right: -13%;
-        width: 35px;
-        opacity: 1;
-        margin-right: 0;
-    }
 }

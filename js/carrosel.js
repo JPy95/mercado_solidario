@@ -1,51 +1,34 @@
-function Carousel(){
-    this.init = function(){
-        this.elemento = document.getElementById('elementos');
-        this.carouselCards = document.getElementById('carousel');
-        this.botoes = document.querySelectorAll('button.btn_carousel');
-        this.voltar = this.botoes[0];
-        this.avancar = this.botoes[1];
-        this.movimento = 0;
-    };
-
-    this.bindEvents = function(){
-        document.addEventListener("load", this.validaTamanho.bind());
-        this.elemento.addEventListener("mouseout", this.hide.bind(this));
-        this.elemento.addEventListener("mouseover", this.show.bind(this));
-        this.avancar.addEventListener("click", this.mover.bind(this));
-        this.voltar.addEventListener("click", this.mover.bind(this));
-    };
-
-    this.show = function(){
-        if(this.carouselCards.scrollLeft != 0){
-            this.voltar.style.opacity = 1;
-        } else {
-            this.voltar.style.opacity = 0;
+function editaCarousel() {
+    var lista = [];
+    //obtenho todos os elementos com a class .bloco e faço a varredura com each
+    $('.cards').each(function (inx) {
+        //console.log(lista);
+        //Verifico se o elemento já possui um contain
+        if ($(this).prev().hasClass("cards")) {
+            //verifico se o numero é par, se for ele cria a div e adiciona a class container
+            if (inx % 2 != 0) {
+                lista.push(this);
+                if(lista.length == 2){
+                    $('.carousel-inner').append($('<div></div>').addClass('carousel-item').append($(lista[0]).append($(lista[1]))));
+                    lista.length = 0;
+                }
+            } 
         }
+    });
+}
 
-        if(this.carouselCards.clientWidth + this.carouselCards.scrollLeft - this.carouselCards.scrollWidth != 0){
-            this.avancar.style.opacity = 1;
-        } else {
-            this.avancar.style.opacity = 0;
-        }
-    };
-    
-    this.hide = function(){
-        this.voltar.style.opacity = 0; 
-        this.avancar.style.opacity = 0;
-    };
-    
-    this.mover = function(direcao){
-        this.carouselCards.scrollLeft += 50 * direcao.target.id;
-        this.carouselCards.style.transform = "translate3d("+(-1*(this.carouselCards.scrollLeft))+"px,0,0)";
-    };
+$(document).ready(function () {
+    //setando evento de click no botão para chamar função
+    $('.carousel-inner').load(editaCarousel());
+});
 
-    this.validaTamanho = function(){
-        if(this.elemento.clientWidth== this.elemento.scrollWidth){
-            this.avancar.style.opacity = 0;
-        }; 
-    };
-};
-var carousel = new Carousel();
-carousel.init();
-carousel.bindEvents();
+$('.carousel').carousel({
+    pause: true,
+    interval: false
+});
+
+
+/*$('.carousel-inner').append($('<div></div>')
+                    .addClass('carousel-item')
+                    .append($(this)));*/
+                    

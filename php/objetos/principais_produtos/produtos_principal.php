@@ -1,5 +1,5 @@
 <!--Colocar acimar crud para buscar dados de produtos e dinamizar codigo abaixo...-->
-<div class="principal">
+<div class="col-12 principal">
     <div class="borda_titulo_pag">
         <span class="titulo_cat">Para sua Casa</span>
     </div>
