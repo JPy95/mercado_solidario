@@ -1,5 +1,32 @@
+.carousel-control-prev,
+.carousel-control-next {
+  margin: 10px 5px 17px 5px;
+  padding-bottom: 22px;
+  width: 40px;
+}
+
+.carousel-control-prev:hover, .carousel-control-prev:focus {
+  background-image: linear-gradient(to right, #595959c4 , #ffff0000);
+  border-radius: 10px;
+  padding-bottom: 22px;
+}
+
+.carousel-control-next:hover,
+.carousel-control-next:focus{
+  background-image: linear-gradient(to left, #595959c4 , #ffff0000);
+  border-radius: 10px;
+  padding-bottom: 22px;
+}
+
 @media only screen and (max-width: 600px) {
-    .carousel-item.active, .carousel-item-next, .carousel-item-prev {
-      display: inline-flex;
-    }
+  .carousel-item.active, .carousel-item-next, .carousel-item-prev {
+    display: inline-flex;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    margin: 10px 5px 10px 5px;
+    padding-bottom: 22px;
+    width: 40px;
+  }
 }

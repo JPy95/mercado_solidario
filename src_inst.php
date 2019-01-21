@@ -3,6 +3,7 @@
    <head>
         <?php include_once('php\estruturas_base\head.php') ?>
         <link rel="stylesheet" type="text/css" href="css\carrosel.css">
+        <link rel="stylesheet" type="text/css" href="css\cards.css">
     </head>
     <body>
         <!--NAV -->

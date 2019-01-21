@@ -1,100 +1,228 @@
 <div class="lista_inst_cat">
     <div class="border_bottom_src_inst">
         <h4 class="style_subtitle_slide">Causa 1</h4>
-    </div>
-    <div id="elementos" class="card_inst_group">
-        <!--Voltar-->
-        <button id="-1" class="btn_carousel btn_previous"></button>
-        <!--Cards-->
-        <ul id="carousel" class="carrosel_ul">
-            <li class="carrosel_li">
-                <div class="card_proj_inst">
+    </div class="row">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div id="carousel" class="carousel-item active">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia1</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-            </li>
-            <li class="carrosel_li">
-                <div class="card_proj_inst">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia2</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-                <div class="card_proj_inst">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia2</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-                <div class="card_proj_inst">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia2</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-                <div class="card_proj_inst">
+            </div>
+            <div id="carousel" class="carousel-item">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia2</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-            </li>
-            <li class="carrosel_li">
-                <div class="card_proj_inst">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia3</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-            </li>
-            <li class="carrosel_li">
-                <div class="card_proj_inst">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
                     <div class="borda_img_card">
-                        <img src="img\img_prod\baleia.png" class="img_card_aprest_perfil_inst">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
                     </div>
-                    <div class="desc_projt_card_prfil_inst">
-                        <h5>Nome Fantasia4</h5>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
                     </div>
-                    <div >
-                        <button class="btn_cards">Saiba Mais</button>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
                     </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
                 </div>
-            </li>
-        </ul>
-        <!--Fim Cards-->
-        <!--Avançar-->
-        <button id="1" class="btn_carousel btn_next"></button>
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
+                    <div class="borda_img_card">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
+                    </div>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
+                    </div>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
+                    </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
+                </div>
+            </div>
+            <div id="carousel" class="carousel-item">
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
+                    <div class="borda_img_card">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
+                    </div>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
+                    </div>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
+                    </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
+                </div>
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
+                    <div class="borda_img_card">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
+                    </div>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
+                    </div>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
+                    </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
+                </div>
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
+                    <div class="borda_img_card">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
+                    </div>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
+                    </div>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
+                    </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
+                </div>
+                <div class="cards" >
+                    <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
+                    <div class="borda_img_card">
+                        <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
+                    </div>
+                    <div class="title_cards">
+                        <span>AirFryer</span>
+                    </div>
+                    <div class="descricao">
+                        is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been
+                    </div>
+                    <div class="valor">
+                        R$ 1.000,00
+                    </div>
+                    <button class="btn_cards">Visualizar</button> 
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
     </div>
 </div>
