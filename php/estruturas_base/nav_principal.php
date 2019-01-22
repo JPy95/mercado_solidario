@@ -17,7 +17,7 @@
      
     <ul class="navbar-nav mr-auto">
         <div class="nav_bar_principal">
-            <a href="login.html"><img class="user borda-nav" src="img\icones\avatar.png"></a>
+            <a href="login.php"><img class="user borda-nav" src="img\icones\avatar.png"></a>
             <div class="nav_bar_links">
                 <li class="nav-item active">
                     <a href="login.php" class="link_nav">Entrar</a><span class="span_nav">/Bem Vindo Usuário</span><br>

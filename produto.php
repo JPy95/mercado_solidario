@@ -2,6 +2,7 @@
   <head>
     <!--HEAD -->
     <?php include_once('php\estruturas_base\head.php') ?>
+    <link rel="stylesheet" type="text/css" href="css\produto.css">
   </head>
   <body>
     <!--NAV -->
@@ -50,6 +51,7 @@
                 </div>
                 <div class="qtde_prod">
                     <span class="text_qtde_prod">Quantidade: </span><input type="number" class="format_input_qtde">
+                    <a href=""><button class="btn_format">Finalizar Compra</button></a>
                 </div>
             </div>
         </div>
@@ -72,7 +74,7 @@
             <div>
                 <h4 class="titulo_desc_produto">Dados do Vendedor</h4>
             </div>
-            <div>
+            <div class="info_vededor">
                 <span class="nome_vendedor">Fulano de tal</span>
                 <div class="five_stars">
                     <img src="img\icones\stars.png" class="stars_prod">

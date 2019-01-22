@@ -17,7 +17,7 @@
             <div class="valor">
                 R$ 1.000,00
             </div>
-            <button class="btn_cards">Visualizar</button> 
+            <a href="produto.php"><button class="btn_cards">Visualizar</button></a> 
         </div>
         <div class="cards" >
             <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
