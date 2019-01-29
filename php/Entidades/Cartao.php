@@ -19,7 +19,22 @@ class Cartao
 
     }
 
+    public function insert($conexao)
+    {
+        $con = $conexao->conectar();
 
+        $query = "INSERT INTO CARTAO(nome, cpf_cenpj, numero, cvv, validade) 
+							values(
+								'" . $this->getNome() . "',
+								'" . $this->getCpf_cnpj() . "',
+								'" . $this->getNumero() . "',
+                                '" . $this->getCvv() . "',
+								'" . $this->getValidade() . "'                                
+							)";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
 
     /**
      * Get the value of nome

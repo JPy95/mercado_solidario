@@ -8,11 +8,43 @@ class PessoaFisica extends Pessoa
 
     public function __construct($email, $senha, $nome, $endereco, $cpf)
     {
-        $this->cpf = $cpf;
         $this->nome = $nome;
+        $this->cpf = $cpf;
         $this->email = $email;
         $this->senha = $senha;
         $this->endereco = $endereco;
+    }
+
+    public function insert($conexao)
+    {
+        $con = $conexao->conectar();
+
+        $query = "INSERT INTO USUARIO(nome, cpf, email, senha) 
+							values(
+								'" . $this->getNome() . "',
+								'" . $this->getCpf() . "',
+								'" . $this->getEmail() . "',
+								'" . $this->getSenha() . "'                                
+							)";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+
+    public function update($login, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        $query = "UPDATE USER SET 
+								nome='" . $this->getNome() . "',
+								cpf='" . $this->getCpf() . "',
+                                email='" . $this->getEmail() . "'
+                                senha='" . $this->getSenha() . "'
+						  WHERE login = '$login'";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
     }
 
 
