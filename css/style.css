@@ -42,6 +42,7 @@ body {
   #categoria {
     overflow: scroll hidden;
     padding: 0;
+    display: -webkit-inline-box;
   }
 }
 
@@ -186,6 +187,12 @@ body {
 
 #busca_inst {
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #busca_inst {
+    padding: 5;
+  }
 }
 
 .logo {
@@ -1069,6 +1076,13 @@ input[type="file"] {
   color: #ff4f5d;
 }
 
+@media only screen and (max-width: 600px) {
+  .title_perfil_inst {
+    font-size: 19px;
+    margin-top: 10;
+  }
+}
+
 .text_perfil_inst {
   color: #999696;
   font-size: 10px;
@@ -1224,6 +1238,12 @@ input[type="file"] {
 
 .lista_inst_cat {
   margin: 50 150;
+}
+
+@media only screen and (max-width: 600px) {
+  .lista_inst_cat {
+    margin: 10px;
+  }
 }
 
 .format_inputs_busca_inst {
@@ -1671,12 +1691,26 @@ input[type="file"] {
   margin-top: 35px;
 }
 
+@media only screen and (max-width: 600px) {
+  .format_buscar_inst {
+    margin-top: 0px;
+  }
+}
+
 .format_input_src_inst {
   border-radius: 10px 0px 0px 10px;
   border: 1px solid rgba(128, 128, 128, 0.2);
   padding-left: 10px;
   width: 400;
   height: 38px;
+}
+
+@media only screen and (max-width: 600px) {
+  .format_input_src_inst {
+    width: 70%;
+    height: 30px;
+    font-size: 13px;
+  }
 }
 
 .format_btn_src_inst {
@@ -1688,10 +1722,30 @@ input[type="file"] {
 }
 
 @media only screen and (max-width: 600px) {
+  .format_btn_src_inst {
+    width: 30%;
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title_dropdown {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   .format_img {
     width: 300px;
     height: 200px;
     margin: 10 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dropdown-toggle::after {
+    margin: 0px 1px -2px 0;
   }
 }
 
@@ -1702,6 +1756,15 @@ input[type="file"] {
   font-weight: 600;
   font-style: italic;
   font-family: Segoe UI;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn_src_inst {
+    margin: 0px;
+    height: 30px;
+    margin-bottom: 5;
+    padding: 0px 0px 4px 4px;
+  }
 }
 
 .btn_src_inst:focus,

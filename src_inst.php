@@ -23,7 +23,7 @@
             <div class="format_buscar_inst">
                 <div class="dropdown">
                     <button class="btn_src_inst btn btn-secondary dropdown-toggle" type="button" id="causas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Causas</span> 
+                        <span class="title_dropdown">Causas</span> 
                     </button>
                     <div class="dropdown-menu" aria-labelledby="causas">
                         <a class="dropdown-item" href="?causa1">Causa 1</a>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="dropdown">
                     <button class="btn_src_inst btn btn-secondary dropdown-toggle" type="button" id="cidades" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Cidades</span> 
+                        <span class="title_dropdown">Cidades</span> 
                     </button>
                     <div class="dropdown-menu" aria-labelledby="cidades">
                         <a class="dropdown-item" href="?cidade1">Cidade 1</a>
