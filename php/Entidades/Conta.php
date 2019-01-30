@@ -6,18 +6,54 @@ class Conta
     private $agencia;
     private $conta;
     private $titular;
-    private $cnpj_cpf;
+    private $cpf_cnpj;
 
-    public function __construct($banco, $agencia, $conta, $titular, $cnpj_cpf)
+    public function __construct($banco, $agencia, $conta, $titular, $cpf_cnpj)
     {
         $this->banco = $banco;
         $this->agencia = $agencia;
         $this->conta = $conta;
         $this->titular = $titular;
-        $this->cnpj_cpf = $cnpj_cpf;
+        $this->cpf_cnpj = $cpf_cnpj;
 
 
     }
+
+    public function insert($conexao)
+    {
+        $con = $conexao->conectar();
+
+        $query = "INSERT INTO CONTA(banco, agencia, conta, titular, cpf_cnpj) 
+							values(
+								'" . $this->getBanco() . "',
+								'" . $this->getAgencia() . "',
+								'" . $this->getConta() . "',
+                                '" . $this->getTitular() . "',
+								'" . $this->getCpf_cnpj() . "'                                
+							)";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+    public function update($id_instituicao, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        $query = "UPDATE CONTA SET 
+								banco='" . $this->getBanco() . "',
+								agencia='" . $this->getAgencia() . "',
+                                conta='" . $this->getConta() . "',
+                                titular='" . $this->getTitular() . "',
+                                cpf_cnpj='" . $this->getCpf_cnpj . "'
+						  WHERE id_instituicao = '$id_instituicao'";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+
+
 
 
 
@@ -101,22 +137,23 @@ class Conta
         return $this;
     }
 
+
     /**
-     * Get the value of cnpj_cpf
+     * Get the value of cpf_cnpj
      */
-    public function getCnpj_cpf()
+    public function getCpf_cnpj()
     {
-        return $this->cnpj_cpf;
+        return $this->cpf_cnpj;
     }
 
     /**
-     * Set the value of cnpj_cpf
+     * Set the value of cpf_cnpj
      *
      * @return  self
      */
-    public function setCnpj_cpf($cnpj_cpf)
+    public function setCpf_cnpj($cpf_cnpj)
     {
-        $this->cnpj_cpf = $cnpj_cpf;
+        $this->cpf_cnpj = $cpf_cnpj;
 
         return $this;
     }

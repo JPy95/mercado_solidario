@@ -223,7 +223,6 @@ body {
   color: grey;
   font-weight: 600;
   font-style: italic;
-  
 }
 
 .buscar-nav:hover {
@@ -327,7 +326,6 @@ body {
   height: 500px;
 }
 
-
 .titulo_cat {
   font-family: Segoe UI;
   font-weight: 500;
@@ -347,6 +345,7 @@ body {
   position: relative;
   width: 90%;
   margin: 30px auto;
+  text-align: center;
 }
 
 .footer {
@@ -1132,7 +1131,7 @@ input[type="file"] {
   margin: 0 5px;
 }
 
-.card_alinha{
+.card_alinha {
   display: inline-flex;
 }
 
@@ -1774,7 +1773,7 @@ input[type="file"] {
   outline: 0 !important;
 }
 
-.btn_src_inst:active{
+.btn_src_inst:active {
   background-color: #00d1ff !important;
   border: 1px solid #00d1ff !important;
 }
@@ -1797,11 +1796,12 @@ input[type="file"] {
   box-shadow: none;
 }
 
-.btn-secondary:focus, .btn-secondary.focus{
+.btn-secondary:focus,
+.btn-secondary.focus {
   box-shadow: none;
 }
 
-.dropdown-item-src_inst{
+.dropdown-item-src_inst {
   display: block;
   width: 100%;
   padding: 0.25rem 1.5rem;
@@ -1814,17 +1814,15 @@ input[type="file"] {
   border: 0;
 }
 
-.card_inst_group{
+.card_inst_group {
   position: relative;
   display: inline-flex;
   margin: 15px 80px;
 }
 
-.carousel_inst{
+.carousel_inst {
   margin: 0 0 0 5px;
 }
-
-
 
 /*Classe para ProgressBar*/
 svg path {

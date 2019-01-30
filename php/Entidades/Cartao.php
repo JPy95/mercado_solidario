@@ -1,4 +1,5 @@
 <?php
+//adicionar requires de conexao
 class Cartao
 {
 
@@ -31,6 +32,22 @@ class Cartao
                                 '" . $this->getCvv() . "',
 								'" . $this->getValidade() . "'                                
 							)";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+    public function update($id_usuario, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        $query = "UPDATE CARTAO SET 
+								nome='" . $this->getNome() . "',
+								cpf_cnpj='" . $this->getCpf_cnpj() . "',
+                                numero='" . $this->getNumero() . "',
+                                cvv='" . $this->getCvv() . "',
+                                validade='" . $this->getValidade() . "'
+						  WHERE id_usuario = '$id_usuario'";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();

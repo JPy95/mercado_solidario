@@ -1,6 +1,7 @@
 <?php
 require_once('Endereco.php');
 require_once('PessoaJuridica.php');
+//adicionar requires
 class Instituicao extends PessoaJuridica
 {
     private $website;
@@ -19,9 +20,6 @@ class Instituicao extends PessoaJuridica
         $this->descricao = $descricao;
 
     }
-
-
-
 
     /**
      * Get the value of website

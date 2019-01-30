@@ -1,6 +1,7 @@
 <?php
 require_once('Pessoa.php');
 require_once('Endereco.php');
+//adicionar requires
 class PessoaFisica extends Pessoa
 {
     private $cpf;
@@ -14,6 +15,8 @@ class PessoaFisica extends Pessoa
         $this->senha = $senha;
         $this->endereco = $endereco;
     }
+
+
 
     public function insert($conexao)
     {
@@ -32,16 +35,16 @@ class PessoaFisica extends Pessoa
     }
 
 
-    public function update($login, $conexao)
+    public function update($idUsuario, $conexao)
     {
         $con = $conexao->conectar();
 
-        $query = "UPDATE USER SET 
+        $query = "UPDATE USUARIO SET 
 								nome='" . $this->getNome() . "',
 								cpf='" . $this->getCpf() . "',
-                                email='" . $this->getEmail() . "'
+                                email='" . $this->getEmail() . "',
                                 senha='" . $this->getSenha() . "'
-						  WHERE login = '$login'";
+						  WHERE id_usuario = '$idUsuario'";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
