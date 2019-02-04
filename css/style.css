@@ -1840,7 +1840,6 @@ input[type="file"] {
   margin: 15px 80px;
 }
 
-<<<<<<< HEAD
 .carousel_inst{
   margin: 0 0 0 35px;
 }
@@ -1919,12 +1918,6 @@ input[type="file"] {
   box-shadow: none;
 }
 
-=======
-.carousel_inst {
-  margin: 0 0 0 5px;
-}
-
->>>>>>> 3787ee92be604b9350b57fae2d269766ce7c0dcf
 /*Classe para ProgressBar*/
 svg path {
   will-change: auto;
@@ -1932,3 +1925,4 @@ svg path {
   stroke-miterlimit: round;
   transition: stroke-dashoffset 850ms ease-in-out;
 }
+

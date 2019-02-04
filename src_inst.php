@@ -9,8 +9,8 @@
         <!--NAV -->
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <?php include_once('php\objetos\carousel_banner.php') ?>
-        <div class="style_title_slide">
-            <h1 class="title_perfil_inst">Conheça a Instituição que deseja ajudar</h1>
+        <div class="register_banner">
+            <h2 class="title_src_inst">Conheça a Instituição que deseja ajudar</h2>
         </div>
          <div id="busca_inst">
             <div class="format_buscar_inst">

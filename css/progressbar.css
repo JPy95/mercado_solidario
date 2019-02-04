@@ -1,10 +1,3 @@
-body {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 svg path {
   will-change: auto;
   stroke-width: 20px;
