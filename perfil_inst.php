@@ -1,12 +1,12 @@
 <html lang="pt-br">
     <head>
         <?php include_once('php\estruturas_base\head.php') ?>
+        <link rel="stylesheet" type="text/css" href="css\cards.css">
     </head>
     <body>
         <!--NAV -->
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <div id="perfil">
-            <?php include_once('php\estruturas_base\sidebar_menu_inst.php')?>
             <div id="presentation_inst">
                 <div class="title_slide ">
                     <h1 class="style_title_slide ">Instituição X</h1>

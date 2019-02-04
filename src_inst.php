@@ -8,10 +8,11 @@
     <body>
         <!--NAV -->
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
+        <?php include_once('php\objetos\carousel_banner.php') ?>
+        <div class="style_title_slide">
+            <h1 class="title_perfil_inst">Conheça a Instituição que deseja ajudar</h1>
+        </div>
          <div id="busca_inst">
-            <div class="style_title_slide">
-                <h1 class="title_perfil_inst">Conheça a Instituição que deseja ajudar</h1>
-            </div>
             <div class="format_buscar_inst">
                 <form action="">
                     <div>
@@ -47,5 +48,7 @@
         <!--Rodapé-->
         <?php include_once('php\estruturas_base\footer.php') ?>
         <script type="text/javascript" src="js\carrosel.js"></script>
+        <script type="text/javascript" src="js\btn_src_inst.js"></script>
+        
     </body>
 </html>

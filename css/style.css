@@ -6,6 +6,7 @@
 .bg-light {
   background-color: #00d1ff !important;
   border-bottom: 1px solid rgba(128, 128, 128, 0.2) !important;
+  box-shadow: 0px 0px 10px 0px #0000009c;
 }
 
 body {
@@ -192,6 +193,7 @@ body {
 @media only screen and (max-width: 600px) {
   #busca_inst {
     padding: 5;
+    margin-top: 10px;
   }
 }
 
@@ -345,8 +347,14 @@ body {
 
 .principal {
   position: relative;
-  width: 90%;
+  width: 75%;
   margin: 30px auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .principal {
+    width: 85%;
+  }
 }
 
 .footer {
@@ -574,6 +582,7 @@ body {
   font-style: italic;
   font-size: 20px;
   color: #fff;
+  box-shadow: 0px 0px 10px 1px #000000ad;
 }
 
 .register_btn_gourp {
@@ -1072,14 +1081,25 @@ input[type="file"] {
   }
 }
 
+.link_card, .link_card:hover, .link_card:active, .link_card:focus{
+  text-decoration: none;
+  color: white;
+}
+
 .style_title_slide {
   color: #ff4f5d;
 }
 
 @media only screen and (max-width: 600px) {
+  .style_title_slide {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   .title_perfil_inst {
     font-size: 19px;
-    margin-top: 10;
+    padding: 7px;
   }
 }
 
@@ -1149,7 +1169,7 @@ input[type="file"] {
 }
 
 .img_card_projt_perfil_inst {
-  width: 200px;
+  width: auto;
   height: 150px;
   border-radius: 10px 10px 0px 0px;
 }
@@ -1821,10 +1841,82 @@ input[type="file"] {
 }
 
 .carousel_inst{
-  margin: 0 0 0 5px;
+  margin: 0 0 0 35px;
 }
 
+@media only screen and (max-width: 600px) {
+  .carousel_inst {
+    margin: 0 0 0 15px;
+  }
+}
 
+.dropdown-menu.show{
+  transform: translate3d(-100px, 30px, 0px);
+}
+
+.btn_format_cpf_cnpj{
+  border-radius: 10px;
+  height: 35px;
+}
+
+.input_format_cpf_cnpj{
+  border-radius: 10px;
+  height: 35px;
+}
+
+.input_format_cpf_cnpj.error{
+  border-color: red;
+  background-image: url(../img/icones/error_form.png);
+  background-repeat: no-repeat;
+  background-size: 23px;
+  background-position-x: 98%;
+  background-position-y: 48%;
+  background-color: #ff000005;
+  float: right;
+}
+
+.input_format_cpf_cnpj.ok{
+  border: 2px solid rgba(2, 230, 2, 0.918);
+  background-image: url(../img/icones/check.png);
+  background-repeat: no-repeat;
+  background-size: 28px;
+  background-position-x: 98%;
+  background-position-y: 48%;
+  background-color: #05ff050f;
+  float: right;
+}
+.text_style_cpf_cnpj{
+  font-style: italic;
+  font-weight: 500;
+  color: white;
+}
+
+.btn_style_cpf_cnpj{
+  background-color: #ff4f5d;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.btn_style_cpf_cnpj:hover, .btn_style_cpf_cnpj:focus, .btn_style_cpf_cnpj:active{
+  background-color: #00d1ff;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  outline: 0px;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-secondary.dropdown-toggle{
+  background-color: #00d1ff;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  outline: 0px;
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary.focus{
+  box-shadow: none;
+}
+
+.form-control:focus{
+  box-shadow: none;
+}
 
 /*Classe para ProgressBar*/
 svg path {

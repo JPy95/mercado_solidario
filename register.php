@@ -1,7 +1,6 @@
 <html lang="pt-br">
     <head>
         <?php include_once('php\estruturas_base\head.php') ?>
-        <script type="text/javascript" src="js\validacao_resgister.js"></script>
     </head>
     <body>
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
@@ -29,7 +28,6 @@
                                     <h4 class="style_title_register">Dados Cadastrais</h4>
                                 </div>
                                 <!--Dados Obrigatorios (Dados Cadastrais)-->
-                                <div class="col-xl-11 cadastro">
                                     <div class="col-xl-12">
                                         <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
                                         <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
@@ -37,9 +35,15 @@
                                     </div>
                                     <div class="col-xl-12">
                                         <div class="row">
-                                            <div class="col-xl-4">
-                                                <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
-                                                <input onkeydown="fMasc( this, mCPF )"  onblur="valida_cpf()" type="text" class="format_input" id="cpf" name="cpf">
+                                            <div class="col-xl-6">
+                                                <label for="" class="subtitle_register">CPF/CNPJ:</label><br>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button id="btn-cpf" class="btn btn-outline-secondary btn_format_cpf_cnpj btn_style_cpf_cnpj" type="button"><label class="text_style_cpf_cnpj">CPF</label></button>
+                                                        <button id="btn-cnpj" class="btn btn-outline-secondary btn_style_cpf_cnpj" style="height: 35px;" type="button"><label class="text_style_cpf_cnpj">CNPJ</label></button>
+                                                    </div>
+                                                    <input id="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
+                                                </div>
                                                 <p id="erro-cpf" class="erro_form"></p>
                                             </div>
                                             <div class="col-xl-6">
@@ -192,5 +196,6 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js\validacao_resgister.js"></script>
     </body>
 </html>

@@ -17,7 +17,6 @@
         <div class="dropdown-menu" aria-labelledby="sidebar_compras">
             <a class="dropdown-item" href="#">Minhas Compras</a>
             <a class="dropdown-item" href="#">Meus Dados</a>
-            <a class="dropdown-item" href="#">Endereços de Entrega</a>
         </div>
     </div>
     <div class="dropdown show">
@@ -30,7 +29,8 @@
         <div class="dropdown-menu" aria-labelledby="sidebar_compras">
             <a class="dropdown-item" href="anuncios.php">Meus Anúncios</a>
             <a class="dropdown-item" href="#">Comentarios</a>
-            <a class="dropdown-item" href="#">Dados dos Compradores</a>
+            <a class="dropdown-item" href="#">Info de Compradores</a>
+            <a class="dropdown-item" href="#">Cadastrar Produto</a>
         </div>
     </div>
 </div>
