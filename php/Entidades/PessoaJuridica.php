@@ -1,6 +1,7 @@
 <?php
 require_once('Pessoa.php');
 require_once('Endereco.php');
+//adicionar requires de conexao
 class PessoaJuridica extends Pessoa
 {
     private $cnpj;

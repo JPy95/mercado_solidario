@@ -1,29 +1,60 @@
 <?php 
-
+//adicionar requires
 class Endereco
 {
     private $logradouro;
-    private $cep;
     private $numero;
     private $complemento;
+    private $bairro;
     private $cidade;
-    private $estado;
+    private $uf;
+    private $cep;
 
-    public function __construct($logradouro, $cep, $numero, $complemento, $cidade, $estado)
+    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $estado)
     {
         $this->logradouro = $logradouro;
         $this->cep = $cep;
         $this->numero = $numero;
+        $this->bairro = $bairro;
         $this->complemento = $complemento;
         $this->cidade = $cidade;
-        $this->estado = $estado;
+        $this->uf = $uf;
 
     }
 
+    public function insert($conexao)
+    {
+        $con = $conexao->conectar();
 
+        $query = "INSERT INTO ENDERECO(logradouro, numero, complemento, bairro, cidade, uf, cep) 
+							values(
+								'" . $this->getLogradouro() . "',
+								'" . $this->getNumero() . "',
+								'" . $this->getComplemento() . "',
+                                '" . $this->getBairro() . "',
+                                '" . $this->getCidade() . "',
+                                '" . $this->getUf() . "',
+								'" . $this->getCep() . "'                                
+							)";
 
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
 
+    public function update($idUsuario, $conexao)
+    {
+        $con = $conexao->conectar();
 
+        $query = "UPDATE ENDERECO SET 
+								nome='" . $this->getNome() . "',
+								cpf='" . $this->getCpf() . "',
+                                email='" . $this->getEmail() . "',
+                                senha='" . $this->getSenha() . "'
+						  WHERE id_usuario = '$idUsuario'";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
 
     /**
      * Get the value of logradouro
@@ -125,22 +156,43 @@ class Endereco
         return $this;
     }
 
+
     /**
-     * Get the value of estado
+     * Get the value of bairro
      */
-    public function getEstado()
+    public function getBairro()
     {
-        return $this->estado;
+        return $this->bairro;
     }
 
     /**
-     * Set the value of estado
+     * Set the value of bairro
      *
      * @return  self
      */
-    public function setEstado($estado)
+    public function setBairro($bairro)
     {
-        $this->estado = $estado;
+        $this->bairro = $bairro;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of uf
+     */
+    public function getUf()
+    {
+        return $this->uf;
+    }
+
+    /**
+     * Set the value of uf
+     *
+     * @return  self
+     */
+    public function setUf($uf)
+    {
+        $this->uf = $uf;
 
         return $this;
     }
