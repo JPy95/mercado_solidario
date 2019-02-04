@@ -517,6 +517,28 @@ body {
   padding-left: 15px;
 }
 
+.formart_btn_cnpj{
+  border: 1px solid rgba(128, 128, 128, 0.28);
+  font-family: Segoe UI;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 20px;
+  color: #fff;
+  width: 155px;
+  height: 35px;
+  margin: 0 -5px 0 0px;
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(250, 0, 0, 0.72);
+}
+
+.formart_btn_cnpj:focus,
+.formart_btn_cnpj:hover,
+.formart_btn_cnpj:active{
+  background-color: #00d1ff;
+  color: #fff;
+  outline: 0;
+}
+
 .format_btn {
   background-color: rgba(250, 0, 0, 0.72);
   border: 1px solid rgba(128, 128, 128, 0.28);
@@ -631,7 +653,7 @@ body {
 .register_btn_inst {
   background-color: rgba(250, 0, 0, 0.72);
   border: 1px solid rgba(128, 128, 128, 0.28);
-  border-radius: 10px 10px 10px 0px;
+  border-radius: 10px;
   width: auto;
   height: 35px;
   padding: 0 5px;
@@ -1916,6 +1938,20 @@ input[type="file"] {
 
 .form-control:focus{
   box-shadow: none;
+}
+
+.format_select_tipo_pessoa{
+  border-radius: 10px;
+  height: 35px;
+  font-style: italic;
+  color: rgb(128, 128, 128);
+  padding: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.28);;
+}
+
+.format_option_tipo_pessoa{
+  font-style: italic;
+  color: rgb(128, 128, 128);
 }
 
 /*Classe para ProgressBar*/

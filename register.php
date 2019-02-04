@@ -29,21 +29,24 @@
                                 </div>
                                 <!--Dados Obrigatorios (Dados Cadastrais)-->
                                     <div class="col-xl-12">
-                                        <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
-                                        <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
-                                        <p id="erro-nome" class="erro_form"></p>
+                                        <div>
+                                            <label for="tipo_pessoa" id="lblPessoa" class="subtitle_register">Tipo de Pessoa:</label><br>
+                                            <select name="pessoa" id="tipo_pessoa" class="format_select_tipo_pessoa" onmouseout="alteraNome()">
+                                                <option value="fisica" class="format_option_tipo_pessoa">Pessoa Física</option>
+                                                <option value="juridica" class="format_option_tipo_pessoa">Pessoa Jurídica</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
+                                            <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
+                                            <p id="erro-nome" class="erro_form"></p>
+                                        </div>
                                     </div>
                                     <div class="col-xl-12">
                                         <div class="row">
-                                            <div class="col-xl-6">
-                                                <label for="" class="subtitle_register">CPF/CNPJ:</label><br>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button id="btn-cpf" class="btn btn-outline-secondary btn_format_cpf_cnpj btn_style_cpf_cnpj" type="button"><label class="text_style_cpf_cnpj">CPF</label></button>
-                                                        <button id="btn-cnpj" class="btn btn-outline-secondary btn_style_cpf_cnpj" style="height: 35px;" type="button"><label class="text_style_cpf_cnpj">CNPJ</label></button>
-                                                    </div>
-                                                    <input id="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
-                                                </div>
+                                            <div class="col-xl-4">
+                                                <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
+                                                <input id="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
                                                 <p id="erro-cpf" class="erro_form"></p>
                                             </div>
                                             <div class="col-xl-6">
