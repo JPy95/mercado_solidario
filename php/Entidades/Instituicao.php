@@ -4,9 +4,12 @@ require_once('PessoaJuridica.php');
 //adicionar requires
 class Instituicao extends PessoaJuridica
 {
+    private $data_cadastro;
+    private $nome_fantasia;
     private $website;
     private $causa;
     private $descricao;
+
     public function __construct($email, $senha, $endereco, $razaoSocial, $cnpj, $website, $causa, $descricao)
     {
 
@@ -20,6 +23,53 @@ class Instituicao extends PessoaJuridica
         $this->descricao = $descricao;
 
     }
+
+    public function insert($conexao)
+    {
+        $con = $conexao->conectar();
+
+        $query = "INSERT INTO INSTITUICOES(data_cadastro, razao_social, nome_fantasia, cnpj, email, senha, descrição, img_isnt, causa, website) 
+							values(
+								'" . $this->getData_cadastro() . "',
+								'" . $this->getRazaoSocial() . "',
+								'" . $this->getNome_fantasia() . "',
+                                '" . $this->getCnpj() . "',
+                                '" . $this->getEmail() . "',
+                                '" . $this->getSenha() . "',
+                                '" . $this->getDescricao() . "',
+                                '" . null . "',
+                                '" . $this->getCausa() . "',
+								'" . $this->getWebsite() . "'                                
+							)";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+    public function update($idUsuario, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        //organizar o update da imagem
+        $query = "UPDATE INSTITUICOES SET 
+								data_cadastro='" . $this->getData_cadastro() . "',
+								razao_social='" . $this->getRazaoSocial() . "',
+                                nome_fantasia='" . $this->getNome_fantasia() . "',
+                                cnpj='" . $this->getCnpj() . "',
+                                email='" . $this->getEmail() . "',
+                                senha='" . $this->getSenha() . "',
+                                descricao='" . $this->getDescricao() . "',
+                                img_inst='" . null . "',
+                                causa='" . $this->getCausa() . "',
+                                website='" . $this->getWebsite() . "'
+						  WHERE id_usuario = '$idUsuario'";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+
+
 
     /**
      * Get the value of website
@@ -77,6 +127,46 @@ class Instituicao extends PessoaJuridica
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of data_cadastro
+     */
+    public function getData_cadastro()
+    {
+        return $this->data_cadastro;
+    }
+
+    /**
+     * Set the value of data_cadastro
+     *
+     * @return  self
+     */
+    public function setData_cadastro($data_cadastro)
+    {
+        $this->data_cadastro = $data_cadastro;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nome_fantasia
+     */
+    public function getNome_fantasia()
+    {
+        return $this->nome_fantasia;
+    }
+
+    /**
+     * Set the value of nome_fantasia
+     *
+     * @return  self
+     */
+    public function setNome_fantasia($nome_fantasia)
+    {
+        $this->nome_fantasia = $nome_fantasia;
 
         return $this;
     }

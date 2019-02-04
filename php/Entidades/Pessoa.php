@@ -14,9 +14,6 @@ class Pessoa
         $this->endereco = $endereco;
     }
 
-
-
-
     /**
      * Get the value of email
      */
