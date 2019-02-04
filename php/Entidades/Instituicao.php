@@ -4,13 +4,14 @@ require_once('PessoaJuridica.php');
 //adicionar requires
 class Instituicao extends PessoaJuridica
 {
-    private $data_cadastro;
+
     private $nome_fantasia;
     private $website;
     private $causa;
     private $descricao;
+    private $telefone;
 
-    public function __construct($email, $senha, $endereco, $razaoSocial, $cnpj, $website, $causa, $descricao)
+    public function __construct($email, $senha, $endereco, $razaoSocial, $cnpj, $website, $causa, $descricao, $telefone)
     {
 
         $this->email = $email;
@@ -21,6 +22,7 @@ class Instituicao extends PessoaJuridica
         $this->website = $website;
         $this->causa = $causa;
         $this->descricao = $descricao;
+        $this->telefone = $telefone;
 
     }
 
@@ -30,7 +32,7 @@ class Instituicao extends PessoaJuridica
 
         $query = "INSERT INTO INSTITUICOES(data_cadastro, razao_social, nome_fantasia, cnpj, email, senha, descrição, img_isnt, causa, website) 
 							values(
-								'" . $this->getData_cadastro() . "',
+								'" . getdate() . "',
 								'" . $this->getRazaoSocial() . "',
 								'" . $this->getNome_fantasia() . "',
                                 '" . $this->getCnpj() . "',
@@ -40,7 +42,11 @@ class Instituicao extends PessoaJuridica
                                 '" . null . "',
                                 '" . $this->getCausa() . "',
 								'" . $this->getWebsite() . "'                                
-							)";
+                            );
+                            INSERT INTO TELEFONE(telefone) 
+							values(
+								'" . $this->getTelefone() . "'                                
+							);";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
@@ -52,7 +58,6 @@ class Instituicao extends PessoaJuridica
 
         //organizar o update da imagem
         $query = "UPDATE INSTITUICOES SET 
-								data_cadastro='" . $this->getData_cadastro() . "',
 								razao_social='" . $this->getRazaoSocial() . "',
                                 nome_fantasia='" . $this->getNome_fantasia() . "',
                                 cnpj='" . $this->getCnpj() . "',
@@ -62,10 +67,19 @@ class Instituicao extends PessoaJuridica
                                 img_inst='" . null . "',
                                 causa='" . $this->getCausa() . "',
                                 website='" . $this->getWebsite() . "'
-						  WHERE id_usuario = '$idUsuario'";
+                          WHERE id_usuario = '$idUsuario';
+
+                          UPDATE TELEFONE SET 
+                                telefone='" . $this->getTelefone() . "'
+						  WHERE id_usuario = '$id_usuario'; ";
+
+
 
         $stmt = $con->prepare($query);
+
+
         return $stmt->execute();
+
     }
 
 
@@ -167,6 +181,26 @@ class Instituicao extends PessoaJuridica
     public function setNome_fantasia($nome_fantasia)
     {
         $this->nome_fantasia = $nome_fantasia;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of telefone
+     */
+    public function getTelefone()
+    {
+        return $this->telefone;
+    }
+
+    /**
+     * Set the value of telefone
+     *
+     * @return  self
+     */
+    public function setTelefone($telefone)
+    {
+        $this->telefone = $telefone;
 
         return $this;
     }

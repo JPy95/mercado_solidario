@@ -1,7 +1,11 @@
 <?php
 require_once('Endereco.php');
-class Pessoa
+class Usuario
+
 {
+    private $data_cadastro;
+    private $cpf;
+    private $nome;
     private $email;
     private $senha;
     private $endereco;

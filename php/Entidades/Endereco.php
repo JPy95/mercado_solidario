@@ -45,6 +45,7 @@ class Endereco
     {
         $con = $conexao->conectar();
 
+        //corrigir update endereco
         $query = "UPDATE ENDERECO SET 
 								nome='" . $this->getNome() . "',
 								cpf='" . $this->getCpf() . "',
