@@ -18,11 +18,9 @@ function valida_cpf() {
   var btnCnpj = document.getElementById("btn-cnpj");
   if (cpf.value.length == 14) {
     cpf.classList.add("ok");
-    btnCpf.classList.add("active");
     return true;
   } else if(cpf.value.length == 18){
     cpf.classList.add("ok");
-    btnCnpj.classList.add("active");
     return true;
   } else {
     cpf.classList.add("error");
@@ -85,7 +83,20 @@ function valida_form() {
 //função para nome
 function alterarNome() {
   var btnIntituicoes = document.getElementById("btnInst");
+  
+
   if (btnIntituicoes.attributes[6].value == "false") {
+    document.getElementById("lblNome").innerHTML = "Razão Social:";
+    document.getElementById("lblCpf").innerHTML = "CNPJ:";
+  } else {
+    document.getElementById("lblNome").innerHTML = "Nome:";
+    document.getElementById("lblCpf").innerHTML = "CPF:";
+  }
+}
+
+function alteraNome(){
+  var selectTipoPessoa = document.getElementById("tipo_pessoa").value;
+  if(selectTipoPessoa == "juridica"){
     document.getElementById("lblNome").innerHTML = "Razão Social:";
     document.getElementById("lblCpf").innerHTML = "CNPJ:";
   } else {
