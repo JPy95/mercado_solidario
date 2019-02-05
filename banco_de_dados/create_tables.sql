@@ -89,18 +89,24 @@ create table foto_pdt(
     id_produto int not null
 );
 
+create table carrinho(
+	tokenCart int primary key not null,
+    nomePdt varchar(100) not null,
+    vlrPdt decimal not null,
+    doacao int not null,
+    idVendedor int not null
+);
+
 create table compra(
-	idt_Compra int auto_increment primary key,
-    idCompra int not null,
-    vlr_total decimal not null,
-    forma_pgmt varchar(20) not null,
-    qtde_parcela int not null,
-    id_produto int not null,
-    id_vendedor int not null,
-    id_comprador int not null,
-    id_instituicao int not null,
-    id_endereco int not null,
-    id_cartao int not null
+	idCompra int primary key auto_increment,
+    token_cart int not null,
+    vlrBrt decimal not null,
+    vlrEntrega decimal not null,
+    descontos decimal not null,
+    vlrTotal decimal not null,
+    doacaoTotal decimal not null,
+    id_inst int not null,
+    id_comprador int not null
 );
 
 select * from compra;
