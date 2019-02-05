@@ -7,6 +7,7 @@ class Conta
     private $conta;
     private $titular;
     private $cpf_cnpj;
+    private $id_usuario;
 
     public function __construct($banco, $agencia, $conta, $titular, $cpf_cnpj)
     {
@@ -15,8 +16,7 @@ class Conta
         $this->conta = $conta;
         $this->titular = $titular;
         $this->cpf_cnpj = $cpf_cnpj;
-
-
+        $this->id_usuario = $_SESSION['id_usuario'];
     }
 
     public function insert($conexao)
@@ -29,9 +29,9 @@ class Conta
 								'" . $this->getAgencia() . "',
 								'" . $this->getConta() . "',
                                 '" . $this->getTitular() . "',
-								'" . $this->getCpf_cnpj() . "'                                
+								'" . $this->getCpf_cnpj() . "',
+                                '" . $this->getId_usuario() . "'
 							)";
-
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -39,7 +39,6 @@ class Conta
     public function update($id_instituicao, $conexao)
     {
         $con = $conexao->conectar();
-
         $query = "UPDATE CONTA SET 
 								banco='" . $this->getBanco() . "',
 								agencia='" . $this->getAgencia() . "',
@@ -154,6 +153,26 @@ class Conta
     public function setCpf_cnpj($cpf_cnpj)
     {
         $this->cpf_cnpj = $cpf_cnpj;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cpf_cnpj
+     */
+    public function getId_usuario()
+    {
+        return $this->id_usuario;
+    }
+
+    /**
+     * Set the value of cpf_cnpj
+     *
+     * @return  self
+     */
+    public function setId_usuario($id_usuario)
+    {
+        $this->id_usuario = $id_usuario;
 
         return $this;
     }

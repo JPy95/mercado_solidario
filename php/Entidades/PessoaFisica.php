@@ -6,34 +6,35 @@ class PessoaFisica extends Pessoa
 {
     private $cpf;
     private $nome;
+    private $img_usuario;
 
-    public function __construct($email, $senha, $nome, $endereco, $cpf)
+    public function __construct($nome, $tipo_pessoa, $cpf, $email, $senha)
     {
+        parent::__construct($tipo_pessoa, $email, $senha);
         $this->nome = $nome;
         $this->cpf = $cpf;
-        $this->email = $email;
-        $this->senha = $senha;
-        $this->endereco = $endereco;
     }
 
 
-
+    //insert usuario pessoa fisica
     public function insert($conexao)
     {
         $con = $conexao->conectar();
 
-        $query = "INSERT INTO USUARIO(nome, cpf, email, senha) 
+        $query = "INSERT INTO USUARIO(dta_cadastro, nome, tipo_pessoa, cpf_cnpj, email, senha, img_usuario) 
 							values(
+                                '" . NOW() . "',
 								'" . $this->getNome() . "',
+                                '" . $this->getTipo_pessoa() . "',
 								'" . $this->getCpf() . "',
 								'" . $this->getEmail() . "',
-								'" . $this->getSenha() . "'                                
+								'" . $this->getSenha() . "',
+                                '" . null . "'                                
 							)";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
-
 
     public function update($idUsuario, $conexao)
     {
@@ -43,7 +44,8 @@ class PessoaFisica extends Pessoa
 								nome='" . $this->getNome() . "',
 								cpf='" . $this->getCpf() . "',
                                 email='" . $this->getEmail() . "',
-                                senha='" . $this->getSenha() . "'
+                                senha='" . $this->getSenha() . "',
+                                img_usuario= '" . $this->getImg_usuario() . "'
 						  WHERE id_usuario = '$idUsuario'";
 
         $stmt = $con->prepare($query);
@@ -87,6 +89,26 @@ class PessoaFisica extends Pessoa
     public function setNome($nome)
     {
         $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nome
+     */
+    public function getImg_usuario()
+    {
+        return $this->img_usuario;
+    }
+
+    /**
+     * Set the value of nome
+     *
+     * @return  self
+     */
+    public function setImg_usuario($img_usuario)
+    {
+        $this->img_usuario = $img_usuario;
 
         return $this;
     }

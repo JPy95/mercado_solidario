@@ -31,3 +31,8 @@ INSERT INTO tipo VALUES
 (21, 'Bolsas, Malas e Mochilas', 7),
 (22, 'Bijoterias, Relogios e Acessorios', 7);
 
+update insttiuicoes set nome='JOao' where idUsuario = 1;
+update telefone set num='sdada' where idUsuario = 1;
+
+select getdate;
+

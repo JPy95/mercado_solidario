@@ -9,8 +9,10 @@ class Endereco
     private $cidade;
     private $uf;
     private $cep;
+    private $id_usuario;
+    private $tipo_pessoa;
 
-    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $estado)
+    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $estado, $id_usario, $tipo_pessoa)
     {
         $this->logradouro = $logradouro;
         $this->cep = $cep;
@@ -19,24 +21,40 @@ class Endereco
         $this->complemento = $complemento;
         $this->cidade = $cidade;
         $this->uf = $uf;
-
-    }
+        $this->id_usuario = $id_usario;
+        $this->tipo_pessoa = $tipo_pessoa;
+    }   
 
     public function insert($conexao)
     {
         $con = $conexao->conectar();
-
-        $query = "INSERT INTO ENDERECO(logradouro, numero, complemento, bairro, cidade, uf, cep) 
-							values(
-								'" . $this->getLogradouro() . "',
-								'" . $this->getNumero() . "',
-								'" . $this->getComplemento() . "',
-                                '" . $this->getBairro() . "',
-                                '" . $this->getCidade() . "',
-                                '" . $this->getUf() . "',
-								'" . $this->getCep() . "'                                
-							)";
-
+        if(!$tipo_pessoa.equals("instituicao")){
+            $query = "INSERT INTO ENDERECO(logradouro, numero, complemento, bairro, cidade, uf, cep, id_usuario, id_instituicao) 
+                        values(
+                            '" . $this->getLogradouro() . "',
+                            '" . $this->getNumero() . "',
+                            '" . $this->getComplemento() . "',
+                            '" . $this->getBairro() . "',
+                            '" . $this->getCidade() . "',
+                            '" . $this->getUf() . "',
+                            '" . $this->getCep() . "',
+                            '" . $this->getId_usuario() . "',
+                            '" . null . "'                   
+                        )";
+        } else {
+            $query = "INSERT INTO ENDERECO(logradouro, numero, complemento, bairro, cidade, uf, cep, id_usuario, id_instituicao) 
+                        values(
+                            '" . $this->getLogradouro() . "',
+                            '" . $this->getNumero() . "',
+                            '" . $this->getComplemento() . "',
+                            '" . $this->getBairro() . "',
+                            '" . $this->getCidade() . "',
+                            '" . $this->getUf() . "',
+                            '" . $this->getCep() . "',
+                            '" . null . "',
+                            '" . $this->getId_usuario() . "'                   
+                        )";
+        }
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }

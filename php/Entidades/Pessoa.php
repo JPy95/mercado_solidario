@@ -3,44 +3,37 @@ require_once('Endereco.php');
 class Usuario
 
 {
-    private $data_cadastro;
-    private $nome;
     private $tipo_pessoa;
-    private $cpf_cnpj;
     private $email;
     private $senha;
-   
 
     //construtor
-    public function __construct($data_cadastro, $nome, $tipo_pessoa, $cpf_cnpj, $email, $senha)
+    public function __construct($tipo_pessoa, $email, $senha)
     {
-        $this->data_cadastro = $data_cadastro;
-        $this->nome = $nome;
         $this->tipo_pessoa = $tipo_pessoa;
-        $this->cpf_cnpj = $cpf_cnpj;
         $this->email = $email;
         $this->senha = $senha;
     }
 
+    
+    /*
     public function insert($conexao)
     {
         $con = $conexao->conectar();
 
-        $query = "INSERT INTO USUARIO(nome, cpf, email, senha) 
+        $query = "INSERT INTO USUARIO(dta_cadastro, nome, tipo_pessoa, cpf_cnpj, email, senha) 
 							values(
-                                '" . getdate() . "',
+                                '" . NOW() . "',
 								'" . $this->getNome() . "',
-								'" . $this->getCpf() . "',
+                                '" . $this->getTipo_pessoa() . "',
+                                '" . $this->getCpf_cnpj() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "'                                
 							)";
-
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
-
-
-
+    */
 
     /**
      * Get the value of data_cadastro

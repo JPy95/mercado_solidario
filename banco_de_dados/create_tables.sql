@@ -103,11 +103,7 @@ create table compra(
     id_cartao int not null
 );
 
-insert into compra value(null,13213,1500,'cartao',6,1,1,1,1,1,1);
-insert into compra value(null,13213,1500,'cartao',6,1,1,1,1,1,1);
-insert into compra value(null,13213,1500,'cartao',6,1,1,1,1,1,1);
-
-select * from compra
+select * from compra;
 
 drop table Usuario;
 drop table intstuicoes;
@@ -120,8 +116,6 @@ drop table categoria;
 drop table produto;
 drop table foto_pdt;
 drop table compra;
-
-/*Elaborando as FK*/
 
 
 

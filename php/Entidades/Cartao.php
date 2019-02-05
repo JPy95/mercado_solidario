@@ -8,6 +8,7 @@ class Cartao
     private $numero;
     private $cvv;
     private $validade;
+    private $id_usuario;
 
 
     public function __construct($nome, $cpf_cnpj, $numero, $cvv, $validade)
@@ -17,20 +18,21 @@ class Cartao
         $this->numero = $numero;
         $this->cvv = $cvv;
         $this->validade = $validade;
-
+        $this->id_usuario = $_SESSION['id_usuairo'];
     }
 
     public function insert($conexao)
     {
         $con = $conexao->conectar();
 
-        $query = "INSERT INTO CARTAO(nome, cpf_cenpj, numero, cvv, validade) 
+        $query = "INSERT INTO CARTAO(nome, cpf_cenpj, numero, cvv, validade, id_usuario) 
 							values(
 								'" . $this->getNome() . "',
 								'" . $this->getCpf_cnpj() . "',
 								'" . $this->getNumero() . "',
                                 '" . $this->getCvv() . "',
-								'" . $this->getValidade() . "'                                
+								'" . $this->getValidade() . "',
+                                '" . $this->getId_usuario()"'                                
 							)";
 
         $stmt = $con->prepare($query);
@@ -149,6 +151,23 @@ class Cartao
     public function setValidade($validade)
     {
         $this->validade = $validade;
+
+        return $this;
+    }
+
+    public function getId_usuario()
+    {
+        return $this->id_usuario;
+    }
+
+    /**
+     * Set the value of validade
+     *
+     * @return  self
+     */
+    public function setValidade($id_usuario)
+    {
+        $this->id_usuario = $id_usuario;
 
         return $this;
     }
