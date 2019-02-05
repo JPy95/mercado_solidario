@@ -2,7 +2,7 @@
     //ADD REQUEIRED
     class Carrinho{
         
-        private $carrinho[];
+        private $carrinho;
         private $tokenCart;
 
         public function insert($idUsuario,$conexao){
