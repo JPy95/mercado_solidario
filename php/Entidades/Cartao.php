@@ -1,5 +1,10 @@
 <?php
 //adicionar requires de conexao
+
+/*
+Usuario tera apenas a possibilidade de inserir ou excluir o cartão cadastrado para compra. 
+Tirando a possibilidade de corrigir info do cartão;
+*/
 class Cartao
 {
 
@@ -39,17 +44,21 @@ class Cartao
         return $stmt->execute();
     }
 
-    public function update($id_usuario, $conexao)
+    public function delete($conexao, $id_cartao)
     {
         $con = $conexao->conectar();
 
-        $query = "UPDATE CARTAO SET 
-								nome='" . $this->getNome() . "',
-								cpf_cnpj='" . $this->getCpf_cnpj() . "',
-                                numero='" . $this->getNumero() . "',
-                                cvv='" . $this->getCvv() . "',
-                                validade='" . $this->getValidade() . "'
-						  WHERE id_usuario = '$id_usuario'";
+        $query = "DELETE FROM cartao WHERE idCartao = '$id_cartao'";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+    public function select($conexao, $idUsuario)
+    {
+        $con = $conexao->conectar();
+
+        $query = "SELECT * FROM cartao WHERE id_usuario = '$idUsuario'";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();

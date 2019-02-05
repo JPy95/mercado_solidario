@@ -1,5 +1,10 @@
 <?php
 //adicionar require da conexão
+
+/*
+Usuario tera apenas a possibilidade de inserir ou excluir o cartão cadastrado para compra. 
+Tirando a possibilidade de corrigir info do cartão;
+*/
 class Conta
 {
     private $banco;
@@ -36,25 +41,23 @@ class Conta
         return $stmt->execute();
     }
 
-    public function update($id_instituicao, $conexao)
+    public function delete($id_conta, $conexao)
     {
         $con = $conexao->conectar();
-        $query = "UPDATE CONTA SET 
-								banco='" . $this->getBanco() . "',
-								agencia='" . $this->getAgencia() . "',
-                                conta='" . $this->getConta() . "',
-                                titular='" . $this->getTitular() . "',
-                                cpf_cnpj='" . $this->getCpf_cnpj . "'
-						  WHERE id_instituicao = '$id_instituicao'";
+        $query = "DELETE FROM CONTA WHERE idConta = '$id_conta'";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
 
+    public function select($idUsuario, $conexao)
+    {
+        $con = $conexao->conectar();
+        $query = "SELECT * FROM CONTA WHERE id_instituicao = '$idUsuario'";
 
-
-
-
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
 
     /**
      * Get the value of banco

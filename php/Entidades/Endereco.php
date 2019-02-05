@@ -12,7 +12,7 @@ class Endereco
     private $id_usuario;
     private $tipo_pessoa;
 
-    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $estado, $id_usario, $tipo_pessoa)
+    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $estado, $id_usuario, $tipo_pessoa)
     {
         $this->logradouro = $logradouro;
         $this->cep = $cep;
@@ -21,7 +21,7 @@ class Endereco
         $this->complemento = $complemento;
         $this->cidade = $cidade;
         $this->uf = $uf;
-        $this->id_usuario = $id_usario;
+        $this->id_usuario = $id_usuario;
         $this->tipo_pessoa = $tipo_pessoa;
     }   
 
@@ -62,15 +62,49 @@ class Endereco
     public function update($idUsuario, $conexao)
     {
         $con = $conexao->conectar();
+        if(!$tipo_pessoa.equals("instituicao")){
+            $query = "UPDATE ENDERECO SET 
+                            logradouro='" . $this->getLogradouro() . "',
+                            num='" . $this->getNumero() . "',
+                            compl='" . $this->getComplemento() . "',
+                            bairro='" . $this->getBairro() . "',
+                            cidade='" . $this->getCidade() . "',
+                            uf='" . $this->getUf() . "',
+                            cep='" . $this->getCep() . "'
+                        WHERE id_usuario = '$idUsuario'";
+        } else {
+            $query = "UPDATE ENDERECO SET 
+                            logradouro='" . $this->getLogradouro() . "',
+                            num='" . $this->getNumero() . "',
+                            compl='" . $this->getComplemento() . "',
+                            bairro='" . $this->getBairro() . "',
+                            cidade='" . $this->getCidade() . "',
+                            uf='" . $this->getUf() . "',
+                            cep='" . $this->getCep() . "'
+                        WHERE id_instituicao = '$idUsuario'";
+        }
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
 
-        //corrigir update endereco
-        $query = "UPDATE ENDERECO SET 
-								nome='" . $this->getNome() . "',
-								cpf='" . $this->getCpf() . "',
-                                email='" . $this->getEmail() . "',
-                                senha='" . $this->getSenha() . "'
-						  WHERE id_usuario = '$idUsuario'";
+    public function delete($idEndereco, $conexao)
+    {
+        $con = $conexao->conectar();
+        $query = "DELETE FROM ENDERECO WHERE idEndereco = '$idEndereco'";
 
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+    public function select($idUsuario, $conexao)
+    {
+        $con = $conexao->conectar();
+        if(!$tipo_pessoa.equals("instituicao")){
+            $query = "SELECT * FROM ENDERECO WHERE id_usuario = '$idUsuario'";
+        } else {
+            $query = "SELECT * FROM ENDERECO WHERE id_instituicao = '$idUsuario'";
+        }
+        
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -212,6 +246,26 @@ class Endereco
     public function setUf($uf)
     {
         $this->uf = $uf;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_usuario
+     */ 
+    public function getId_usuario()
+    {
+        return $this->id_usuario;
+    }
+
+    /**
+     * Set the value of id_usuario
+     *
+     * @return  self
+     */ 
+    public function setId_usuario($id_usuario)
+    {
+        $this->id_usuario = $id_usuario;
 
         return $this;
     }
