@@ -96,7 +96,7 @@ class Endereco
         return $stmt->execute();
     }
 
-    public function select($idUsuario, $conexao)
+    public function select($idUsuario, $conexao, $tipo_pessoa)
     {
         $con = $conexao->conectar();
         if(!$tipo_pessoa.equals("instituicao")){

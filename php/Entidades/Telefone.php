@@ -1,6 +1,6 @@
 <?php 
 //adicionar requires
-class Endereco
+class Telefone
 {
     private $numero;
     private $id_usuario;
