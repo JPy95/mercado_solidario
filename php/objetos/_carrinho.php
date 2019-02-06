@@ -1,6 +1,13 @@
 <?php
     
     
+
+
+
+
+
+
+
     
     public function addCarrinho($idPdt,$vlrPdt,$qtde){
         $carrinho[] = array($idPdt,array($vlrPdt,$qtde));
