@@ -51,7 +51,7 @@
                 </div>
                 <div class="qtde_prod">
                     <span class="text_qtde_prod">Quantidade: </span><input type="number" class="format_input_qtde">
-                    <a href=""><button class="btn_format">Finalizar Compra</button></a>
+                    <a href="carrinho.php"><button class="btn_format">Adicionar ao carrinho</button></a>
                 </div>
             </div>
         </div>

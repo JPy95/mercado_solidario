@@ -1,0 +1,80 @@
+h1{
+    color: #ff4f5d;
+    margin: 0;
+}
+
+h3{
+    color: #00d1ff;
+}
+
+.title_carrinho{
+    margin: 30 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.subtitle_carrinho{
+    margin: 0 0 30 0;
+}
+
+.produtos{
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    margin-bottom: 20px;
+}
+
+.resumo{
+    margin-left: 0px; 
+}
+.desc_carrinho{
+    padding-left: 25px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: grey;
+}
+
+.btn_carrinho{
+    text-align: center;
+}
+
+button{
+    margin-top: 10px;
+    height: 35px;
+    width: 170px;
+    background-color: #ff4f5d;
+    color: white;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 10px;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover,button:focus,button:active{
+    background-color: #00d1ff;
+    outline: 0;
+}
+
+a{
+    color: #00d1ff;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+a:hover,a:focus,a:active{
+    text-decoration: none;
+    color: grey;
+}
+
+input{
+    border-radius: 10px;
+    border: 1px solid;
+    width: 100px;
+    padding: 0 10;
+}
+
+.anuncios{
+    width: 500px;
+    margin: 25;
+}
