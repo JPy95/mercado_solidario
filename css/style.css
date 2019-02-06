@@ -117,6 +117,13 @@ body {
   width: 45%;
 }
 
+@media only screen and (max-width: 600px) {
+  #silede_perfil_anuncio {
+    width: auto;
+    border-right: none;
+  }
+}
+
 #star_perfil {
   margin: 90px auto;
   position: relative;
@@ -135,6 +142,10 @@ body {
 
 #slide_anuncio {
   margin: 0 60 20 60;
+}
+
+#slide_compra{
+  margin: 0 30px 20 10px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -475,6 +486,19 @@ body {
   padding-left: 15px;
 }
 
+.format_input_number{
+  display: inline-block;
+  border: 1px solid rgba(128, 128, 128, 0.28);
+  border-radius: 10px;
+  height: 35px;
+  width: 85%;
+  color: rgb(128, 128, 128);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 13px;
+  padding-left: 15px;
+}
+
 .format_input.ok {
   border: 2px solid rgba(2, 230, 2, 0.918);
   background-image: url(../img/icones/check.png);
@@ -758,7 +782,6 @@ body {
   display: relative;
   border: 1px solid rgba(128, 128, 128, 0.28);
   border-radius: 10px;
-  width: 100%;
   height: 35px;
   padding: 0px 15px;
   color: rgb(128, 128, 128);
@@ -915,6 +938,7 @@ body {
 @media only screen and (max-width: 600px) {
   .anuncios {
     display: block;
+    width: 305px;
   }
 }
 
@@ -943,10 +967,16 @@ body {
   background-color: #fff;
   width: 100%;
 }
+@media only screen and (max-width: 600px) {
+  .desc_anuncio {
+    background-color: #fff;
+    width: 100%;
+  }
+}
 
 .subtitulo_prod {
-  font-size: 20px;
   padding: 5 5 5 20px;
+  color: #00d1ff;
 }
 
 .borda_subtitulo {
@@ -954,11 +984,33 @@ body {
   width: 215px;
 }
 
+@media only screen and (max-width: 600px) {
+  .borda_subtitulo {
+    font-size: 20px;
+  }
+}
+
 .descricao_anun {
   padding-left: 35px;
   font-size: 14px;
   font-weight: 400;
   color: grey;
+}
+
+.descricao_compra{
+  padding-left: 30px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+  .descricao_compra {
+    font-size: 10px;
+    padding-left: 25px;
+    padding-bottom: 0;
+  }
 }
 
 .descricao_anun_valor {
@@ -973,7 +1025,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   .validacao {
-    border-radius: 0px 0px 0px 10px;
+    border-radius: 0px 0px 10px 10px;
   }
 }
 
@@ -1056,13 +1108,20 @@ input[type="file"] {
   border-radius: 10px;
   padding: 12px;
   margin-top: 20px;
+  cursor: pointer;
+}
+
+.img_file{
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
   .inputfile_inst {
-    height: 20%;
+    height: 15%;
     padding: 0;
-    padding-top: 25px;
+    padding-top: 20px;
+    width: 50%;
+    margin: 20px 0px 0 70px;
   }
 }
 
@@ -1114,6 +1173,7 @@ input[type="file"] {
 @media only screen and (max-width: 600px) {
   .style_title_slide {
     height: 40px;
+    font-size: 30px;
   }
 }
 
@@ -1471,7 +1531,6 @@ input[type="file"] {
   background-color: #00d1ff4a;
   display: block;
   width: 15%;
-  border-right: 1px solid rgba(128, 128, 128, 0.45);
 }
 
 @media only screen and (max-width: 600px) {
@@ -1952,6 +2011,26 @@ input[type="file"] {
 .format_option_tipo_pessoa{
   font-style: italic;
   color: rgb(128, 128, 128);
+}
+
+.style_subtitle{
+  font-style: italic;
+  font-size: 15px;
+}
+
+.format_file{
+  display: block !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .style_title_pdt {
+    font-size:24px;
+  }
+}
+
+.style_input_range{
+  background-color: #00d1ff;
 }
 
 /*Classe para ProgressBar*/

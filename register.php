@@ -28,45 +28,48 @@
                                     <h4 class="style_title_register">Dados Cadastrais</h4>
                                 </div>
                                 <!--Dados Obrigatorios (Dados Cadastrais)-->
-                                    <div class="col-xl-12">
-                                        <div>
-                                            <label for="tipo_pessoa" id="lblPessoa" class="subtitle_register">Tipo de Pessoa:</label><br>
-                                            <select name="pessoa" id="tipo_pessoa" class="format_select_tipo_pessoa" onmouseout="alteraNome()">
-                                                <option value="fisica" class="format_option_tipo_pessoa">Pessoa Física</option>
-                                                <option value="juridica" class="format_option_tipo_pessoa">Pessoa Jurídica</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
-                                            <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
-                                            <p id="erro-nome" class="erro_form"></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <div class="row">
-                                            <div class="col-xl-4">
-                                                <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
-                                                <input id="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
-                                                <p id="erro-cpf" class="erro_form"></p>
+                                <div class="row">
+                                    <div class="col-xl-11 cadastro">
+                                        <div class="col-xl-12">
+                                            <div class="">
+                                                <label for="tipo_pessoa" id="lblPessoa" class="subtitle_register">Tipo de Pessoa:</label><br>
+                                                <select name="pessoa" id="tipo_pessoa" class="format_select_tipo_pessoa" onmouseout="alteraNome()">
+                                                    <option value="fisica" class="format_option_tipo_pessoa">Pessoa Física</option>
+                                                    <option value="juridica" class="format_option_tipo_pessoa">Pessoa Jurídica</option>
+                                                </select>
                                             </div>
-                                            <div class="col-xl-6">
-                                                <label for="email" class="subtitle_register">E-mail:</label><br>
-                                                <input onblur="valida_email()" type="email" class="format_input" id="email" name="email">
-                                                <p id="erro-email" class="erro_form"></p>
+                                            <div>
+                                                <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
+                                                <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
+                                                <p id="erro-nome" class="erro_form"></p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <div class="row">
-                                            <div class="col-xl-4">
-                                                <label for="pass" class="subtitle_register">Senha:</label><br>
-                                                <input onblur="valida_pass()" type="password" class="format_input" id="pass" name="pass">
-                                                <p id="erro-pass" class="erro_form"></p>
+                                        <div class="col-xl-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
+                                                    <input id="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
+                                                    <p id="erro-cpf" class="erro_form"></p>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <label for="email" class="subtitle_register">E-mail:</label><br>
+                                                    <input onblur="valida_email()" type="email" class="format_input" id="email" name="email">
+                                                    <p id="erro-email" class="erro_form"></p>
+                                                </div>
                                             </div>
-                                            <div class="col-xl-4">
-                                                <label for="confirma_pass" class="subtitle_register">Confirma Senha:</label><br>
-                                                <input onblur="valida_check_pass()" type="password" class="format_input" name="confirma_pass" id="confirma_pass">
-                                                <p id="erro-confirma_pass" class="erro_form"></p>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <label for="pass" class="subtitle_register">Senha:</label><br>
+                                                    <input onblur="valida_pass()" type="password" class="format_input" id="pass" name="pass">
+                                                    <p id="erro-pass" class="erro_form"></p>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <label for="confirma_pass" class="subtitle_register">Confirma Senha:</label><br>
+                                                    <input onblur="valida_check_pass()" type="password" class="format_input" name="confirma_pass" id="confirma_pass">
+                                                    <p id="erro-confirma_pass" class="erro_form"></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -87,10 +90,8 @@
                                                             <input type="text" class="format_input" id="site" name="site"><br>
                                                         </div>
                                                         <div class="col-xl-5">
-                                                            <label for="causa" class="subtitle_register">Causa:</label>
-                                                            <select name="causa" id="causa" class="format_select">
-                                                                <option value="" class="">Qual a Causa Social:</option>
-                                                            </select>
+                                                            <label for="fantasia" class="subtitle_register">Nome Fantasia:</label>
+                                                            <input type="text" class="format_input" id="fantasia" name="fantasia"><br>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,6 +134,12 @@
                                                             <label for="uf" class="subtitle_register">UF:</label><br>
                                                             <input type="text" class="format_input" id="uf" name="uf"><br>
                                                         </div>
+                                                        <div class="col-xl-5">
+                                                            <label for="causa" class="subtitle_register">Causa:</label>
+                                                            <select name="causa" id="causa" class="format_select">
+                                                                <option value="" class="">Qual a Causa Social:</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-12">
@@ -162,43 +169,7 @@
                 </div>
             </div>
         </form>
-        <footer class="footer">
-            <div class="footer_menu">
-                <div class="footer_list">
-                    <h5>Mercado Solidário</h5><br>
-                    <a href="" class="footer_link">Quem somos</a><br>
-                    <a href="" class="footer_link">Politica de Privacidade</a><br>
-                    <a href="" class="footer_link">Politica de Troca</a>
-                </div>
-                <div class="footer_list">
-                    <h5>Instituições</h5><br>
-                    <a href="" class="footer_link">Cadastre-se</a><br>
-                    <a href="" class="footer_link">Pesquisar</a>
-                </div>
-                <div class="footer_list">
-                    <h5>Forma de Pagamento</h5><br>
-                    <span><img src="img\icones\master.png"><img src="img\icones\visa.png"><img src="img\icones\paypal.png"></span><br>
-                    <span><img src="img\icones\boleto.png"></span><br>
-                    <h5>Compra Segura</h5>
-                    <span><img src="img\icones\cadeado.png" class="img_pgto"></span>
-                </div>
-                <div class="footer_list">
-                    <h5>Empresas Parceiras</h5><br>
-                    <span>
-                    </span>
-                </div>
-            </div>
-        </footer>
-        <div class="mercado">
-            <span>
-                <h6 class="texto_mercado">Quando ajudamos o proximo, estamos plantando o bem para podermos colher um mundo melhor! Todos os direitos reservados.</h6>
-            </span>
-        </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <?php include_once('php\estruturas_base\footer.php')?>
         <script type="text/javascript" src="js\validacao_resgister.js"></script>
     </body>
 </html>

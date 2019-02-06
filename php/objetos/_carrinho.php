@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
     
     
 
@@ -12,23 +13,38 @@
     public function addCarrinho($idPdt,$vlrPdt,$qtde){
         $carrinho[] = array($idPdt,array($vlrPdt,$qtde));
     }
+=======
+//colocar requires...
 
-    public function 
-    
-    $produto1 = array(1,array(1000,1));
-    $produto2 = array(2,array(1500,1));
-    $produto3 = array(3,array(1500,2));
+function adcionarAoCarrinho()
+{
 
-    $carrinho[] = $produto1;
-    $carrinho[] = $produto2;
-    $carrinho[] = $produto3;
+    $produto = new Item_Carrinho($id, $valor, $quantidade);
 
-    var_dump($carrinho);
+>>>>>>> 4a5105db110569e3436ccb0cee775837d1df8cad
 
-    foreach($carrinho as $cart){
-        echo "Dados: {$cart[0]}-{$cart[1][1]}\n";
+    if (isset($_COOKIE['Carrinho'])) {
+        $carrinho = new Carrinho($produto);
+        setcookie("Carrinho", $carrinho);
+
+    } else {
+
+        $carrinho = $_COOKIE["Carrinho"];
+        $carrinho->adicionarItem($produto);
+        $_COOKIE["Carrinho"] = $carrinho;
+
     }
-    
+
+}
+
+
+function removerCarrinho($indice)
+{
+    $carrinho = $_COOKIE["Carrinho"];
+    $carrinho->removerItem($indice);
+    $_COOKIE["Carrinho"] = $carrinho;
+
+}
 
 
 ?>

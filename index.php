@@ -10,9 +10,9 @@
         <!--Barra de Navegação Categoria-->
         <?php include_once('php\estruturas_base\nav_categoria.php')?>
         <!--Carrosel Banner-->
-        <?php include_once('php\objetos\carousel_banner.php')?>
+        <?php include_once('php\estruturas_base\carousel_banner.php')?>
         <!--Apresentação de Produtos-->
-        <?php include_once('php\objetos\principais_produtos\produtos_principal.php')?>
+        <?php include_once('php\estruturas_base\produtos_principal.php')?>
         <!--Rodapé-->
         <?php include_once('php\estruturas_base\footer.php')?>
     </body>

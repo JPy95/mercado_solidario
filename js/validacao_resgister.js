@@ -88,6 +88,7 @@ function alterarNome() {
   if (btnIntituicoes.attributes[6].value == "false") {
     document.getElementById("lblNome").innerHTML = "Razão Social:";
     document.getElementById("lblCpf").innerHTML = "CNPJ:";
+    document.getElementById('tipo_pessoa').value = "juridica" 
   } else {
     document.getElementById("lblNome").innerHTML = "Nome:";
     document.getElementById("lblCpf").innerHTML = "CPF:";

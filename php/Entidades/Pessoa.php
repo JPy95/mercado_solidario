@@ -33,7 +33,7 @@ class Usuario
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
-    */
+     */
 
     /**
      * Get the value of data_cadastro

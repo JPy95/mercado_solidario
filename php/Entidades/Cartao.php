@@ -4,7 +4,7 @@
 /*
 Usuario tera apenas a possibilidade de inserir ou excluir o cartão cadastrado para compra. 
 Tirando a possibilidade de corrigir info do cartão;
-*/
+ */
 class Cartao
 {
 
@@ -37,7 +37,7 @@ class Cartao
 								'" . $this->getNumero() . "',
                                 '" . $this->getCvv() . "',
 								'" . $this->getValidade() . "',
-                                '" . $this->getId_usuario()"'                                
+                                '" . $this->getId_usuario() . "'                                
 							)";
 
         $stmt = $con->prepare($query);
