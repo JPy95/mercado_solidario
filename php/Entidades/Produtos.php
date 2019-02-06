@@ -12,7 +12,7 @@ class Produto
     private $idCategoria;
     private $idVendedor;
 
-    public function __construct($nomePdt,$vlrPdt,$pctDoacao,$descricao,$tipo,$urlImg,$idTipo,$idCategoria,$idVendedor)
+    public function __construct($nomePdt, $vlrPdt, $pctDoacao, $descricao, $tipo, $urlImg, $idTipo, $idCategoria, $idVendedor)
     {
         $this->nomePdt = $nomePdt;
         $this->vlrPdt = $vlrPdt;
@@ -23,7 +23,7 @@ class Produto
         $this->idTipo = $idTipo;
         $this->idCategoria = $idCategoria;
         $this->idVendedor = $idVendedor;
-    }   
+    }
 
     public function insert($conexao)
     {
@@ -73,7 +73,7 @@ class Produto
     {
         $con = $conexao->conectar();
         $query = "SELECT * FROM produto WHERE id_usuario = '$idUsuario'";
-        
+
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -81,7 +81,7 @@ class Produto
 
     /**
      * Get the value of nomePdt
-     */ 
+     */
     public function getNomePdt()
     {
         return $this->nomePdt;
@@ -91,7 +91,7 @@ class Produto
      * Set the value of nomePdt
      *
      * @return  self
-     */ 
+     */
     public function setNomePdt($nomePdt)
     {
         $this->nomePdt = $nomePdt;
@@ -101,7 +101,7 @@ class Produto
 
     /**
      * Get the value of vlrPdt
-     */ 
+     */
     public function getVlrPdt()
     {
         return $this->vlrPdt;
@@ -111,7 +111,7 @@ class Produto
      * Set the value of vlrPdt
      *
      * @return  self
-     */ 
+     */
     public function setVlrPdt($vlrPdt)
     {
         $this->vlrPdt = $vlrPdt;
@@ -121,7 +121,7 @@ class Produto
 
     /**
      * Get the value of pctDoacao
-     */ 
+     */
     public function getPctDoacao()
     {
         return $this->pctDoacao;
@@ -131,7 +131,7 @@ class Produto
      * Set the value of pctDoacao
      *
      * @return  self
-     */ 
+     */
     public function setPctDoacao($pctDoacao)
     {
         $this->pctDoacao = $pctDoacao;
@@ -141,7 +141,7 @@ class Produto
 
     /**
      * Get the value of descricao
-     */ 
+     */
     public function getDescricao()
     {
         return $this->descricao;
@@ -151,7 +151,7 @@ class Produto
      * Set the value of descricao
      *
      * @return  self
-     */ 
+     */
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
@@ -161,7 +161,7 @@ class Produto
 
     /**
      * Get the value of urlImg
-     */ 
+     */
     public function getUrlImg()
     {
         return $this->urlImg;
@@ -171,7 +171,7 @@ class Produto
      * Set the value of urlImg
      *
      * @return  self
-     */ 
+     */
     public function setUrlImg($urlImg)
     {
         $this->urlImg = $urlImg;
@@ -181,7 +181,7 @@ class Produto
 
     /**
      * Get the value of idTipo
-     */ 
+     */
     public function getIdTipo()
     {
         return $this->idTipo;
@@ -191,7 +191,7 @@ class Produto
      * Set the value of idTipo
      *
      * @return  self
-     */ 
+     */
     public function setIdTipo($idTipo)
     {
         $this->idTipo = $idTipo;
@@ -201,7 +201,7 @@ class Produto
 
     /**
      * Get the value of idCategoria
-     */ 
+     */
     public function getIdCategoria()
     {
         return $this->idCategoria;
@@ -211,7 +211,7 @@ class Produto
      * Set the value of idCategoria
      *
      * @return  self
-     */ 
+     */
     public function setIdCategoria($idCategoria)
     {
         $this->idCategoria = $idCategoria;
@@ -221,7 +221,7 @@ class Produto
 
     /**
      * Get the value of idVendedor
-     */ 
+     */
     public function getIdVendedor()
     {
         return $this->idVendedor;
@@ -231,7 +231,7 @@ class Produto
      * Set the value of idVendedor
      *
      * @return  self
-     */ 
+     */
     public function setIdVendedor($idVendedor)
     {
         $this->idVendedor = $idVendedor;
@@ -241,7 +241,7 @@ class Produto
 
     /**
      * Get the value of tipoAnuncio
-     */ 
+     */
     public function getTipoAnuncio()
     {
         return $this->tipoAnuncio;
@@ -251,11 +251,12 @@ class Produto
      * Set the value of tipoAnuncio
      *
      * @return  self
-     */ 
+     */
     public function setTipoAnuncio($tipoAnuncio)
     {
         $this->tipoAnuncio = $tipoAnuncio;
 
         return $this;
     }
+}
 ?>
