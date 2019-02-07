@@ -19,3 +19,4 @@
         <img src="img\icones\validation.png" class="img_validacao" />
     </div>
 </div>
+
