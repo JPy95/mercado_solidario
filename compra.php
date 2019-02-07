@@ -148,17 +148,12 @@
                         <div>
                             <h3>Revisão</h3>
                         </div>
-                        <?php include_once('') ?>
+                        <?php include_once('php\estruturas_base\card_produto.php') ?>
                     </div>
 
                 </div>
             </div>        
-        </div>
-        
-        
-        
-        
-        
+        </div>     
         
         </div>
         <!--Rodapé-->
