@@ -1,11 +1,11 @@
 <html lang="pt-br">
     <head>
-        <?php include_once('php\estruturas_base\head.php')?>
+        <?php include_once('php\estruturas_base\head.php') ?>
         <link rel="stylesheet" type="text/css" href="css\carrinho.css">
     </head>
     <body>
         <nav>
-            <?php include_once('php\estruturas_base\nav_principal.php')?>
+            <?php include_once('php\estruturas_base\nav_principal.php') ?>
         </nav>
         <div class="container">
             <div class="title_carrinho">
@@ -17,7 +17,7 @@
                         <div class="subtitle_carrinho">
                             <h3>Produtos:</h3>
                         </div>
-                        <?php include_once('php\estruturas_base\card_produto.php');?>
+                        <?php include_once('php\estruturas_base\card_produto.php'); ?>
                     </div>
                     <div class="col-xl-5 resumo">
                         <div class="subtitle_carrinho">
@@ -28,7 +28,7 @@
                             <label class="desc_carrinho">Valor Total:</label><span class="descricao_anun_valor"> R$xxxx</span><br>
                         </div>
                         <div class="btn_carrinho">
-                            <button>Finalizar Compra</button><br>
+                            <a href="compra.php"><button>Finalizar Compra</button></a> <br>
                             <a href="">Continuar Comprando</a>
                         </div>
                     </div>
@@ -36,6 +36,6 @@
             </div>
         </div>
         <!--Rodapé-->
-        <?php include_once('php\estruturas_base\footer.php')?>
+        <?php include_once('php\estruturas_base\footer.php') ?>
   </body>
 </html>
