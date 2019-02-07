@@ -16,3 +16,4 @@
         <img src="img\icones\delete.png" class="img_validacao" />
     </div>
 </div>
+
