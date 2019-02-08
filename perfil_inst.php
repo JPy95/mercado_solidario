@@ -2,9 +2,11 @@
     <head>
         <?php include_once('php\estruturas_base\head.php') ?>
         <link rel="stylesheet" type="text/css" href="css\cards.css">
+        <link rel="stylesheet" type="text/css" href="css\modals.css">
     </head>
     <body>
         <!--NAV -->
+        <?php include_once('php\estruturas_base\modals\desc_projeto.php')?>
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <div id="perfil">
             <div id="presentation_inst">
@@ -15,7 +17,6 @@
                             Este perfil será visualizado por todos os usuários do nosso site. 
                             Capriche no texto de apresentação e lembre-se, sempre mantenha o seu perfil atualizado.
                         </span>
-                        <a href="edit_perfil_inst.php" class="link_perfil_inst">Editar Perfil</a>
                     </div>
                 </div>
                 <div class="dados_cad_inst_perfil">

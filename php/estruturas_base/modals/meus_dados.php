@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#"><button type="button" class="btn_edit">Editar dados</button></a> 
+        <a href="edit_perfil_user.php"><button type="button" class="btn_edit">Editar dados</button></a> 
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@
         <h5>Titulo do Projeto</h5>
     </div>
     <div >
-        <a class="link_card" href="perfil_inst.php"><button class="btn_cards">Saiba Mais</button></a>
+        <button class="btn_cards" data-toggle="modal" data-target="#modalDescProjeto">Saiba Mais</button>
     </div>
 </div>
 

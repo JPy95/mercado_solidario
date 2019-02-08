@@ -1,4 +1,4 @@
-<!-- Modal Meus Dados -->
+<!-- Modal Comentários -->
 <div class="modal fade" id="modalComentarios" tabindex="-1" role="dialog" aria-labelledby="modalComentariosTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

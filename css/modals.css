@@ -35,6 +35,20 @@ h6{
     font-weight: 400;
 }
 
+.btn_sidebar_modal{
+    width: 100%;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+}
+  
+.btn_sidebar_modal:focus,
+.btn_sidebar_modal:active,
+.btn_sidebar_modal:hover{
+background-color: #f8f9fa;
+}
+
 .btn_edit{
     background-color: #00d1ff;
     color: white;
@@ -110,4 +124,44 @@ h6{
     height: 65px;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
     padding: 3px;
+}
+
+.desc_esqueceu_senha{
+    font-size: 10px;
+    font-style: italic;
+    color: grey;
+}
+
+.form_recuperar_senha{
+    margin: 10px 30%;
+}
+
+.subtitle_register{
+    font-style: italic;
+}
+
+.btn_esqueceu_senha{
+    text-align: center;
+}
+
+.modal_projeto{
+    padding-top: 15px;
+    font-style: italic;
+    color: gray;
+}
+
+.img_projeto{
+    width: 100%;
+}
+
+.desc_valor_projeto{
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: #ff4f5d;
+    font-weight: 500;
+}
+
+p{
+    font-size: 13px;
+    padding-left: 10px;
 }

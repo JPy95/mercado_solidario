@@ -8,7 +8,7 @@
     <body>
         <!--NAV -->
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
-        <?php include_once('php\objetos\carousel_banner.php') ?>
+        <?php include_once('php\estruturas_base\carousel_banner.php')?>
         <div class="register_banner">
             <h2 class="title_src_inst">Conheça a Instituição que deseja ajudar</h2>
         </div>

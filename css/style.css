@@ -1541,7 +1541,7 @@ input[type="file"] {
 }
 
 .title_sidebar {
-  background-color: red;
+  background-color: #ff182b;
   display: block;
   height: 135px;
   text-align: center;
@@ -1647,7 +1647,7 @@ input[type="file"] {
 .foto_user {
   border: 3px solid white;
   border-radius: 50%;
-  box-shadow: 0px 0px 18px 4px #dcdcdc;
+  box-shadow: inset 0px 0px 18px 0px #dcdcdc;
 }
 
 .img_menu_dropdown {
@@ -2031,20 +2031,6 @@ input[type="file"] {
 
 .style_input_range{
   background-color: #00d1ff;
-}
-
-.btn_sidebar_modal{
-  width: 100%;
-  border: none;
-  background: white;
-  text-align: left;
-}
-
-.btn_sidebar_modal:focus,
-.btn_sidebar_modal:active,
-.btn_sidebar_modal:hover{
-  background-color: #f8f9fa;
-  color: #ff4f5d;
 }
 
 .dropdown-item.active, 
