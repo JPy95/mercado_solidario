@@ -1,3 +1,9 @@
+<!--css Modal-->
+<link rel="stylesheet" type="text/css" href="css\modals.css">
+<!--Modal-->
+<?php include_once('php\estruturas_base\modals\meus_dados.php');?>
+<?php include_once('php\estruturas_base\modals\comentarios.php');?>
+<?php include_once('php\estruturas_base\modals\info_clientes.php');?>
 <div id="sidebar_menu">
     <div class="title_sidebar">
         <div class="">
@@ -16,7 +22,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="sidebar_compras">
             <a class="dropdown-item" href="minha_compra.php">Minhas Compras</a>
-            <a class="dropdown-item" href="#">Meus Dados</a>
+            <button type="button" class="btn_sidebar_modal" data-toggle="modal" data-target="#modalMeusDados">
+                <a class="dropdown-item">Meus dados</a>
+            </button>
         </div>
     </div>
     <div class="dropdown show">
@@ -29,8 +37,12 @@
         <div class="dropdown-menu" aria-labelledby="sidebar_compras">
             <a class="dropdown-item" href="anuncios.php">Meus Anúncios</a>
             <a class="dropdown-item" href="new_produto.php">Novo Anúncio</a>
-            <a class="dropdown-item" href="#">Comentarios</a>
-            <a class="dropdown-item" href="#">Info de Compradores</a>
+            <button type="button" class="btn_sidebar_modal" data-toggle="modal" data-target="#modalComentarios">
+                <a class="dropdown-item">Comentrios</a>
+            </button>
+            <button type="button" class="btn_sidebar_modal" data-toggle="modal" data-target="#modalInfoClientes">
+                <a class="dropdown-item">Info. de Compradores</a>
+            </button>
         </div>
     </div>
 </div>

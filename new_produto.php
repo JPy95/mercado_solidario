@@ -3,6 +3,8 @@
         <?php include_once('php\estruturas_base\head.php')?>
     </head>
     <body>
+        <!--Modal-->
+        <?php include_once('php\estruturas_base\modals\meus_dados.php');?>
         <?php include_once('php\estruturas_base\nav_principal.php')?>
         <div id="perfil">
             <?php include_once('php\estruturas_base\sidebar_menu.php')?>

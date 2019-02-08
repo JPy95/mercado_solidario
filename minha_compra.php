@@ -5,6 +5,8 @@
     <script type="text/javascript" src="js\progressbar.js"></script>
   </head>
   <body>
+    <!--Modal-->
+    <?php include_once('php\estruturas_base\modals\meus_dados.php');?>
     <!--NAV -->
     <?php include_once('php\estruturas_base\nav_principal.php') ?>
     <div id="perfil">

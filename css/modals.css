@@ -1,0 +1,113 @@
+.modal-header{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    background-color: #ff4f5d;
+    font-style: italic;
+    color: white;
+}
+
+.desc_dados{
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    color: grey;
+}
+
+h6{
+    font-style: italic;
+    color: #00d1ff;
+}
+
+.descricao_anun_valor{
+    font-weight: 400;
+}
+
+.btn_edit{
+    background-color: #00d1ff;
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.btn_edit:active,
+.btn_edit:focus,
+.btn_edit:hover{
+    background-color: #ff4f5d;
+}
+
+.img_usuario{
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 7px 0px grey;
+    position: absolute;
+    left: 65%;
+    bottom: 55%;
+    overflow: hidden;
+}
+
+.style_usuario{
+    width: 100px;
+}
+
+.card_comentario{
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+}
+
+.title_card_comentario{
+    display: inline-flex;
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);;
+}
+
+.title_card{
+    font-size: 16px;
+    font-style: italic;
+    color: grey;
+    padding: 7 20;
+}
+
+.title_prod{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    color: #00d1ff;
+}
+
+.title_prod:hover,
+.title_prod:focus,
+.title_prod:active{
+    color: #ff4f5d;
+    text-decoration: none;
+}
+
+.desc_card_comentario{
+    padding: 5;
+    font-size: 13px;
+    font-style: italic;
+    color: grey;
+}
+
+.img_prod_card{
+    width: 65px;
+    height: 65px;
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 3px;
+}
