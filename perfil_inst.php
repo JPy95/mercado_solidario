@@ -12,12 +12,6 @@
             <div id="presentation_inst">
                 <div class="title_slide ">
                     <h1 class="style_title_slide ">Instituição X</h1>
-                    <div>
-                        <span class="text_perfil_inst border_top_inst">
-                            Este perfil será visualizado por todos os usuários do nosso site. 
-                            Capriche no texto de apresentação e lembre-se, sempre mantenha o seu perfil atualizado.
-                        </span>
-                    </div>
                 </div>
                 <div class="dados_cad_inst_perfil">
                     <div class="format_img">

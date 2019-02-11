@@ -5,6 +5,6 @@
     </div>
     <!--Carrosel Para sua Casa-->
     <div class="row">
-        <?php include_once('php\estruturas_base\carrosel_produtos.php')?>
+        <?php include('php\estruturas_base\carrosel_produtos.php')?>
     </div>
 </div>

@@ -152,6 +152,7 @@ background-color: #f8f9fa;
 
 .img_projeto{
     width: 100%;
+    box-shadow: 0px 0px 5px 0px black;
 }
 
 .desc_valor_projeto{

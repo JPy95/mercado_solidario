@@ -190,7 +190,7 @@ body {
 
 #presentation_inst {
   display: block;
-  margin: 20px 30px;
+  margin: 20px auto;
 }
 
 #dados_perfil_inst {
@@ -340,6 +340,7 @@ body {
 }
 
 .titulo_cat {
+  text-align: initial;
   font-family: Segoe UI;
   font-weight: 500;
   font-size: 30px;
@@ -1244,6 +1245,7 @@ input[type="file"] {
 }
 
 .desc_projt_card_prfil_inst {
+  font-style: italic;
   margin-top: 10px;
   text-align: center;
   height: 75;
@@ -1776,9 +1778,8 @@ input[type="file"] {
 }
 
 .format_img {
-  border-radius: 10px;
   border: 1px solid rgba(128, 128, 128, 0.2);
-  box-shadow: inset 0px 0px 20px 0px #00000038;
+  box-shadow: 5px 5px 3px 0px #00000038;
   width: 400px;
   height: 200px;
   display: block;
@@ -2005,7 +2006,7 @@ input[type="file"] {
   font-style: italic;
   color: rgb(128, 128, 128);
   padding: 5px;
-  border: 1px solid rgba(128, 128, 128, 0.28);;
+  border: 1px solid rgba(128, 128, 128, 0.28);
 }
 
 .format_option_tipo_pessoa{
@@ -2037,6 +2038,60 @@ input[type="file"] {
 .dropdown-item:active{
   background-color: white;
   color: #ff4f5d;
+}
+
+.btn_delete{
+  border: none;
+  width: 25px;
+  height: 25px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  outline: 0;
+}
+
+.img_delete{
+  background-image: url(../img/icones/delete.png);
+  background-repeat: no-repeat;
+  background-size: 22px;
+  background-position: -1px -1px;
+}
+
+.subtitle_form_edit_perfil{
+  color: #00d1ff;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.desc_edit_perfil{
+  margin: 5px 30px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.btn_modal_edit_perfil{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.subtitle_edit_perfil{
+  font-style: italic;
+  color: #00d1ff;
+}
+
+.modal_edit_perfil{
+  background-color: transparent;
+  border: none;
+  color: #ff4f5d;
+  text-decoration: none;
+  font-size: 14px;
+  font-style: initial;
+  font-weight: 400;
+  float: right;
+  cursor: pointer;
 }
 
 /*Classe para ProgressBar*/

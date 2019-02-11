@@ -2,7 +2,7 @@
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div id="carousel" class="carousel-item active">
-        <div class="cards" >
+        <div class="cards" onmousemove="active(this)" onmouseout="desable(this)">
             <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
             <div class="borda_img_card">
                 <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
@@ -19,7 +19,7 @@
             </div>
             <a href="produto.php"><button class="btn_cards">Visualizar</button></a> 
         </div>
-        <div class="cards" >
+        <div class="cards" onmousemove="active(this)" onmouseout="desable(this)">
             <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
             <div class="borda_img_card">
                 <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
@@ -36,7 +36,7 @@
             </div>
             <button class="btn_cards">Visualizar</button> 
         </div>
-        <div class="cards" >
+        <div class="cards" onmousemove="active(this)" onmouseout="desable(this)">
             <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
             <div class="borda_img_card">
                 <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
@@ -53,7 +53,7 @@
             </div>
             <button class="btn_cards">Visualizar</button> 
         </div>
-        <div class="cards" >
+        <div class="cards" onmousemove="active(this)" onmouseout="desable(this)">
             <button class="favorito_cards"><img src="img\icones\favorito.png" width="30"></button>
             <div class="borda_img_card">
                 <img class="img_cards" src="img\img_prod\AirFryer.jpg" alt="">
@@ -212,12 +212,12 @@
         </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+  <button class="carousel-control-prev btn-previous" href="#carousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next btn-next" href="#carousel" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </button>
 </div>

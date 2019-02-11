@@ -17,4 +17,5 @@
         <?php include_once('php\estruturas_base\footer.php')?>
     </body>
     <script type="text/javascript" src="js\carrosel.js"></script>
+    <script type="text/javascript" src="js\cards.js"></script>
 </html>
