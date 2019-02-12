@@ -1,87 +1,46 @@
 <html lang="pt-br">
     <head>
         <?php include_once('php\estruturas_base\head.php') ?>
-        <script type="text/javascript" src="js\validacao_login.js"></script>
+        <link rel="stylesheet" type="text/css" href="css\finalizar_compra.css">
+        <link rel="stylesheet" type="text/css" href="css\modals.css">
     </head>
     <body>
         <nav>
             <?php include_once('php\estruturas_base\nav_principal.php') ?>
         </nav>
+            <?php include_once('php\estruturas_base\modals\add_endereco.php') ?>
         <div class="container">
-                    <div class="title">
                     <h1>Finalizar compra</h1>
-                    </div>
-            <div class="col-xl-12">
+            <div class="col-xl-12" style="margin-bottom:20px">
                 <div class="row">
-                    <div class="col-xl-4"><!--Endereco-->
+                    <div class="col-xl-4" style="border-right:1px solid rgba(128, 128, 128, 0.2)"><!--Endereco-->
                         <div>
-                            <h3>Endereço</h3>
+                            <h3 class="style_subtitle_slide">Endereço</h3>
                         </div>
                         <div>
-                            <select name="" id="">
+                            <select  class="format_select" name="" id="">
                             <option value="id">Rua a</option>
                             <option value="id">Rua b</option>
                             </select> 
                         </div>
-                        <div>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEndereco" aria-expanded="false" aria-controls="collapseEndereco">
-                            Adicionar novo endereço
-                            </button>
+                        <div class="descricao_endereco">
+                            <span>Rua: <label class="descricao_anun_valor">Cambe</label></span><br>
+                            <span>Complemento: <label class="descricao_anun_valor"></label></span><br>
+                            <span>Cidade-UF: <label class="descricao_anun_valor">FISICA</label></span><br>
+                            <span>CEP: <label class="descricao_anun_valor">XXX.XXX.XXX-XX</label></span><br>
                         </div>
-                        <div>
-                            <div class="collapse" id="collapseEndereco">
-                                <form action="">
-                                    <div>
-                                        <h5>Novo endereço</h5>
-                                    </div>
-                                    <div>
-                                        <label for="">Rua:</label><br>
-                                        <input type="text">
-                                    </div>
-                                    <div class="row">
-                                        <div>
-                                            <label for="">Num:</label><br>
-                                            <input type="text" >
-                                        </div>
-                                        <div>
-                                            <label for="">Comp:</label><br>
-                                            <input type="text" >
-                                        </div>
-                                        <div>
-                                            <label for="">Bairro:</label><br>
-                                            <input type="text" >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div>
-                                            <label for="">Cidade::</label><br>
-                                            <input type="text" >
-                                        </div>
-                                        <div>
-                                            <label for="">UF:</label><br>
-                                            <input type="text" >
-                                        </div>
-                                        <div>
-                                            <label for="">CEP:</label><br>
-                                            <input type="text" >
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button>Salvar</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
+                        <button class="button_compras w-75" type="button" data-toggle="modal" data-target="#modalAddEndereco">
+                            <a>Adicionar novo endereço</a>
+                        </button>
                     </div>
                     <div class="col-xl-4"><!--Cartao-->
                         <div>
-                            <h5>Forma de pagamento</h5>
+                            <h3 class="style_subtitle_slide">Forma de pagamento</h3>
                         </div>
                         <div class="row">
                             <div>
-                                <button>Boleto</button>
-                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCartao" aria-expanded="false" aria-controls="collapseCartao">
+                                <button class="button_compras">Boleto</button>
+                                <button  class="button_compras" type="button" data-toggle="collapse" data-target="#collapseCartao" aria-expanded="false" aria-controls="collapseCartao">
                                     Cartão
                                 </button>
                             </div>
@@ -90,20 +49,20 @@
                             <div class="collapse" id="collapseCartao">
                                 <div>
                                     <label for="">Cartão:</label><br>
-                                    <select name="" id="">
+                                    <select class="format_select" name="" id="">
                                         <option value="">Nubank</option>
                                         <option value="">Inter</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="">Parcelas:</label><br>
-                                    <select name="" id="">
+                                    <select class="format_select" name="" id="">
                                         <option value="">1x</option>
                                         <option value="">2x</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAddCartao" aria-expanded="false" aria-controls="collapseAddCartao">
+                                    <button  class="button_compras" type="button" data-toggle="collapse" data-target="#collapseAddCartao" aria-expanded="false" aria-controls="collapseAddCartao">
                                         Adicionar novo cartão
                                     </button>
                                 </div>
@@ -130,7 +89,7 @@
                                         </div>
                                         <div>
                                             <label for="">Bandeira:</label><br>
-                                            <Select>
+                                            <Select class="format_select">
                                                 <option value="">MasterCard</option>
                                                 <option value="">Visa</option>
                                                 <option value="">Elo</option>
@@ -138,7 +97,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button>Salvar cartão</button>
+                                        <button class="button_compras">Salvar cartão</button>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +105,7 @@
                     </div>
                     <div class="col-xl-4"> <!--Revisão-->
                         <div>
-                            <h3>Revisão</h3>
+                            <h3 class="style_subtitle_slide">Revisão</h3>
                         </div>
                         <?php include_once('php\estruturas_base\card_produto.php') ?>
                     </div>
@@ -158,5 +117,6 @@
         </div>
         <!--Rodapé-->
         <?php include_once('php\estruturas_base\footer.php') ?>
+        <script type="text/javascript" src="js\validacao_login.js"></script>
   </body>
 </html>

@@ -1,0 +1,35 @@
+h1 {
+  font-style: italic;
+  color: #ff4f5d;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 20px;
+}
+
+.button_compras {
+  background-color: #ff4f5d;
+  margin-top: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  height: 35px;
+  border-radius: 10px;
+  color: white;
+}
+
+.button_compras:hover,
+.button_compras:active,
+.button_compras:focus {
+  background-color: #00d1ff;
+  outline: 0;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+label {
+  font-style: italic;
+}
+
+.descricao_endereco {
+  margin: 10px 5px;
+  font-weight: 500;
+}
