@@ -9,6 +9,7 @@
             <?php include_once('php\estruturas_base\nav_principal.php') ?>
         </nav>
             <?php include_once('php\estruturas_base\modals\add_endereco.php') ?>
+            <?php include_once('php\estruturas_base\modals\add_cartao.php') ?>
         <div class="container">
                     <h1>Finalizar compra</h1>
             <div class="col-xl-12" style="margin-bottom:20px">
@@ -38,12 +39,11 @@
                             <h3 class="style_subtitle_slide">Forma de pagamento</h3>
                         </div>
                         <div class="row">
-                            <div>
-                                <button class="button_compras">Boleto</button>
-                                <button  class="button_compras" type="button" data-toggle="collapse" data-target="#collapseCartao" aria-expanded="false" aria-controls="collapseCartao">
-                                    Cartão
-                                </button>
-                            </div>
+                            <button class="button_compras w-25" style="margin-left:15px">Boleto</button>
+                            <button class="button_compras w-25" style="margin-left:15px" type="button" data-toggle="collapse" data-target="#collapseCartao" aria-expanded="false" aria-controls="collapseCartao">
+                                Cartão
+                            </button>
+                            
                         </div>
                         <div>
                             <div class="collapse" id="collapseCartao">
@@ -62,44 +62,11 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <button  class="button_compras" type="button" data-toggle="collapse" data-target="#collapseAddCartao" aria-expanded="false" aria-controls="collapseAddCartao">
-                                        Adicionar novo cartão
+                                    <button class="button_compras w-75" type="button" data-toggle="modal" data-target="#modalAddCartao">
+                                        <a>Adicionar novo cartão</a>
                                     </button>
                                 </div>
-                                <div class="collapse" id="collapseAddCartao">
-                                    <div>
-                                        <h5>Novo cartão</h5>
-                                    </div>
-                                    <div>
-                                        <label for="">Número:</label><br>
-                                        <input type="text">    
-                                    </div>
-                                    <div>
-                                        <label for="">Titular:</label><br>
-                                        <input type="text">    
-                                    </div>
-                                    <div class="row">
-                                        <div>
-                                            <label for="">Validade:</label><br>
-                                            <input type="text">    
-                                        </div>
-                                        <div>
-                                            <label for="">CVV:</label><br>
-                                            <input type="text">    
-                                        </div>
-                                        <div>
-                                            <label for="">Bandeira:</label><br>
-                                            <Select class="format_select">
-                                                <option value="">MasterCard</option>
-                                                <option value="">Visa</option>
-                                                <option value="">Elo</option>
-                                            </Select>   
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button class="button_compras">Salvar cartão</button>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
