@@ -1,6 +1,6 @@
 <?php
 require_once('Endereco.php');
-class Usuario
+class Pessoa
 
 {
     private $tipo_pessoa;
@@ -16,24 +16,16 @@ class Usuario
     }
 
     
-    /*
-    public function insert($conexao)
+    
+    public function selectSession($conexao,$email,$senha)
     {
         $con = $conexao->conectar();
 
-        $query = "INSERT INTO USUARIO(dta_cadastro, nome, tipo_pessoa, cpf_cnpj, email, senha) 
-							values(
-                                '" . NOW() . "',
-								'" . $this->getNome() . "',
-                                '" . $this->getTipo_pessoa() . "',
-                                '" . $this->getCpf_cnpj() . "',
-								'" . $this->getEmail() . "',
-								'" . $this->getSenha() . "'                                
-							)";
+        $query = "SELECT idUsuario, nome, tipo_pessoa FROM usuario WHERE email = $email AND senha = $senha";
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
-     */
+    
 
     /**
      * Get the value of data_cadastro

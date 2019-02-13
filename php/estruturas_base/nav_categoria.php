@@ -1,49 +1,49 @@
 <div class="col-12" id="categoria">
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?para_sua_casa">
+            <a class="link_cat" href="?idCat=1">
                 <i><img class="img_cat" src="img\categoria\house.png" width="50"></i>Para sua Casa
             </a>
         </li>
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?esportivos">
+            <a class="link_cat" href="?idCat=2">
                 <i><img class="img_cat" src="img\categoria\esportivos.png" width="50"></i>Esportivos
             </a>
         </li>
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?musica_hobbies">
+            <a class="link_cat" href="?idCat=3">
                 <i><img class="img_cat" src="img\categoria\music.png" width="50"></i>Musica e Hobbies
             </a>
         </li>
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?artigos_infantis">
+            <a class="link_cat" href="?idCat=4">
                 <i><img class="img_cat" src="img\categoria\babys.png" width="50"></i>Artigos Infantis
             </a>
         </li>
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?eletronicos">
+            <a class="link_cat" href="?idCat=5">
                 <i><img class="img_cat" src="img\categoria\eletronicos.png" width="50"></i>Eletrônicos
             </a>
         </li>
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?comercio_escritorio">
+            <a class="link_cat" href="?idCat=6">
                 <i><img class="img_cat" src="img\categoria\comercio.png" width="50"></i>Comércio e Escritório
             </a>
         </li>
     </ul>
     <ul>
         <li class="categoria">
-            <a class="link_cat" href="?moda_beleza">
+            <a class="link_cat" href="?idCat=7">
                 <i><img class="img_cat" src="img\categoria\moda.png" width="50"></i>Moda e Beleza
             </a>
         </li>

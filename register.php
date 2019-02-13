@@ -9,7 +9,7 @@
             <h2>Cadastro de Usuário</h2>
         </div>
         <!--Formulario de Registro de Usuário (Cliente e Instituições)-->
-        <form name="register" action="php\formularios\_register.php" method="post">
+        <form name="register" action="php\objetos\_register.php" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col-8" id="register">
@@ -21,7 +21,6 @@
                                 </span>
                             </div>
                         </div>
-                        
                         <div class="row">
                             <div id="register_form" class="col-xl-12">
                                 <div class="title_register">
@@ -36,6 +35,7 @@
                                                 <select name="pessoa" id="tipo_pessoa" class="format_select_tipo_pessoa" onmouseout="alteraNome()">
                                                     <option value="fisica" class="format_option_tipo_pessoa">Pessoa Física</option>
                                                     <option value="juridica" class="format_option_tipo_pessoa">Pessoa Jurídica</option>
+                                                    <option value="instituicao" class="format_option_tipo_pessoa">Instituição</option>
                                                 </select>
                                             </div>
                                             <div>
@@ -48,7 +48,7 @@
                                             <div class="row">
                                                 <div class="col-xl-4">
                                                     <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
-                                                    <input id="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
+                                                    <input id="cpf" name="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
                                                     <p id="erro-cpf" class="erro_form"></p>
                                                 </div>
                                                 <div class="col-xl-6">
@@ -99,7 +99,8 @@
                                                     <div class="row">
                                                         <div class="col-xl-3">
                                                             <label for="cep" class="subtitle_register">CEP:</label><br>
-                                                            <input type="text" class="format_input" id="cep" name="cep"><br>
+                                                            <input type="text" class="format_input" id="cep" name="cep" onblur="pesquisacep(this.value);"><br>
+                                                            <p id="erro-cep" class="erro_form"></p>
                                                         </div>
                                                         <div class="col-xl-9">
                                                             <label for="log" class="subtitle_register">Logradouro:</label><br>
@@ -137,7 +138,22 @@
                                                         <div class="col-xl-5">
                                                             <label for="causa" class="subtitle_register">Causa:</label>
                                                             <select name="causa" id="causa" class="format_select">
-                                                                <option value="" class="">Qual a Causa Social:</option>
+                                                                <option value="0" class="">Qual a Causa Social:</option>
+                                                                <option value="1" class="">Saúde</option>
+                                                                <option value="2" class="">Crianças</option>
+                                                                <option value="3" class="">Combate à fome e à pobreza</option>
+                                                                <option value="4" class="">Idosos</option>
+                                                                <option value="5" class="">Situações emergenciais</option>
+                                                                <option value="6" class="">Educação</option>
+                                                                <option value="7" class="">Moradia</option>
+                                                                <option value="8" class="">Deficiente físico</option>
+                                                                <option value="9" class="">Geração de Trabalho e renda</option>
+                                                                <option value="10" class="">Abandono e maus tratos de animais</option>
+                                                                <option value="11" class="">Dependência química</option>
+                                                                <option value="12" class="">Meio ambiente</option>
+                                                                <option value="13" class="">Deficiente mental</option>
+                                                                <option value="14" class="">Morador de rua</option>
+                                                                <option value="15" class="">Outros</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -159,7 +175,7 @@
                                         <!--Botão de submissão de dados ao banco de dados.
                                             *Acionado por um validador JS.-->
                                         <div class="btn_cad">
-                                            <input onclick="valida_form()" class="format_btn" type="button" value="Cadastrar">
+                                            <input onclick="valida_form()" class="format_btn" type="submit" value="Cadastrar">
                                         </div>
                                     </div>
                                 </div>
@@ -171,5 +187,6 @@
         </form>
         <?php include_once('php\estruturas_base\footer.php')?>
         <script type="text/javascript" src="js\validacao_resgister.js"></script>
+        <script type="text/javascript" src="js\cep.js"></script>
     </body>
 </html>

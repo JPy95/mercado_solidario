@@ -51,6 +51,23 @@ class PessoaJuridica extends Pessoa
         return $stmt->execute();
     }
 
+    public function selectIdUser($cnpj, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        //organizar o update da imagem
+        $query = "SELECT * FROM usuario WHERE cpf_cnpj = $cnpj";
+
+        $stmt = $con->prepare($query);
+        $stmt->execute();
+
+        while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+            $IdUser = $row->idUsuario;
+        }
+
+        return $IdUser;
+    }
+
 
     /**
      * Get the value of cnpj

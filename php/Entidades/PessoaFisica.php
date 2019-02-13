@@ -23,13 +23,13 @@ class PessoaFisica extends Pessoa
 
         $query = "INSERT INTO USUARIO(dta_cadastro, nome, tipo_pessoa, cpf_cnpj, email, senha, img_usuario) 
 							values(
-                                '" . NOW() . "',
+                                '"  NOW() "',
 								'" . $this->getNome() . "',
                                 '" . $this->getTipo_pessoa() . "',
 								'" . $this->getCpf() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
-                                '" . null . "'                                
+                                '" null "'                                
 							)";
 
         $stmt = $con->prepare($query);
@@ -50,6 +50,23 @@ class PessoaFisica extends Pessoa
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
+    }
+
+    public function selectIdUser($cpf, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        //organizar o update da imagem
+        $query = "SELECT * FROM usuario WHERE cpf_cnpj = $cpf";
+
+        $stmt = $con->prepare($query);
+        $stmt->execute();
+
+        while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+            $IdUser = $row->idUsuario;
+        }
+
+        return $IdUser;
     }
 
 

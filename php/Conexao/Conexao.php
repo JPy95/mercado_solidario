@@ -16,7 +16,7 @@ class Conexao
 
     private function configuraDados()
     {
-        $this->bd = 'bd';
+        $this->bd = 'mercado_solidario';
         $this->host = 'localhost';
         $this->usuario = 'root';
         $this->senha = '';
@@ -33,7 +33,8 @@ class Conexao
             $this->conectar();
         } catch (PDOException $e) {
             # call the get_error function
-            $this->get_error($e);
+           // $this->get_error($e);
+
         }
     }
 
@@ -49,10 +50,14 @@ class Conexao
 
     function conectar()
     {
+        
         $query = "mysql:host=" . $this->host . ";dbname=" . $this->bd;
         $this->conexao = new PDO($query, $this->usuario, $this->senha);
+        
         return $this->conexao;
     }
+
+    
 }
 
 ?>

@@ -63,6 +63,23 @@ class Instituicao extends PessoaJuridica
         return $stmt->execute();
     }
 
+    public function selectIdInst($cnpj, $conexao)
+    {
+        $con = $conexao->conectar();
+
+        //organizar o update da imagem
+        $query = "SELECT * FROM intstuicoes WHERE cnpj = $cnpj";
+
+        $stmt = $con->prepare($query);
+        $stmt->execute();
+
+        while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+            $idInst = $row->idInst;
+        }
+
+        return $idInst;
+    }
+
     /**
      * Get the value of website
      */

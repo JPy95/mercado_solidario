@@ -69,10 +69,19 @@ class Produto
         return $stmt->execute();
     }
 
-    public function select($idUsuario, $conexao)
+    public function selectAllPdt($conexao)
     {
         $con = $conexao->conectar();
-        $query = "SELECT * FROM produto WHERE id_usuario = '$idUsuario'";
+        $query = "SELECT * FROM produto";
+
+        $stmt = $con->prepare($query);
+        return $stmt->execute();
+    }
+
+    public function selectEspecificoPdt($idCat, $conexao)
+    {
+        $con = $conexao->conectar();
+        $query = "SELECT * FROM produto WHERE id_categoria = '$idUsuario'";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
