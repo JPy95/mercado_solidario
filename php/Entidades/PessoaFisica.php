@@ -23,15 +23,15 @@ class PessoaFisica extends Pessoa
 
         $query = "INSERT INTO USUARIO(dta_cadastro, nome, tipo_pessoa, cpf_cnpj, email, senha, img_usuario) 
 							values(
-                                '"  NOW() "',
+                                  NOW(),
 								'" . $this->getNome() . "',
                                 '" . $this->getTipo_pessoa() . "',
 								'" . $this->getCpf() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
-                                '" null "'                                
+                                null                                
 							)";
-
+        var_dump($query);   
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }

@@ -25,20 +25,21 @@ class Instituicao extends PessoaJuridica
     {
         $con = $conexao->conectar();
 
-        $query = "INSERT INTO INSTITUICOES(data_cadastro, razao_social, nome_fantasia, cnpj, email, senha, descrição, img_isnt, causa, website) 
+        $query = "INSERT INTO instituicoes(data_cadastro, razao_social, nome_fantasia, cnpj, email, senha, descricao, img_inst, causa, website) 
 							values(
-								'" . NOW() . "',
+								NOW(),
 								'" . $this->getRazaoSocial() . "',
 								'" . $this->getNome_fantasia() . "',
                                 '" . $this->getCnpj() . "',
                                 '" . $this->getEmail() . "',
                                 '" . $this->getSenha() . "',
                                 '" . $this->getDescricao() . "',
-                                '" . null . "',
+                                null,
                                 '" . $this->getCausa() . "',
 								'" . $this->getWebsite() . "'                                
                             );";
         $stmt = $con->prepare($query);
+
         return $stmt->execute();
     }
 
@@ -47,7 +48,7 @@ class Instituicao extends PessoaJuridica
         $con = $conexao->conectar();
 
         //organizar o update da imagem
-        $query = "UPDATE INSTITUICOES SET 
+        $query = "UPDATE instituicoes SET 
 								razao_social='" . $this->getRazaoSocial() . "',
                                 nome_fantasia='" . $this->getNome_fantasia() . "',
                                 cnpj='" . $this->getCnpj() . "',
@@ -68,15 +69,14 @@ class Instituicao extends PessoaJuridica
         $con = $conexao->conectar();
 
         //organizar o update da imagem
-        $query = "SELECT * FROM intstuicoes WHERE cnpj = $cnpj";
-
+        $query = "SELECT * FROM instituicoes WHERE cnpj = '$cnpj'";
         $stmt = $con->prepare($query);
         $stmt->execute();
 
         while($row = $stmt->fetch(PDO::FETCH_OBJ)){
             $idInst = $row->idInst;
         }
-
+        var_dump($idInst);
         return $idInst;
     }
 

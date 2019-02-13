@@ -16,7 +16,7 @@ class Conexao
 
     private function configuraDados()
     {
-        $this->bd = 'mercado_solidario';
+        $this->bd = 'merc_solidario';
         $this->host = 'localhost';
         $this->usuario = 'root';
         $this->senha = '';
@@ -51,7 +51,7 @@ class Conexao
     function conectar()
     {
         
-        $query = "mysql:host=" . $this->host . ";dbname=" . $this->bd;
+        $query = "mysql:host=" . $this->host . ";dbname=" . $this->bd . ";charset=utf8";
         $this->conexao = new PDO($query, $this->usuario, $this->senha);
         
         return $this->conexao;

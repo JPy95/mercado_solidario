@@ -12,7 +12,7 @@ class Endereco
     private $id_usuario;
     private $tipo_pessoa;
 
-    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $estado, $id_usuario, $tipo_pessoa)
+    public function __construct($logradouro, $cep, $numero, $complemento, $bairro, $cidade, $uf, $id_usuario, $tipo_pessoa)
     {
         $this->logradouro = $logradouro;
         $this->cep = $cep;
@@ -28,8 +28,8 @@ class Endereco
     public function insert($conexao)
     {
         $con = $conexao->conectar();
-        if(!$tipo_pessoa.equals("instituicao")){
-            $query = "INSERT INTO ENDERECO(logradouro, numero, complemento, bairro, cidade, uf, cep, id_usuario, id_instituicao) 
+        if($this->tipo_pessoa<>"instituicao"){
+            $query = "INSERT INTO endereco(logradouro, num, compl, bairro, cidade, uf, cep, id_usuario, id_inst) 
                         values(
                             '" . $this->getLogradouro() . "',
                             '" . $this->getNumero() . "',
@@ -39,10 +39,10 @@ class Endereco
                             '" . $this->getUf() . "',
                             '" . $this->getCep() . "',
                             '" . $this->getId_usuario() . "',
-                            '" . null . "'                   
+                            null                 
                         )";
         } else {
-            $query = "INSERT INTO ENDERECO(logradouro, numero, complemento, bairro, cidade, uf, cep, id_usuario, id_instituicao) 
+            $query = "INSERT INTO endereco(logradouro, num, compl, bairro, cidade, uf, cep, id_usuario, id_inst) 
                         values(
                             '" . $this->getLogradouro() . "',
                             '" . $this->getNumero() . "',
@@ -51,10 +51,11 @@ class Endereco
                             '" . $this->getCidade() . "',
                             '" . $this->getUf() . "',
                             '" . $this->getCep() . "',
-                            '" . null . "',
-                            '" . $this->getId_usuario() . "'                   
+                            null,
+                            " . $this->getId_usuario() . "                   
                         )";
         }
+        
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -81,7 +82,7 @@ class Endereco
                             cidade='" . $this->getCidade() . "',
                             uf='" . $this->getUf() . "',
                             cep='" . $this->getCep() . "'
-                        WHERE id_instituicao = '$idUsuario'";
+                        WHERE id_inst = '$idUsuario'";
         }
         $stmt = $con->prepare($query);
         return $stmt->execute();

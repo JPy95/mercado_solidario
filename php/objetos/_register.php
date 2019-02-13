@@ -26,19 +26,30 @@
     $desc = $_POST['desc'];
 
     if($tipoPessoa=='instituicao'){
-        $inst = new Instituicao($nome,$tipoPessoa,$nomeFantasia,$cpf_cnpj,$email,$senha,$desc,$causa,$website);
-        $inst->insert($conexao);
+        $inst = new Instituicao($nome,$tipoPessoa,$nomeFantasia,$cpf_cnpj,$email,password_hash($senha, PASSWORD_DEFAULT),$desc,$causa,$website);
+        $result1=$inst->insert($conexao);
         $endereco = new Endereco($log, $cep, $num, $compl, $bairro, $cidade, $uf, $inst->selectIdInst($cpf_cnpj,$conexao), $tipoPessoa);
-        $endereco->insert($conexao);
+        $result2=$endereco->insert($conexao);
+        if($result1&&$result2){
+            header("Location: ../../login.php?register=true");
+        } else {
+            header("Location: ?register=false");
+        }
     } else if ($tipoPessoa=='juridica'){
-        $pj = new PessoaJuridica($nome, $tipoPessoa, $cpf_cnpj, $email, $senha);
-        $pj->insert($conexao);
-        $endereco = new Endereco($log, $cep, $num, $compl, $bairro, $cidade, $uf, $pj->selectIdUser($cpf_cnpj, $conexao), $tipoPessoa);
-        $endereco->insert($conexao);
+        $pj = new PessoaJuridica($nome, $tipoPessoa, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT));
+        $result = $pj->insert($conexao);
+        if($result){
+            header("Location: ../../login.php?register=true");
+        } else {
+            header("Location: ?register=false");
+        }
     } else {
-        $pf = new PessoaFisica($nome, $tipoPessoa, $cpf_cnpj, $email, $senha);
-        $pf->insert($conexao);
-        $endereco = new Endereco($log, $cep, $num, $compl, $bairro, $cidade, $uf, $pf->selectIdUser($cpf_cnpj, $conexao), $tipoPessoa);
-        $endereco->insert($conexao);
+        $pf = new PessoaFisica($nome, $tipoPessoa, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT));
+        $result = $pf->insert($conexao);
+        if($result){
+            header("Location: ../../login.php?register=true");
+        } else {
+            header("Location: ?register=false");
+        }
     }
 ?>

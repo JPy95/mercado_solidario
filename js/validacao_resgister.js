@@ -14,17 +14,18 @@ function valida_nome() {
 //Bloqueia o usuario digitar um cpf menor ou maior que 14 digitos.
 function valida_cpf() {
   var cpf = document.getElementById("cpf");
-  var btnCpf = document.getElementById("btn-cpf");
-  var btnCnpj = document.getElementById("btn-cnpj");
+  var cpf_cnpj = document.getElementById('lblCpf').innerHTML;
   if (cpf.value.length == 14) {
+    cpf.classList.remove("error");
     cpf.classList.add("ok");
-    return true;
+    document.getElementById("erro-cpf").innerHTML = "";
   } else if(cpf.value.length == 18){
+    cpf.classList.remove("error");
     cpf.classList.add("ok");
-    return true;
+    document.getElementById("erro-cpf").innerHTML = "";
   } else {
     cpf.classList.add("error");
-    document.getElementById("erro-cpf").innerHTML = "CPF invalido.";
+    document.getElementById("erro-cpf").innerHTML = cpf_cnpj.replace(":","")+" invalido.";
   }
   return false;
 }
@@ -124,10 +125,22 @@ function fMascEx() {
 }
 
 //Mascara CPF
-function mCPF(cpf) {
-  cpf = cpf.replace(/\D/g, "");
-  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-  return cpf;
+function mCPF(valor) {
+  var cpf_cnpj = document.getElementById('lblCpf').innerHTML;
+  var inputCpf = document.getElementById('cpf');
+  if(cpf_cnpj.replace(":","")=="CPF"){
+    inputCpf.maxLength = 14;
+    valor = valor.replace(/\D/g, "");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    return valor;
+  } else {
+    inputCpf.maxLength = 18;
+    valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
+    valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+    valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
+    valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+    return valor;
+  }
 }

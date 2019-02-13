@@ -40,7 +40,7 @@
                                             </div>
                                             <div>
                                                 <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
-                                                <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome"><br>
+                                                <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome" maxlength="200"><br>
                                                 <p id="erro-nome" class="erro_form"></p>
                                             </div>
                                         </div>
@@ -53,7 +53,7 @@
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <label for="email" class="subtitle_register">E-mail:</label><br>
-                                                    <input onblur="valida_email()" type="email" class="format_input" id="email" name="email">
+                                                    <input onblur="valida_email()" type="email" class="format_input" id="email" name="email" maxlength="100">
                                                     <p id="erro-email" class="erro_form"></p>
                                                 </div>
                                             </div>
@@ -91,7 +91,7 @@
                                                         </div>
                                                         <div class="col-xl-5">
                                                             <label for="fantasia" class="subtitle_register">Nome Fantasia:</label>
-                                                            <input type="text" class="format_input" id="fantasia" name="fantasia"><br>
+                                                            <input type="text" class="format_input" id="fantasia" name="fantasia" maxlength="100"><br>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -112,7 +112,7 @@
                                                     <div class="row">
                                                         <div class="col-xl-3">
                                                             <label for="num" class="subtitle_register">Número:</label><br>
-                                                            <input type="text" class="format_input" id="num" name="num"><br>
+                                                            <input type="text" class="format_input" id="num" name="num" maxlength="5"><br>
                                                         </div>
                                                         <div class="col-xl-3">
                                 
@@ -121,7 +121,7 @@
                                                         </div>
                                                         <div class="col-xl-6">
                                                             <label for="bairro" class="subtitle_register">Bairro:</label><br>
-                                                            <input type="text" class="format_input" id="bairro" name="bairro"><br>
+                                                            <input type="text" class="format_input" id="bairro" name="bairro" maxlength="50"><br>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -129,7 +129,7 @@
                                                     <div class="row">
                                                         <div class="col-xl-5">
                                                             <label for="cidade" class="subtitle_register">Cidade:</label><br>
-                                                            <input type="text" class="format_input" id="cidade" name="cidade"><br>
+                                                            <input type="text" class="format_input" id="cidade" name="cidade" maxlength="50"><br>
                                                         </div>
                                                         <div class="col-xl-2">
                                                             <label for="uf" class="subtitle_register">UF:</label><br>

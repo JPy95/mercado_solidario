@@ -22,13 +22,13 @@ class PessoaJuridica extends Pessoa
 
         $query = "INSERT INTO USUARIO(dta_cadastro, nome, tipo_pessoa, cpf_cnpj, email, senha, img_usuario) 
 							values(
-                                '" . NOW() . "',
+                                NOW(),
 								'" . $this->getRazaoSocial() . "',
                                 '" . $this->getTipo_pessoa() . "',
 								'" . $this->getCnpj() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
-                                '" . null . "'                                
+                                null                                
 							)";
 
         $stmt = $con->prepare($query);

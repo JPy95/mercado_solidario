@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Fev-2019 às 22:48
+-- Generation Time: 13-Fev-2019 às 21:55
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -19,8 +19,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mercado_solidario`
+-- Database: `merc_solidario`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `tokenCart` int(11) NOT NULL,
+  `nomePdt` varchar(100) NOT NULL,
+  `vlrPdt` decimal(10,0) NOT NULL,
+  `doacao` int(11) NOT NULL,
+  `idVendedor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -37,7 +51,7 @@ CREATE TABLE `cartao` (
   `validade` varchar(8) NOT NULL,
   `cvv` varchar(3) NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -48,20 +62,7 @@ CREATE TABLE `cartao` (
 CREATE TABLE `categoria` (
   `idCategoria` int(11) NOT NULL,
   `categoria` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `categoria`
---
-
-INSERT INTO `categoria` (`idCategoria`, `categoria`) VALUES
-(1, 'para sua casa'),
-(2, 'esportivos'),
-(3, 'musica e hobies'),
-(4, 'artigos infantis'),
-(5, 'eletronicos'),
-(6, 'comercio e escritorio'),
-(7, 'moda e beleza');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -70,27 +71,16 @@ INSERT INTO `categoria` (`idCategoria`, `categoria`) VALUES
 --
 
 CREATE TABLE `compra` (
-  `idt_Compra` int(11) NOT NULL,
   `idCompra` int(11) NOT NULL,
-  `vlr_total` decimal(10,0) NOT NULL,
-  `forma_pgmt` varchar(20) NOT NULL,
-  `qtde_parcela` int(11) NOT NULL,
-  `id_produto` int(11) NOT NULL,
-  `id_vendedor` int(11) NOT NULL,
-  `id_comprador` int(11) NOT NULL,
-  `id_instituicao` int(11) NOT NULL,
-  `id_endereco` int(11) NOT NULL,
-  `id_cartao` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `compra`
---
-
-INSERT INTO `compra` (`idt_Compra`, `idCompra`, `vlr_total`, `forma_pgmt`, `qtde_parcela`, `id_produto`, `id_vendedor`, `id_comprador`, `id_instituicao`, `id_endereco`, `id_cartao`) VALUES
-(1, 13213, '1500', 'cartao', 6, 1, 1, 1, 1, 1, 1),
-(2, 13213, '1500', 'cartao', 6, 1, 1, 1, 1, 1, 1),
-(3, 13213, '1500', 'cartao', 6, 1, 1, 1, 1, 1, 1);
+  `token_cart` int(11) NOT NULL,
+  `vlrBrt` decimal(10,0) NOT NULL,
+  `vlrEntrega` decimal(10,0) NOT NULL,
+  `descontos` decimal(10,0) NOT NULL,
+  `vlrTotal` decimal(10,0) NOT NULL,
+  `doacaoTotal` decimal(10,0) NOT NULL,
+  `id_inst` int(11) NOT NULL,
+  `id_comprador` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,7 +96,7 @@ CREATE TABLE `conta` (
   `titular` varchar(50) DEFAULT NULL,
   `cpf_cnpj` varchar(22) DEFAULT NULL,
   `id_instituicao` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -118,14 +108,14 @@ CREATE TABLE `endereco` (
   `idEndereco` int(11) NOT NULL,
   `logradouro` varchar(100) NOT NULL,
   `num` varchar(5) NOT NULL,
-  `compl` varchar(10) NOT NULL,
+  `compl` varchar(10) DEFAULT NULL,
   `bairro` varchar(50) NOT NULL,
   `cidade` varchar(50) NOT NULL,
   `uf` varchar(2) NOT NULL,
   `cep` varchar(10) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
-  `id_instituicao` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_inst` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -137,27 +127,27 @@ CREATE TABLE `foto_pdt` (
   `idFoto_pdt` int(11) NOT NULL,
   `url_foto` varchar(200) DEFAULT NULL,
   `id_produto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `intstuicoes`
+-- Estrutura da tabela `instituicoes`
 --
 
-CREATE TABLE `intstuicoes` (
+CREATE TABLE `instituicoes` (
   `idInst` int(11) NOT NULL,
-  `dta_cadastro` date NOT NULL,
-  `razao_social` varchar(100) NOT NULL,
-  `nome_fantasia` varchar(50) DEFAULT NULL,
-  `cnpj` varchar(14) NOT NULL,
+  `data_cadastro` datetime NOT NULL,
+  `razao_social` varchar(200) NOT NULL,
+  `nome_fantasia` varchar(100) DEFAULT NULL,
+  `cnpj` varchar(18) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `senha` varchar(22) NOT NULL,
+  `senha` varchar(200) NOT NULL,
   `descricao` longtext,
   `img_inst` varchar(200) DEFAULT NULL,
-  `causa` varchar(20) NOT NULL,
-  `site` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `causa` varchar(100) NOT NULL,
+  `website` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -174,7 +164,7 @@ CREATE TABLE `produto` (
   `id_tipo` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `id_vendedor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -186,8 +176,8 @@ CREATE TABLE `telefone` (
   `idTelefone` int(11) NOT NULL,
   `num` varchar(10) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
-  `id_instituicao` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_inst` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -199,34 +189,7 @@ CREATE TABLE `tipo` (
   `idTipo` int(11) NOT NULL,
   `tipo` varchar(50) DEFAULT NULL,
   `id_categoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `tipo`
---
-
-INSERT INTO `tipo` (`idTipo`, `tipo`, `id_categoria`) VALUES
-(1, 'Moveis', 1),
-(2, 'Eletrodomesticos', 1),
-(3, 'Utencilios', 1),
-(4, 'Decoracao', 1),
-(5, 'Esporte', 2),
-(6, 'Ginástica', 2),
-(7, 'Ciclismo', 2),
-(8, 'Instrumentos', 3),
-(9, 'CD e DVD', 3),
-(10, 'Livros e Revistas', 3),
-(11, 'Catogoria sem seleção de Tipo', 4),
-(13, 'Video Games', 5),
-(14, 'Computadores e Acessorios', 5),
-(15, 'Celular', 5),
-(16, 'Audio, TV e Fotografia', 5),
-(17, 'Equipamentos', 6),
-(18, 'Mobiliarios', 6),
-(19, 'Beleza e Saude', 7),
-(20, 'Roupas e Calçados', 7),
-(21, 'Bolsas, Malas e Mochilas', 7),
-(22, 'Bijoterias, Relogios e Acessorios', 7);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -236,18 +199,32 @@ INSERT INTO `tipo` (`idTipo`, `tipo`, `id_categoria`) VALUES
 
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
-  `dta_cadastro` date NOT NULL,
+  `dta_cadastro` datetime NOT NULL,
   `nome` varchar(100) NOT NULL,
   `tipo_pessoa` varchar(20) NOT NULL,
-  `cpf_cnpj` varchar(25) NOT NULL,
+  `cpf_cnpj` varchar(18) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `senha` varchar(22) NOT NULL,
+  `senha` varchar(200) NOT NULL,
   `img_usuario` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `dta_cadastro`, `nome`, `tipo_pessoa`, `cpf_cnpj`, `email`, `senha`, `img_usuario`) VALUES
+(8, '2019-02-13 16:52:04', 'João Pedro Alves Rodrigues', 'fisica', '109.307.846-42', 'jpalvees95@gmail.com', '$2y$10$cbsGg6tI/sIwqzWjg8zB3eQ/91ip6gNJ19tfvckOoQNc4aW5638..', NULL),
+(14, '2019-02-13 17:53:34', 'mercado solidario', 'juridica', '10.000.000/0000-00', 'mercado@solidario.com', '$2y$10$9JStBtQcPsv2ztzwi8sJZeXsG5dUO4.wmnes6QNgYkFabkn3psODy', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD PRIMARY KEY (`tokenCart`);
 
 --
 -- Indexes for table `cartao`
@@ -266,7 +243,10 @@ ALTER TABLE `categoria`
 -- Indexes for table `compra`
 --
 ALTER TABLE `compra`
-  ADD PRIMARY KEY (`idt_Compra`);
+  ADD PRIMARY KEY (`idCompra`),
+  ADD KEY `FK_COMPRA_CARRINHO` (`token_cart`),
+  ADD KEY `FK_COMPRA_INSTITUICAO` (`id_inst`),
+  ADD KEY `FK_COMPRA_VENDEDOR` (`id_comprador`);
 
 --
 -- Indexes for table `conta`
@@ -281,7 +261,7 @@ ALTER TABLE `conta`
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`idEndereco`),
   ADD KEY `FK_ENDERECO_USUARIO` (`id_usuario`),
-  ADD KEY `FK_ENDERECO_INSTITUICOES` (`id_instituicao`);
+  ADD KEY `FK_ENDERECO_INSTITUICOES` (`id_inst`);
 
 --
 -- Indexes for table `foto_pdt`
@@ -291,9 +271,9 @@ ALTER TABLE `foto_pdt`
   ADD KEY `FK_FOTOPDT_PRODUTO` (`id_produto`);
 
 --
--- Indexes for table `intstuicoes`
+-- Indexes for table `instituicoes`
 --
-ALTER TABLE `intstuicoes`
+ALTER TABLE `instituicoes`
   ADD PRIMARY KEY (`idInst`);
 
 --
@@ -311,7 +291,7 @@ ALTER TABLE `produto`
 ALTER TABLE `telefone`
   ADD PRIMARY KEY (`idTelefone`),
   ADD KEY `FK_TELEFONE_USUARIO` (`id_usuario`),
-  ADD KEY `FK_TELEFONE_INSTITUICOES` (`id_instituicao`);
+  ADD KEY `FK_TELEFONE_INSTITUICOES` (`id_inst`);
 
 --
 -- Indexes for table `tipo`
@@ -340,13 +320,13 @@ ALTER TABLE `cartao`
 -- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `idt_Compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idCompra` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `conta`
@@ -358,7 +338,7 @@ ALTER TABLE `conta`
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `foto_pdt`
@@ -367,10 +347,10 @@ ALTER TABLE `foto_pdt`
   MODIFY `idFoto_pdt` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `intstuicoes`
+-- AUTO_INCREMENT for table `instituicoes`
 --
-ALTER TABLE `intstuicoes`
-  MODIFY `idInst` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `instituicoes`
+  MODIFY `idInst` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `produto`
@@ -388,13 +368,13 @@ ALTER TABLE `telefone`
 -- AUTO_INCREMENT for table `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -407,16 +387,24 @@ ALTER TABLE `cartao`
   ADD CONSTRAINT `FK_CARTAO_USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
+-- Limitadores para a tabela `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `FK_COMPRA_CARRINHO` FOREIGN KEY (`token_cart`) REFERENCES `carrinho` (`tokenCart`),
+  ADD CONSTRAINT `FK_COMPRA_INSTITUICAO` FOREIGN KEY (`id_inst`) REFERENCES `instituicoes` (`idInst`),
+  ADD CONSTRAINT `FK_COMPRA_VENDEDOR` FOREIGN KEY (`id_comprador`) REFERENCES `usuario` (`idUsuario`);
+
+--
 -- Limitadores para a tabela `conta`
 --
 ALTER TABLE `conta`
-  ADD CONSTRAINT `FK_CONTA_INSTITUICOES` FOREIGN KEY (`id_instituicao`) REFERENCES `intstuicoes` (`idInst`);
+  ADD CONSTRAINT `FK_CONTA_INSTITUICOES` FOREIGN KEY (`id_instituicao`) REFERENCES `instituicoes` (`idInst`);
 
 --
 -- Limitadores para a tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD CONSTRAINT `FK_ENDERECO_INSTITUICOES` FOREIGN KEY (`id_instituicao`) REFERENCES `intstuicoes` (`idInst`),
+  ADD CONSTRAINT `FK_ENDERECO_INSTITUICOES` FOREIGN KEY (`id_inst`) REFERENCES `instituicoes` (`idInst`),
   ADD CONSTRAINT `FK_ENDERECO_USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
@@ -437,7 +425,7 @@ ALTER TABLE `produto`
 -- Limitadores para a tabela `telefone`
 --
 ALTER TABLE `telefone`
-  ADD CONSTRAINT `FK_TELEFONE_INSTITUICOES` FOREIGN KEY (`id_instituicao`) REFERENCES `intstuicoes` (`idInst`),
+  ADD CONSTRAINT `FK_TELEFONE_INSTITUICOES` FOREIGN KEY (`id_inst`) REFERENCES `instituicoes` (`idInst`),
   ADD CONSTRAINT `FK_TELEFONE_USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
