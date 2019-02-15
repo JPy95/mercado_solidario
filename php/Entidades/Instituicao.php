@@ -1,5 +1,4 @@
 <?php
-require_once('Endereco.php');
 require_once('PessoaJuridica.php');
 //adicionar requires
 class Instituicao extends PessoaJuridica
@@ -7,7 +6,6 @@ class Instituicao extends PessoaJuridica
 
     private $nome_fantasia;
     private $descricao;
-    private $tipo_pessoa = 'instituições';
     private $img_inst;
     private $causa;
     private $website;
@@ -25,9 +23,10 @@ class Instituicao extends PessoaJuridica
     {
         $con = $conexao->conectar();
 
-        $query = "INSERT INTO instituicoes(data_cadastro, razao_social, nome_fantasia, cnpj, email, senha, descricao, img_inst, causa, website) 
+        $query = "INSERT INTO instituicoes(data_cadastro, tipo_pessoa, razao_social, nome_fantasia, cnpj, email, senha, descricao, img_inst, causa, website) 
 							values(
 								NOW(),
+                                '" . $this->getTipoPessoa() . "',
 								'" . $this->getRazaoSocial() . "',
 								'" . $this->getNome_fantasia() . "',
                                 '" . $this->getCnpj() . "',
@@ -76,8 +75,18 @@ class Instituicao extends PessoaJuridica
         while($row = $stmt->fetch(PDO::FETCH_OBJ)){
             $idInst = $row->idInst;
         }
-        var_dump($idInst);
         return $idInst;
+    }
+
+    public function confirmaDadosLoginInst($conexao,$email,$senha){
+        $con = $conexao->conectar();
+
+        //organizar o update da imagem
+        $query = "SELECT idInst,nome_fantasia FROM instituicoes WHERE email = '$email' AND senha = '$senha'";
+        $stmt = $con->prepare($query);
+
+
+        return $stmt->execute();;
     }
 
     /**

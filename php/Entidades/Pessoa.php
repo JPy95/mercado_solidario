@@ -3,25 +3,24 @@ require_once('Endereco.php');
 class Pessoa
 
 {
-    private $tipo_pessoa;
+    private $tipoPessoa;
     private $email;
     private $senha;
 
     //construtor
-    public function __construct($tipo_pessoa, $email, $senha)
+    public function __construct($tipoPessoa,$email, $senha)
     {
-        $this->tipo_pessoa = $tipo_pessoa;
         $this->email = $email;
         $this->senha = $senha;
     }
 
     
     
-    public function selectSession($conexao,$email,$senha)
+    public function confirmaDadosLoginUsuario($conexao,$email,$senha)
     {
         $con = $conexao->conectar();
 
-        $query = "SELECT idUsuario, nome, tipo_pessoa FROM usuario WHERE email = $email AND senha = $senha";
+        $query = "SELECT idUsuario, nome, tipo_pessoa FROM usuario WHERE email = '$email' AND senha = '$senha'";
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -128,21 +127,21 @@ class Pessoa
     }
 
     /**
-     * Get the value of tipo_pessoa
-     */
-    public function getTipo_pessoa()
+     * Get the value of tipoPessoa
+     */ 
+    public function getTipoPessoa()
     {
-        return $this->tipo_pessoa;
+        return $this->tipoPessoa;
     }
 
     /**
-     * Set the value of tipo_pessoa
+     * Set the value of tipoPessoa
      *
      * @return  self
-     */
-    public function setTipo_pessoa($tipo_pessoa)
+     */ 
+    public function setTipoPessoa($tipoPessoa)
     {
-        $this->tipo_pessoa = $tipo_pessoa;
+        $this->tipoPessoa = $tipoPessoa;
 
         return $this;
     }

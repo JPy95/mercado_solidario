@@ -55,7 +55,7 @@ function valida_pass() {
   } else {
     pass.classList.add("error");
     document.getElementById("erro-pass").innerHTML =
-      "A senha deve conter no minimo 8 letras.";
+      "A senha deve conter no minimo 8 digitos.";
   }
   return false;
 }
@@ -144,3 +144,4 @@ function mCPF(valor) {
     return valor;
   }
 }
+

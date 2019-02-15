@@ -62,7 +62,7 @@
                                             <div class="row">
                                                 <div class="col-xl-4">
                                                     <label for="pass" class="subtitle_register">Senha:</label><br>
-                                                    <input onblur="valida_pass()" type="password" class="format_input" id="pass" name="pass">
+                                                    <input onblur="valida_pass()" type="password" class="format_input" id="pass" name="pass" data-toggle="tooltip" data-placement="bottom" title="A senha deverá conter no mínimo 8 digitos.">
                                                     <p id="erro-pass" class="erro_form"></p>
                                                 </div>
                                                 <div class="col-xl-4">
@@ -175,7 +175,7 @@
                                         <!--Botão de submissão de dados ao banco de dados.
                                             *Acionado por um validador JS.-->
                                         <div class="btn_cad">
-                                            <input onclick="valida_form()" class="format_btn" type="submit" value="Cadastrar">
+                                            <input onclick="valida_form()" class="format_btn" type="submit" value="Cadastrar" accesskey="enter">
                                         </div>
                                     </div>
                                 </div>

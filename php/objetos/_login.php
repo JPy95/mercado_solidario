@@ -1,27 +1,30 @@
 <?php
-    include_once('conexao.php');
-    include_once('php\Entidades\Pessoa.php');
+    include_once('..\Conexao\Conexao.php');
+    include_once('..\Entidades\Login.php');
 
-    $usuario = new Usuario();
     $conexao = new Conexao();
-
+    
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = $_POST['pass'];
     //$callbackProd = $_POST['callback'];
     
-    $_busca = $usuario->selectSession($conexao,$email,$senha);
+    $login = new Login($email,$senha);
 
-    
-
-    if($_busca->num_rows > 0){
-        session_start();
-        $_SESSION['idCliente'] = $_busca->fetch_assoc()['idCliente'];
-        /*if(!empty($callbackProd)){
-            header("Location: ../pagamento.php?desc_prod=".$callbackProd);
-        }else{
-            header("Location: ../index.php?login=true");
-        }*/
-    }else{
-        header("Location: ../login.php?login=false");
+    if($login->verificaSenha($conexao,$senha)){
+        $result = $login->verificaEmail($conexao,$email);
+        $user = $result->fetch(PDO::FETCH_ASSOC);
+        if($user['tipo_pessoa'] == "instituicao"){
+            session_start();
+            $_SESSION['idUser'] = $user['idInst'];
+            $_SESSION['nome'] = $user['nome_fantasia'];
+            $_SESSION['tipoPessoa'] = $user['tipo_pessoa'];
+        } else {
+            session_start();
+            $_SESSION['idUser'] = $user['idUsuario'];
+            $_SESSION['nome'] = $user['nome'];
+            $_SESSION['tipoPessoa'] = $user['tipo_pessoa'];
+        }
+    } else {
+        header("Location: ../../login.php?login=false");
     }
 ?>

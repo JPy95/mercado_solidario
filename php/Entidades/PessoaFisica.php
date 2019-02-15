@@ -10,7 +10,7 @@ class PessoaFisica extends Pessoa
 
     public function __construct($nome, $tipo_pessoa, $cpf, $email, $senha)
     {
-        parent::__construct($tipo_pessoa, $email, $senha);
+        parent::__construct($tipoPessoa, $email, $senha);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
@@ -25,13 +25,12 @@ class PessoaFisica extends Pessoa
 							values(
                                   NOW(),
 								'" . $this->getNome() . "',
-                                '" . $this->getTipo_pessoa() . "',
+                                '" . $this->getTipoPessoa() . "',
 								'" . $this->getCpf() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
                                 null                                
-							)";
-        var_dump($query);   
+							)";  
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -46,7 +45,7 @@ class PessoaFisica extends Pessoa
                                 email='" . $this->getEmail() . "',
                                 senha='" . $this->getSenha() . "',
                                 img_usuario= '" . $this->getImg_usuario() . "'
-						  WHERE id_usuario = '$idUsuario'";
+						  WHERE id_usuario = $idUsuario";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();

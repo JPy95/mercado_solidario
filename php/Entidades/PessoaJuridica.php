@@ -10,7 +10,7 @@ class PessoaJuridica extends Pessoa
 
     public function __construct($razaoSocial, $tipo_pessoa, $cnpj, $email, $senha)
     {
-        parent::__construct($tipo_pessoa, $email, $senha);
+        parent::__construct($tipoPessoa, $email, $senha);
         $this->razaoSocial = $razaoSocial;
         $this->cnpj = $cnpj;
     }
@@ -24,7 +24,7 @@ class PessoaJuridica extends Pessoa
 							values(
                                 NOW(),
 								'" . $this->getRazaoSocial() . "',
-                                '" . $this->getTipo_pessoa() . "',
+                                '" . $this->getTipoPessoa() . "',
 								'" . $this->getCnpj() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
