@@ -12,6 +12,32 @@ class EsqueceuSenha
                 $this->cpf = $cpf;
         }
 
+        public function verificaDados($conexao,$email,$cpf){
+
+                $con = $conexao->conectar();
+
+                if(strlen($cpf)==14){
+                        $query = "SELECT * FROM USUARIO WHERE EMAIL = '$email' AND CPF_CNPJ = '$cpf'";
+                        
+                        $stmt = $con->prepare($query);
+                        $resul = $stmt->execute();
+
+                        if($stmt->rowCount()>0){
+                                return true;
+                        } else {
+                                $query = "SELECT * FROM instituicoes WHERE EMAIL = '$email' AND CNPJ = '$cpf'";
+                                $stmt = $con->prepare($query);
+                                $resul = $stmt->execute();
+
+                                if($stmt->rowCount()>0){
+                                        return true;
+                                } else {
+                                        return false;
+                                }
+                        }
+                }
+        }
+
 
 
 
