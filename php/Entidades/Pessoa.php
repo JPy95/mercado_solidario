@@ -3,20 +3,45 @@ require_once('Endereco.php');
 class Pessoa
 
 {
-    private $tipoPessoa;
+    private $tipo_pessoa;
     private $email;
     private $senha;
 
     //construtor
-    public function __construct($tipoPessoa,$email, $senha)
+    public function __construct($tipo_pessoa, $email, $senha)
     {
+        $this->tipo_pessoa = $tipo_pessoa;
         $this->email = $email;
         $this->senha = $senha;
     }
 
-    
-    
-    public function confirmaDadosLoginUsuario($conexao,$email,$senha)
+
+
+    public function conferirEmail($conexao)
+    {
+        $con = $conexao->conectar();
+        $query = "SELECT * FROM usuario WHERE email = '" . $this->getEmail() . "';";
+
+        $stmt = $con->prepare($query);
+        $stmt->execute();
+
+        if (($stmt->rowCount()) > 0) {
+            return false;
+        } else {
+            $query = "SELECT * FROM instituicoes WHERE email = '" . $this->getEmail() . "';";
+
+            $stmt = $con->prepare($query);
+            $stmt->execute();
+            if ($stmt->rowCount() > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    }
+
+    public function confirmaDadosLoginUsuario($conexao, $email, $senha)
     {
         $con = $conexao->conectar();
 
@@ -24,7 +49,7 @@ class Pessoa
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
-    
+
 
     /**
      * Get the value of data_cadastro
@@ -126,22 +151,24 @@ class Pessoa
         return $this;
     }
 
+
+
     /**
-     * Get the value of tipoPessoa
-     */ 
-    public function getTipoPessoa()
+     * Get the value of tipo_pessoa
+     */
+    public function getTipo_pessoa()
     {
-        return $this->tipoPessoa;
+        return $this->tipo_pessoa;
     }
 
     /**
-     * Set the value of tipoPessoa
+     * Set the value of tipo_pessoa
      *
      * @return  self
-     */ 
-    public function setTipoPessoa($tipoPessoa)
+     */
+    public function setTipo_pessoa($tipo_pessoa)
     {
-        $this->tipoPessoa = $tipoPessoa;
+        $this->tipo_pessoa = $tipo_pessoa;
 
         return $this;
     }

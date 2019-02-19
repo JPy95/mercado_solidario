@@ -10,9 +10,33 @@ class PessoaJuridica extends Pessoa
 
     public function __construct($razaoSocial, $tipo_pessoa, $cnpj, $email, $senha)
     {
-        parent::__construct($tipoPessoa, $email, $senha);
+        parent::__construct($tipo_pessoa, $email, $senha);
         $this->razaoSocial = $razaoSocial;
         $this->cnpj = $cnpj;
+    }
+
+    public function conferirCnpj($conexao)
+    {
+        $con = $conexao->conectar();
+        $query = "SELECT * FROM instituicoes WHERE cpf_cnpj = '" . $this->getCnpj() . "';";
+
+
+        $stmt = $con->prepare($query);
+        $stmt->execute();
+
+        if (($stmt->rowCount()) > 0) {
+            return false;
+        } else {
+            $query = "SELECT * FROM usuario WHERE cpf_cnpj = '" . $this->getCnpj() . "';";
+            $stmt = $con->prepare($query);
+            $stmt->execute();
+            if ($stmt->rowCount() > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
     }
 
     //insert usuario pessoa juridica
@@ -24,7 +48,7 @@ class PessoaJuridica extends Pessoa
 							values(
                                 NOW(),
 								'" . $this->getRazaoSocial() . "',
-                                '" . $this->getTipoPessoa() . "',
+                                '" . $this->getTipo_pessoa() . "',
 								'" . $this->getCnpj() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
@@ -61,7 +85,7 @@ class PessoaJuridica extends Pessoa
         $stmt = $con->prepare($query);
         $stmt->execute();
 
-        while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+        while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
             $IdUser = $row->idUsuario;
         }
 

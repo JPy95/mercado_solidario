@@ -1,7 +1,7 @@
 <?php
 require_once('Pessoa.php');
 require_once('Endereco.php');
-//adicionar requires
+
 class PessoaFisica extends Pessoa
 {
     private $cpf;
@@ -10,11 +10,37 @@ class PessoaFisica extends Pessoa
 
     public function __construct($nome, $tipo_pessoa, $cpf, $email, $senha)
     {
-        parent::__construct($tipoPessoa, $email, $senha);
+        parent::__construct($tipo_pessoa, $email, $senha);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
 
+    public function conferirCpf($conexao)
+    {
+
+
+        $con = $conexao->conectar();
+        $query = "SELECT * FROM instituicoes WHERE cpf_cnpj = '" . $this->getCpf() . "';";
+
+
+        $stmt = $con->prepare($query);
+        $stmt->execute();
+
+        if (($stmt->rowCount()) > 0) {
+            return false;
+        } else {
+            $query = "SELECT * FROM usuario WHERE cpf_cnpj = '" . $this->getCpf() . "';";
+
+            $stmt = $con->prepare($query);
+            $stmt->execute();
+            if ($stmt->rowCount() > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    }
 
     //insert usuario pessoa fisica
     public function insert($conexao)
@@ -25,13 +51,14 @@ class PessoaFisica extends Pessoa
 							values(
                                   NOW(),
 								'" . $this->getNome() . "',
-                                '" . $this->getTipoPessoa() . "',
+                                '" . $this->getTipo_pessoa() . "',
 								'" . $this->getCpf() . "',
 								'" . $this->getEmail() . "',
 								'" . $this->getSenha() . "',
                                 null                                
-							)";  
+							)";
         $stmt = $con->prepare($query);
+        var_dump($stmt);
         return $stmt->execute();
     }
 
@@ -47,6 +74,7 @@ class PessoaFisica extends Pessoa
                                 img_usuario= '" . $this->getImg_usuario() . "'
 						  WHERE id_usuario = $idUsuario";
 
+        var_dump($query);
         $stmt = $con->prepare($query);
         return $stmt->execute();
     }
@@ -61,7 +89,7 @@ class PessoaFisica extends Pessoa
         $stmt = $con->prepare($query);
         $stmt->execute();
 
-        while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+        while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
             $IdUser = $row->idUsuario;
         }
 

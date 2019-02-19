@@ -25,37 +25,50 @@ $uf = $_POST['uf'];
 $causa = $_POST['causa'];
 $desc = $_POST['desc'];
 
-if ($tipoPessoa == 'instituicao') {
-    $inst = new Instituicao($nome, $tipoPessoa, $nomeFantasia, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT), $desc, $causa, $website);
-    $result1 = $inst->insert($conexao);
-    $endereco = new Endereco($log, $cep, $num, $compl, $bairro, $cidade, $uf, $inst->selectIdInst($cpf_cnpj, $conexao), $tipoPessoa);
-    $result2 = $endereco->insert($conexao);
-    if ($result1 && $result2) {
-        header("Location: ../../login.php?register=true");
+switch ($tipoPessoa) {
 
-    } else {
-        header("Location: ?register=false");
-
-    }
-} else if ($tipoPessoa == 'juridica') {
-    $pj = new PessoaJuridica($nome, $tipoPessoa, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT));
-    $result = $pj->insert($conexao);
-    if ($result) {
-        header("Location: ../../login.php?register=true");
-
-    } else {
-        header("Location: ?register=false");
-
-    }
-} else {
-    $pf = new PessoaFisica($nome, $tipoPessoa, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT));
-    $result = $pf->insert($conexao);
-    if ($result) {
-        header("Location: ../../login.php?register=true");
-
-    } else {
-        header("Location: ?register=false");
-
-    }
+    case "instituicao":
+        $inst = new Instituicao($nome, $tipoPessoa, $nomeFantasia, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT), $desc, $causa, $website);
+        if ($inst->conferirCnpj($conexao) && $inst->conferirEmail($conexao)) {
+            $result1 = $inst->insert($conexao);
+            $endereco = new Endereco($log, $cep, $num, $compl, $bairro, $cidade, $uf, $inst->selectIdInst($cpf_cnpj, $conexao), $tipoPessoa);
+            $result2 = $endereco->insert($conexao);
+            header("Location: ../../login.php?register=true");
+        } elseif ($inst->conferirCnpj($conexao) == false && $inst->conferirEmail($conexao) == true) {
+            header("Location: ../../register.php?cnpj=false");
+        } elseif ($inst->conferirCnpj($conexao) == true && $inst->conferirEmail($conexao) == false) {
+            header("Location: ../../register.php?email=false");
+        } else {
+            header("Location: ../../register.php?register=false");
+        }
+        break;
+    case "juridica":
+        $pj = new PessoaJuridica($nome, $tipoPessoa, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT));
+        if ($pj->conferirCnpj($conexao) && $pj->conferirEmail($conexao)) {
+            $result = $pj->insert($conexao);
+            header("Location: ../../login.php?register=true");
+        } elseif ($pj->conferirCnpj($conexao) == false && $pj->conferirEmail($conexao) == true) {
+            header("Location: ../../register.php?cnpj=false");
+        } elseif ($pj->conferirCnpj($conexao) == true && $pj->conferirEmail($conexao) == false) {
+            header("Location: ../../register.php?email=false");
+        } else {
+            header("Location: ../../register.php?register=false");
+        }
+        break;
+    case "fisica":
+        $pf = new PessoaFisica($nome, $tipoPessoa, $cpf_cnpj, $email, password_hash($senha, PASSWORD_DEFAULT));
+        if ($pf->conferirCpf($conexao) && $pf->conferirEmail($conexao)) {
+            $result = $pf->insert($conexao);
+            header("Location: ../../login.php?register=true");
+        } elseif ($pf->conferirCpf($conexao) == false && $pf->conferirEmail($conexao) == true) {
+            header("Location: ../../register.php?cnpj=false");
+        } elseif ($pf->conferirCpf($conexao) == true && $pf->conferirEmail($conexao) == false) {
+            header("Location: ../../register.php?email=false");
+        } else {
+            header("Location: ../../register.php?register=false");
+        }
+        break;
 }
+
+
 ?>

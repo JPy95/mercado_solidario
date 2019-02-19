@@ -14,18 +14,25 @@ function valida_nome() {
 //Bloqueia o usuario digitar um cpf menor ou maior que 14 digitos.
 function valida_cpf() {
   var cpf = document.getElementById("cpf");
-  var cpf_cnpj = document.getElementById('lblCpf').innerHTML;
-  if (cpf.value.length == 14) {
-    cpf.classList.remove("error");
-    cpf.classList.add("ok");
-    document.getElementById("erro-cpf").innerHTML = "";
-  } else if(cpf.value.length == 18){
-    cpf.classList.remove("error");
-    cpf.classList.add("ok");
-    document.getElementById("erro-cpf").innerHTML = "";
-  } else {
+  var cpf_cnpj = document.getElementById("lblCpf").innerHTML;
+  var query = location.search.slice(1);
+  if (query == "register=false") {
     cpf.classList.add("error");
-    document.getElementById("erro-cpf").innerHTML = cpf_cnpj.replace(":","")+" invalido.";
+    document.getElementById("erro-cpf").innerHTML = "CPF/CNPJ já cadastrado.";
+  } else {
+    if (cpf.value.length == 14) {
+      cpf.classList.remove("error");
+      cpf.classList.add("ok");
+      document.getElementById("erro-cpf").innerHTML = "";
+    } else if (cpf.value.length == 18) {
+      cpf.classList.remove("error");
+      cpf.classList.add("ok");
+      document.getElementById("erro-cpf").innerHTML = "";
+    } else {
+      cpf.classList.add("error");
+      document.getElementById("erro-cpf").innerHTML =
+        cpf_cnpj.replace(":", "") + " invalido.";
+    }
   }
   return false;
 }
@@ -33,14 +40,23 @@ function valida_cpf() {
 //Valida email com o caractere "@" e "."
 function valida_email() {
   var email = document.getElementById("email");
-  if (email.value == "" && (email.value.indexOf("@") < 1 || email.value.indexOf(".") < 7)) {
+  var query = location.search.slice(1);
+  if (query == "register=false") {
     email.classList.add("error");
-    document.getElementById("erro-email").innerHTML = "E-mail invalido.";
+    document.getElementById("erro-email").innerHTML = "E-mail já cadastrado.";
   } else {
-    email.classList.remove("error");
-    email.classList.add("ok");
-    document.getElementById("erro-email").innerHTML = "";
-    return true;
+    if (
+      email.value == "" &&
+      (email.value.indexOf("@") < 1 || email.value.indexOf(".") < 7)
+    ) {
+      email.classList.add("error");
+      document.getElementById("erro-email").innerHTML = "E-mail invalido.";
+    } else {
+      email.classList.remove("error");
+      email.classList.add("ok");
+      document.getElementById("erro-email").innerHTML = "";
+      return true;
+    }
   }
   return false;
 }
@@ -76,7 +92,13 @@ function valida_check_pass() {
 }
 //Valida todos os formularios acima para realizar a submissão ao banco de dados.
 function valida_form() {
-  if ( valida_nome() && valida_cpf() && valida_email() && valida_pass() && valida_check_pass() ) {
+  if (
+    valida_nome() &&
+    valida_cpf() &&
+    valida_email() &&
+    valida_pass() &&
+    valida_check_pass()
+  ) {
     document.register.submit();
   }
 }
@@ -84,21 +106,20 @@ function valida_form() {
 //função para nome
 function alterarNome() {
   var btnIntituicoes = document.getElementById("btnInst");
-  
 
   if (btnIntituicoes.attributes[6].value == "false") {
     document.getElementById("lblNome").innerHTML = "Razão Social:";
     document.getElementById("lblCpf").innerHTML = "CNPJ:";
-    document.getElementById('tipo_pessoa').value = "instituicao" 
+    document.getElementById("tipo_pessoa").value = "instituicao";
   } else {
     document.getElementById("lblNome").innerHTML = "Nome:";
     document.getElementById("lblCpf").innerHTML = "CPF:";
   }
 }
 
-function alteraNome(){
+function alteraNome() {
   var selectTipoPessoa = document.getElementById("tipo_pessoa").value;
-  if(selectTipoPessoa == "juridica"){
+  if (selectTipoPessoa == "juridica") {
     document.getElementById("lblNome").innerHTML = "Razão Social:";
     document.getElementById("lblCpf").innerHTML = "CNPJ:";
   } else {
@@ -126,9 +147,9 @@ function fMascEx() {
 
 //Mascara CPF
 function mCPF(valor) {
-  var cpf_cnpj = document.getElementById('lblCpf').innerHTML;
-  var inputCpf = document.getElementById('cpf');
-  if(cpf_cnpj.replace(":","")=="CPF"){
+  var cpf_cnpj = document.getElementById("lblCpf").innerHTML;
+  var inputCpf = document.getElementById("cpf");
+  if (cpf_cnpj.replace(":", "") == "CPF") {
     inputCpf.maxLength = 14;
     valor = valor.replace(/\D/g, "");
     valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
@@ -144,4 +165,3 @@ function mCPF(valor) {
     return valor;
   }
 }
-

@@ -10,7 +10,7 @@ class Instituicao extends PessoaJuridica
     private $causa;
     private $website;
 
-    public function __construct($razaoSocial,$tipo_pessoa,$nome_fantasia,$cnpj,$email,$senha,$descricao,$causa,$website)
+    public function __construct($razaoSocial, $tipo_pessoa, $nome_fantasia, $cnpj, $email, $senha, $descricao, $causa, $website)
     {
         parent::__construct($razaoSocial, $tipo_pessoa, $cnpj, $email, $senha);
         $this->nome_fantasia = $nome_fantasia;
@@ -26,7 +26,7 @@ class Instituicao extends PessoaJuridica
         $query = "INSERT INTO instituicoes(data_cadastro, tipo_pessoa, razao_social, nome_fantasia, cnpj, email, senha, descricao, img_inst, causa, website) 
 							values(
 								NOW(),
-                                '" . $this->getTipoPessoa() . "',
+                                '" . $this->getTipo_pessoa() . "',
 								'" . $this->getRazaoSocial() . "',
 								'" . $this->getNome_fantasia() . "',
                                 '" . $this->getCnpj() . "',
@@ -72,13 +72,14 @@ class Instituicao extends PessoaJuridica
         $stmt = $con->prepare($query);
         $stmt->execute();
 
-        while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+        while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
             $idInst = $row->idInst;
         }
         return $idInst;
     }
 
-    public function confirmaDadosLoginInst($conexao,$email,$senha){
+    public function confirmaDadosLoginInst($conexao, $email, $senha)
+    {
         $con = $conexao->conectar();
 
         //organizar o update da imagem

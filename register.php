@@ -2,7 +2,8 @@
     <head>
         <?php include_once('php\estruturas_base\head.php') ?>
     </head>
-    <body>
+    <body >
+        
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <img src="img\banners\banner1.jpg" class="banner">
         <div class="register_banner">
@@ -185,7 +186,7 @@
                 </div>
             </div>
         </form>
-        <?php include_once('php\estruturas_base\footer.php')?>
+        <?php include_once('php\estruturas_base\footer.php') ?>
         <script type="text/javascript" src="js\validacao_resgister.js"></script>
         <script type="text/javascript" src="js\cep.js"></script>
     </body>

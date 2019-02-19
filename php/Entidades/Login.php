@@ -1,32 +1,38 @@
 <?php
 
-class Login {
+class Login
+{
 
     private $email;
     private $senha;
 
-    public function __construct($email,$senha){
-        
+    //consultar primeiro as tabelas instituições
+
+    public function __construct($email, $senha)
+    {
+
         $this->email = $email;
         $this->senha = $senha;
     }
 
-    public function verificaSenha($conexao,$senha){
+    public function verificaSenha($conexao, $senha)
+    //consertar email
+    {
         $con = $conexao->conectar();
 
-        $query = "SELECT senha FROM usuario WHERE email = '".$this->getEmail()."';";
+        $query = "SELECT senha FROM usuario WHERE email = '" . $this->getEmail() . "';";
 
         $stmt = $con->prepare($query);
         $stmt->execute();
-        if($stmt->rowCount()>0){
+        if ($stmt->rowCount() > 0) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             return password_verify($this->getSenha(), $user['senha']);
         } else {
-            $query = "SELECT senha FROM instituicoes WHERE email = '".$this->getEmail()."';";
+            $query = "SELECT senha FROM instituicoes WHERE email = '" . $this->getEmail() . "';";
 
             $stmt = $con->prepare($query);
             $stmt->execute();
-            if($stmt->rowCount()>0){
+            if ($stmt->rowCount() > 0) {
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 return password_verify($this->getSenha(), $user['senha']);
             } else {
@@ -35,23 +41,24 @@ class Login {
         }
     }
 
-    public function verificaEmail($conexao,$email){
+    public function verificaEmail($conexao, $email)
+    {
         $con = $conexao->conectar();
 
-        $query = "SELECT * FROM usuario WHERE email = '".$this->getEmail()."';";
+        $query = "SELECT * FROM usuario WHERE email = '" . $this->getEmail() . "';";
 
         $stmt = $con->prepare($query);
         $stmt->execute();
-        
-        
-        if(($stmt->rowCount()) > 0){
+
+
+        if (($stmt->rowCount()) > 0) {
             return $stmt;
         } else {
-            $query = "SELECT * FROM instituicoes WHERE email = '".$this->getEmail()."';";
+            $query = "SELECT * FROM instituicoes WHERE email = '" . $this->getEmail() . "';";
 
             $stmt = $con->prepare($query);
             $stmt->execute();
-            if($stmt->rowCount() > 0){
+            if ($stmt->rowCount() > 0) {
                 return $stmt;
             } else {
                 return false;
@@ -61,7 +68,7 @@ class Login {
 
     /**
      * Get the value of email
-     */ 
+     */
     public function getEmail()
     {
         return $this->email;
@@ -71,7 +78,7 @@ class Login {
      * Set the value of email
      *
      * @return  self
-     */ 
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -81,7 +88,7 @@ class Login {
 
     /**
      * Get the value of senha
-     */ 
+     */
     public function getSenha()
     {
         return $this->senha;
@@ -91,7 +98,7 @@ class Login {
      * Set the value of senha
      *
      * @return  self
-     */ 
+     */
     public function setSenha($senha)
     {
         $this->senha = $senha;
