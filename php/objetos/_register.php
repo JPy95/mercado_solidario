@@ -61,7 +61,7 @@ switch ($tipoPessoa) {
             $result = $pf->insert($conexao);
             header("Location: ../../login.php?register=true");
         } elseif ($pf->conferirCpf($conexao) == false && $pf->conferirEmail($conexao) == true) {
-            header("Location: ../../register.php?cnpj=false");
+            header("Location: ../../register.php?cpf_cnpj=false");
         } elseif ($pf->conferirCpf($conexao) == true && $pf->conferirEmail($conexao) == false) {
             header("Location: ../../register.php?email=false");
         } else {

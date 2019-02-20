@@ -2,7 +2,7 @@
     <head>
         <?php include_once('php\estruturas_base\head.php') ?>
     </head>
-    <body >
+    <body>
         
         <?php include_once('php\estruturas_base\nav_principal.php') ?>
         <img src="img\banners\banner1.jpg" class="banner">
@@ -18,7 +18,7 @@
                             <!--Botão Collapse para abertura de formulario de Instituições-->
                             <div class="col-12 register_btn_pf_inst">
                                 <span>
-                                    <button id="btnInst" class="register_btn_inst" onclick="alterarNome()" type="button" data-toggle="collapse"  data-target="#form_inst" aria-expanded="false" aria-controls="form_inst">Instituições</button>
+                                    <button id="btnInst" class="register_btn_inst" type="button" data-toggle="collapse"  data-target="#form_inst" aria-expanded="false" aria-controls="form_inst">Instituições</button>
                                 </span>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                                         <div class="col-xl-12">
                                             <div class="">
                                                 <label for="tipo_pessoa" id="lblPessoa" class="subtitle_register">Tipo de Pessoa:</label><br>
-                                                <select name="pessoa" id="tipo_pessoa" class="format_select_tipo_pessoa" onmouseout="alteraNome()">
+                                                <select name="pessoa" id="tipo_pessoa" class="format_select_tipo_pessoa">
                                                     <option value="fisica" class="format_option_tipo_pessoa">Pessoa Física</option>
                                                     <option value="juridica" class="format_option_tipo_pessoa">Pessoa Jurídica</option>
                                                     <option value="instituicao" class="format_option_tipo_pessoa">Instituição</option>
@@ -41,7 +41,7 @@
                                             </div>
                                             <div>
                                                 <label for="nome" id="lblNome" class="subtitle_register">Nome:</label><br>
-                                                <input onblur="valida_nome()" type="text" class="format_input" id="nome" name="nome" maxlength="200"><br>
+                                                <input  type="text" class="format_input" id="nome" name="nome" maxlength="200"><br>
                                                 <p id="erro-nome" class="erro_form"></p>
                                             </div>
                                         </div>
@@ -49,12 +49,12 @@
                                             <div class="row">
                                                 <div class="col-xl-4">
                                                     <label for="cpf" id="lblCpf" class="subtitle_register">CPF:</label><br>
-                                                    <input id="cpf" name="cpf" type="text" onkeydown="fMasc( this, mCPF )" onblur="valida_cpf()" class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
+                                                    <input id="cpf" name="cpf" type="text"  class="form-control input_format_cpf_cnpj" aria-describedby="basic-addon1">
                                                     <p id="erro-cpf" class="erro_form"></p>
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <label for="email" class="subtitle_register">E-mail:</label><br>
-                                                    <input onblur="valida_email()" type="email" class="format_input" id="email" name="email" maxlength="100">
+                                                    <input  type="email" class="format_input" id="email" name="email" maxlength="100">
                                                     <p id="erro-email" class="erro_form"></p>
                                                 </div>
                                             </div>
@@ -63,12 +63,12 @@
                                             <div class="row">
                                                 <div class="col-xl-4">
                                                     <label for="pass" class="subtitle_register">Senha:</label><br>
-                                                    <input onblur="valida_pass()" type="password" class="format_input" id="pass" name="pass" data-toggle="tooltip" data-placement="bottom" title="A senha deverá conter no mínimo 8 digitos.">
+                                                    <input  type="password" class="format_input" id="pass" name="pass" data-toggle="tooltip" data-placement="bottom" title="A senha deverá conter no mínimo 8 digitos.">
                                                     <p id="erro-pass" class="erro_form"></p>
                                                 </div>
                                                 <div class="col-xl-4">
                                                     <label for="confirma_pass" class="subtitle_register">Confirma Senha:</label><br>
-                                                    <input onblur="valida_check_pass()" type="password" class="format_input" name="confirma_pass" id="confirma_pass">
+                                                    <input  type="password" class="format_input" name="confirma_pass" id="confirma_pass">
                                                     <p id="erro-confirma_pass" class="erro_form"></p>
                                                 </div>
                                             </div>
@@ -176,7 +176,7 @@
                                         <!--Botão de submissão de dados ao banco de dados.
                                             *Acionado por um validador JS.-->
                                         <div class="btn_cad">
-                                            <input onclick="valida_form()" class="format_btn" type="submit" value="Cadastrar" accesskey="enter">
+                                            <input id="btnSubmit" class="format_btn" type="submit" value="Cadastrar" accesskey="enter">
                                         </div>
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
             </div>
         </form>
         <?php include_once('php\estruturas_base\footer.php') ?>
-        <script type="text/javascript" src="js\validacao_resgister.js"></script>
+        <script type="text/javascript" src="js\validacao_register-v2.js"></script>
         <script type="text/javascript" src="js\cep.js"></script>
     </body>
 </html>
