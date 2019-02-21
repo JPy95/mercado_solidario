@@ -14,15 +14,17 @@
                         <h1 class="login_titulo">Recuperar senha</h1>
                     </div>
                     <div class="login_form">
-                        <form action="php\formularios\_login.php" method="post">
+                        <form action="php\objetos\_recuperarSenha.php" method="post">
                             <div class="form_login col-12">
-                                <label for="email" class="login_form_text">Nova senha:</label><br>
-                                <input type="email" id="email" class="format_input col-12"><br>
-                                <label for="pass" class="login_form_text">Confirmar senha:</label><br>
-                                <input type="password" id="pass" class="format_input col-12">
+                                <label for="pass" class="login_form_text">Nova senha:</label><br>
+                                <input type="password" id="pass" class="format_input col-12"><br>
+                                <p id="erro-pass" class="erro_form"></p><br>
+                                <label for="confirmaPass" class="login_form_text">Confirmar senha:</label><br>
+                                <input type="password" id="confirmaPass" class="format_input col-12"><br>
+                                <p id="erro-confirma_pass" class="erro_form"></p><br>
                             </div>
                             <div class="btn_form_login">
-                                <input type="submit" value="Confirmar" class="format_btn" onclick="validacao_login()">
+                                <input id="btnLogin" type="submit" value="Confirmar" class="format_btn">
                             </div>
                         </form>
                     </div>
@@ -31,6 +33,6 @@
         </div>
         <!--Rodapé-->
         <?php include_once('php\estruturas_base\footer.php')?>
-        <script type="text/javascript" src="js\validacao_login.js"></script>
+        <script type="text/javascript" src="js\recuperar_senha.js"></script>
   </body>
 </html>

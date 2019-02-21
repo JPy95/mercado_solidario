@@ -3,7 +3,7 @@
         <?php include_once('php\estruturas_base\head.php')?>
         <link rel="stylesheet" type="text/css" href="css\modals.css">
     </head>
-    <body onload="validacao_login()">
+    <body>
         <?php include_once('php\estruturas_base\modals\esqueceu_senha.php')?>
         <nav>
             <?php include_once('php\estruturas_base\nav_principal.php')?>
@@ -26,7 +26,7 @@
                                 <span class="login_span">Não possui cadastro? </span><a href="register.php" class="login_link"> Cadastre-se</a>
                             </div>
                             <div class="btn_form_login">
-                                <input type="submit" value="Acessar" class="format_btn" onclick="validacao_login()">
+                                <input id="btnLogin" type="submit" value="Acessar" class="format_btn">
                             </div>
                         </form>
                     </div>

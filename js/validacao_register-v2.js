@@ -32,7 +32,6 @@ function ValidacaoRegister(){
         this.btnIntituicoes.addEventListener("click",this.modificarNome.bind(this),false);
         this.tipoPessoa.addEventListener("mouseout",this.modificaTituloNome.bind(this),false);
         this.cpf.addEventListener("keydown",this.retornaMascara.bind(this),false);
-        //this.cpf.addEventListener("keydown",this.mCPF.bind(this));
         //abaixo a função pos envido de dados
         window.addEventListener("load",this.validarRetorno.bind(this),false);
     }

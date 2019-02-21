@@ -1,52 +1,67 @@
-function validacao_login() {
-    var email = document.getElementById('e-mail');
-    var pass = document.getElementById('pass');
-    var query = location.search;
+function ValidarLogin (){
 
-    var query = query.replace("?","");
+    this.init = function(){
+        this.email = document.getElementById('e-mail');
+        this.pass = document.getElementById('pass');
+        this.tipoPessoa = document.getElementById('tipo_pessoa');
+        this.lblCpf = document.getElementById('lblCpf');
+        this.cpf = document.getElementById('cpf'); 
+        this.query = location.search;
+    }
 
-    if(query == "login=false"){
-        email.classList.add('error');
-        pass.classList.add('error');
+    this.bind = function(){
+        window.addEventListener('load',this.validacao_login.bind(this),false);
+        document.getElementById('btnLogin').addEventListener('click',this.validacao_login.bind(this),false);
+        this.tipoPessoa.addEventListener('mouseout',this.alteraCPF.bind(this),false);
+        this.cpf.addEventListener("keydown",this.retornaMascara.bind(this),false);
+    }
+
+    //recupera o retorno da url para mostrar qual dado esta errado
+    this.validacao_login = function() {
+        if(this.query.replace("?","") == "login=false"){
+            this.email.classList.add('error');
+            this.pass.classList.add('error');
+        }
+    }
+
+    //altera o tipo de cadastro de pessoa (CPF ou CNPJ)
+    this.alteraCPF = function(){
+        if(this.tipoPessoa.value == "juridica" || this.tipoPessoa.value == "instituicao"){
+            this.lblCpf.innerHTML = "CNPJ:";
+        } else {
+            this.lblCpf.innerHTML = "CPF:";
+        }
+    }
+
+    //adiciona mascara do CPF ou CNPJ
+    this.retornaMascara = function(){
+        this.cpf.value = this.mCPF();
+    }
+
+    this.mCPF = function() {
+        let valor = this.cpf.value;
+        if (this.lblCpf.innerHTML.replace(":", "") == "CPF") {
+            this.cpf.maxLength = 14;
+            valor = valor.replace(/\D/g, "");
+            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+            valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            return valor;
+        } else {
+            this.cpf.maxLength = 18;
+            valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
+            valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+            valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
+            valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+            return valor;
+        }
     }
 }
 
-function alteraCPF(){
-    var tipoPessoa = document.getElementById('tipo_pessoa').value;
-    var cpf = document.getElementById('lblCpf');
-    if(tipoPessoa == "juridica" || tipoPessoa == "instituicao"){
-        cpf.innerHTML = "CNPJ:";
-    } else {
-        cpf.innerHTML = "CPF:";
-    }
-}
+var validarLogin = new ValidarLogin();
+validarLogin.init();
+validarLogin.bind();
 
-function fMasc(objeto, mascara) {
-    obj = objeto;
-    masc = mascara;
-    setTimeout("fMascEx()", 1);
-}
 
-function fMascEx() {
-    obj.value = masc(obj.value);
-}
 
-function mascaraCPF(valor) {
-    var cpf_cnpj = document.getElementById('lblCpf').innerHTML;
-    var inputCpf = document.getElementById('cpf');
-    if(cpf_cnpj.replace(":","")=="CPF"){
-      inputCpf.maxLength = 14;
-      valor = valor.replace(/\D/g, "");
-      valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
-      valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
-      valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-      return valor;
-    } else {
-      inputCpf.maxLength = 18;
-      valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
-      valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-      valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
-      valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
-      return valor;
-    }
-  }
+
