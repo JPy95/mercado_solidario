@@ -35,7 +35,7 @@ switch ($tipoPessoa) {
             $result2 = $endereco->insert($conexao);
             header("Location: ../../login.php?register=true");
         } elseif ($inst->conferirCnpj($conexao) == false && $inst->conferirEmail($conexao) == true) {
-            header("Location: ../../register.php?cnpj=false");
+            header("Location: ../../register.php?cpf_cnpj=false");
         } elseif ($inst->conferirCnpj($conexao) == true && $inst->conferirEmail($conexao) == false) {
             header("Location: ../../register.php?email=false");
         } else {

@@ -4,9 +4,9 @@ function ValidacaoRegister(){
     this.init = function(){
         this.nome = document.getElementById("nome");
         this.erroNome = document.getElementById("erro-nome");
-        this.lblNome = document.getElementById("lblNome").innerHTML;
+        this.lblNome = document.getElementById("lblNome");
         this.cpf = document.getElementById("cpf");
-        this.lblCpf = document.getElementById("lblCpf").innerHTML;
+        this.lblCpf = document.getElementById("lblCpf");
         this.erroCpf = document.getElementById("erro-cpf");
         this.email = document.getElementById("email");
         this.erroEmail = document.getElementById("erro-email");
@@ -29,11 +29,12 @@ function ValidacaoRegister(){
         this.pass.addEventListener("blur",this.validarSenha.bind(this),false);
         this.confirmaPass.addEventListener("blur",this.validarConfirmaSenha.bind(this),false);
         this.btnSubmit.addEventListener("click",this.validarFormulario.bind(this),false);
-        this.btnIntituicoes.addEventListener("click",this.midificaTituloNome.bind(this),false);
-        this.tipoPessoa.addEventListener("mouseout",this.midificaTituloNome.bind(this),false);
-        this.cpf.addEventListener("keydown",this.fMasc.bind(this,this.mCPF),false);
+        this.btnIntituicoes.addEventListener("click",this.modificarNome.bind(this),false);
+        this.tipoPessoa.addEventListener("mouseout",this.modificaTituloNome.bind(this),false);
+        this.cpf.addEventListener("keydown",this.retornaMascara.bind(this),false);
+        //this.cpf.addEventListener("keydown",this.mCPF.bind(this));
         //abaixo a função pos envido de dados
-        document.addEventListener("load",this.validarRetorno,false);
+        window.addEventListener("load",this.validarRetorno.bind(this),false);
     }
 
 
@@ -119,18 +120,22 @@ function ValidacaoRegister(){
     }
 
     //Função para alterar o subtitulo de Nome para Razão Sociao, caso o usuario clique no botão de instituições. Ou seleciona a Opção PJ.
-    this.midificaTituloNome = function() {
-        if (this.btnIntituicoes.attributes[5].value == "false") {
-            this.lblNome = "Razão Social:";
-            this.lblNome = "CNPJ:";
-            this.tipoPessoa.value = "instituicao";
-        } else if (this.tipoPessoa == "juridica") {
-            this.lblNome = "Razão Social:";
-            this.lblCpf = "CNPJ:";
+    this.modificaTituloNome = function() {
+        if (this.tipoPessoa.value == "instituicao") {
+            this.lblNome.innerHTML = "Razão Social:";
+            this.lblCpf.innerHTML = "CNPJ:";
+        } else if (this.tipoPessoa.value == "juridica") {
+            this.lblNome.innerHTML = "Razão Social:";
+            this.lblCpf.innerHTML = "CNPJ:";
         } else {
-            this.lblNome = "Nome:";
-            this.lblCpf = "CPF:";
+            this.lblNome.innerHTML = "Nome:";
+            this.lblCpf.innerHTML = "CPF:";
         }
+    }
+
+    this.modificarNome = function(){
+        this.tipoPessoa.value = "instituicao";
+        this.modificaTituloNome();
     }
 
     //Função para eliminar campos vazios
@@ -139,17 +144,13 @@ function ValidacaoRegister(){
     }
 
     //Abaixo são funções add mascaras no cpf e cnpj
-    this.fMasc = function(objeto, mascara) {
-        obj = objeto;
-        masc = mascara;
-        setTimeout(this.fMascEx(), 1);
+    this.retornaMascara = function(){
+        this.cpf.value = this.mCPF();
     }
-    this.fMascEx = function() {
-        obj.value = masc(obj.value);
-    }
+
     this.mCPF = function() {
         let valor = this.cpf.value;
-        if (this.lblCpf.replace(":", "") == "CPF") {
+        if (this.lblCpf.innerHTML.replace(":", "") == "CPF") {
             this.cpf.maxLength = 14;
             valor = valor.replace(/\D/g, "");
             valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
@@ -168,18 +169,17 @@ function ValidacaoRegister(){
     
     //Abaixo funções de retorno apos dados serem enviados para o BD
     this.validarRetorno = function(){
-
         if(this.query == "register=false"){
             this.cpf.classList.add("error");
-            this.erroCpf = "CPF/CNPJ já cadastrado.";
+            this.erroCpf.innerHTML = "CPF/CNPJ já cadastrado.";
             this.email.classList.add("error");
-            this.erroEmail = "E-mail já cadastrado.";
+            this.erroEmail.innerHTML = "E-mail já cadastrado.";
         } else if (this.query == "cpf_cnpj=false"){
             this.cpf.classList.add("error");
-            this.erroCpf = "CPF/CNPJ já cadastrado.";
+            this.erroCpf.innerHTML = "CPF/CNPJ já cadastrado.";
         } else if (this.query == "email=false"){
             this.email.classList.add("error");
-            this.erroEmail = "E-mail já cadastrado.";
+            this.erroEmail.innerHTML = "E-mail já cadastrado.";
         } else {
             return true;
         }
