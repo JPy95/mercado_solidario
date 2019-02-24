@@ -1,7 +1,6 @@
 <?php
-include_once('php\Conexao\Conexao.php');
+    include_once('php\Conexao\Conexao.php');
 
-if (isset($_GET['idCat'])) {
 
-}
+    //elaborar metodo de encerrar sessão
 ?>

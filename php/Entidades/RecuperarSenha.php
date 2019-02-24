@@ -13,7 +13,7 @@
             $stmt->execute();
             if ($stmt->rowCount() > 0) {
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                return password_verify($this->getSenha(), $user['senha']);
+                return password_verify($senha, $user['senha']);
             } else {
                 $query = "SELECT senha FROM instituicoes WHERE idInst = $idUsuario";
 
@@ -21,17 +21,25 @@
                 $stmt->execute();
                 if ($stmt->rowCount() > 0) {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                    return password_verify($this->getSenha(), $user['senha']);
+                    var_dump(password_verify($senha, $user['senha']));
+                    return password_verify($senha, $user['senha']);
                 } else {
                     return false;
                 }
             }
         }
-        //terminar de 
-        public function update($conexao,$senha){
+
+        public function update($conexao,$senha,$tipoPessoa,$idUsuario){
             $con = $conexao->conectar();
 
-            $query = "UPDATE";
+            if($tipoPessoa =="instituicao"){
+                $query = "UPDATE instituicoes SET senha = '$senha' WHERE idInst = $idUsuario";
+            } else {
+                $query = "UPDATE usuario SET senha = '$senha' WHERE idUsuario = $idUsuario";
+            }
+
+            $stmt = $con->prepare($query);
+            return $stmt->execute();
         }
 
         /**

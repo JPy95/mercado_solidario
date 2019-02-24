@@ -20,13 +20,36 @@
             <a href="login.php"><img class="user borda-nav" src="img\icones\avatar.png"></a>
             <div class="nav_bar_links">
                 <li class="nav-item active">
-                    <a href="login.php" class="link_nav">Entrar</a><span class="span_nav">/Bem Vindo Usuário</span><br>
+                    <?php
+                        session_start();
+                        if(!isset( $_SESSION['nome'])){
+                            echo '<a href="login.php" class="link_nav">Entrar</a>';
+                        } else {
+                            $nomeCompleto = explode(' ',$_SESSION['nome']);
+                            $primeiroNome = array_shift($nomeCompleto);
+                            echo '<span class="span_nav">Bem vindo(a) '. $primeiroNome  .'</span><br>';
+                        }
+                    ?>
                 </li>
                 <li class="nav-item">
-                    <a href="perfil_user.php" class="link_nav">Meu Perfil</a><br>
+                    <?php
+                        if(!isset( $_SESSION['nome'])){
+                            echo '<a href="perfil_user.php" class="link_nav" style="display: none;">Meu Perfil</a><br>';
+                        } else {
+                            echo '<a href="perfil_user.php" class="link_nav">Meu Perfil</a><br>';
+                        }
+                    ?>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="" class="link_nav">Sair</a>
+                    <?php
+                    //elaborar metodo de finalizar sessão
+                        if(!isset($_SESSION['nome'])){
+                            echo '<a href="" class="link_nav" style="display: none;">Sair</a';
+                        } else {
+                            echo '<a href="index.php?act=logout" class="link_nav">Sair</a';
+                        }
+                    ?>
+                    >
                 </li>
             </div>
         </div>

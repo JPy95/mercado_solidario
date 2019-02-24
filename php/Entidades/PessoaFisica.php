@@ -58,7 +58,6 @@ class PessoaFisica extends Pessoa
                                 null                                
 							)";
         $stmt = $con->prepare($query);
-        var_dump($stmt);
         return $stmt->execute();
     }
 

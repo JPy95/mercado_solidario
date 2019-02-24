@@ -5,11 +5,13 @@ function RecuperarSenha(){
         this.erroPass = document.getElementById('erro-pass');
         this.confirmaPass = document.getElementById('confirmaPass');
         this.erroConfirmaPass = document.getElementById('erro-confirma_pass');
+        this.query = location.search;
     }
 
     this.bind = function(){
         this.pass.addEventListener("blur",this.validarSenha.bind(this),false);
         this.confirmaPass.addEventListener("blur",this.validarConfirmaSenha.bind(this),false);
+        window.addEventListener("load",this.validarRetorno.bind(this),false);
     }
 
     //Validação de senha com no minimo 8 digitos
@@ -27,7 +29,7 @@ function RecuperarSenha(){
     }
     //Validação a igualdade das senhas
     this.validarConfirmaSenha = function(){
-        if (this.confirmaPass.value == document.getElementById("pass").value) {
+        if (this.confirmaPass.value == this.pass.value) {
             this.confirmaPass.classList.remove("error");
             this.confirmaPass.classList.add("ok");
             this.erroConfirmaPass.innerHTML = "";
@@ -35,6 +37,14 @@ function RecuperarSenha(){
         } else {
             this.confirmaPass.classList.add("error");
             this.erroConfirmaPass.innerHTML = "As senhas devem ser iguais.";
+            return false;
+        }
+    }
+
+    this.validarRetorno = function(){
+        if(this.query.replace("?","") == "reucuperarSenha=false"){
+            this.pass.classList.add("error");
+            this.erroPass.innerHTML = "A senha não pode ser igual a anterior.";
             return false;
         }
     }
