@@ -10,7 +10,13 @@
             <img class="img_side foto_user" src="img\icones\avatar_side.png">
         </div>
         <div>
-            <a href="perfil_user.php" class="texte_title_side">Nome do Usuário</a>
+            <?php
+                if(!isset( $_SESSION['nome'])){
+                    echo '<a href="perfil_user.php" class="texte_title_side">Nome do Usuário</a';
+                } else {
+                    echo '<a href="perfil_user.php" class="texte_title_side">'.$_SESSION['nome'].'</a>';
+                }
+            ?>
         </div>
     </div>
     <div class="dropdown show">

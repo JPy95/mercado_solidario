@@ -8,7 +8,15 @@
             <?php include_once('php\estruturas_base\sidebar_menu.php')?>
             <div id="slide_perfil">
                 <div class="title_slide">
-                    <h1 class="style_title_slide">Olá Usuário!</h1>
+                    <?php
+                        if(!isset( $_SESSION['nome'])){
+                            echo '<h1 class="style_title_slide">Olá Usuário!</h1>';
+                        } else {
+                            $nomeCompleto = explode(' ',$_SESSION['nome']);
+                            $primeiroNome = array_shift($nomeCompleto);
+                            echo '<h1 class="style_title_slide">Olá '.$primeiroNome.'!</h1>';
+                        }
+                    ?>
                 </div>
                 <div id="slide">
                     <div class="slide_group">
@@ -24,7 +32,7 @@
                             <img src="img\icones\anuncios.png" class="img_slide"><a href="anuncios.php"><span><h4 class="style_subtitle_slide subtitle_slide">Anúncios:</h4></span></a> 
                         </div>
                         <div class="text_slide">
-                            <span>Você possui <label class="desc_slide">x</label> anúncios ativos.</span>
+                            <span>Você possui <label class="desc_slide">x</label> anúncios ativos.</span><br>
                             <span>Você possui <label class="desc_slide">x</label> anúncios finalizados.</span>
                         </div>
                     </div>

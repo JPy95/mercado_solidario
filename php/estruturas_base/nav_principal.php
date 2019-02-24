@@ -42,7 +42,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <?php
-                    //elaborar metodo de finalizar sessão
+                        //elaborar metodo de finalizar sessão
                         if(!isset($_SESSION['nome'])){
                             echo '<a href="" class="link_nav" style="display: none;">Sair</a';
                         } else {

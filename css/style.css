@@ -1545,7 +1545,7 @@ input[type="file"] {
 .title_sidebar {
   background-color: #ff182b;
   display: block;
-  height: 135px;
+  height: auto;
   text-align: center;
   padding-top: 10px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.2);
@@ -1561,8 +1561,13 @@ input[type="file"] {
   font-family: Segoe UI;
   font-weight: 500;
   font-style: italic;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
+}
+
+.texte_title_side:hover{
+  text-decoration: none;
+  color: white;
 }
 
 .btn_dropdown {
