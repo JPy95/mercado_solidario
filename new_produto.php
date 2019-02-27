@@ -9,20 +9,17 @@
         <div id="perfil">
             <?php include_once('php\estruturas_base\sidebar_menu.php')?>
             <div id="slide_perfil">
+            <?php include_once('php\objetos\_newProduto.php')?>
                 <form action="php\objetos\_newProduto.php" method="post">
                     <div class="title_slide">
                         <h1 class="style_title_slide style_title_pdt">Novo Anúncio</h1>
                     </div>
                     <div class="col-xl-12">
                         <div class="col-xl-12">
-                            <label for="" class="subtitle_register style_subtitle">Titulo do Produto:</label><br>
-                            <input name="tituloProduto" type="text" class="format_input">
-                        </div>
-                        <div class="col-xl-12">
                             <div class="row">
                                 <div class="col-xl-6">
                                     <label for="" class="subtitle_register style_subtitle">Categoria:</label><br>
-                                    <select name="selectCategoria" id="categorias" class="format_select">
+                                    <select name="selectCategoria" id="categorias" class="format_select" >
                                         <option value="0">Selecione a categoria</option>
                                         <option value="1">Para sua Casa</option>
                                         <option value="2">Esportivos</option>
@@ -32,26 +29,19 @@
                                         <option value="6">Comércio e Escrtório</option>
                                         <option value="7">Moda e Beleza</option>
                                     </select>
-                                    <input type="hidden" name="categoria" value="<?php echo $_GET['categoria']?>">
+                                    <input type="hidden" id="categoria-hidden" name="categoria">
                                 </div>
                                 <div class="col-xl-6">
                                     <label for="" class="subtitle_register style_subtitle">Tipo:</label><br>
-                                    <?php
-                                        include_once('php\Entidades\PerfilUsuarios.php');
-                                        include_once('php\Conexao\Conexao.php');
-
-                                        $categoria = new PerfilUsuarios();
-                                        $conexao = new Conexao();
-
-                                        var_dump($_GET['categoria']);
-
-                                    ?>
                                     <select name="tipo" id="" class="format_select">
                                         <option value="0">Selecione o tipo</option>
-                                        
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <label for="" class="subtitle_register style_subtitle">Titulo do Produto:</label><br>
+                            <input name="tituloProduto" type="text" class="format_input">
                         </div>
                         <div class="col-xl-12">
                             <div class="row">

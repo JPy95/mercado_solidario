@@ -3,18 +3,14 @@
     class PerfilUsuarios {
 
         private $idUsuario;
-
-
         
-
-
-        public function buscaTipo($conexao,$categoria){
+        public function listaTipo($conexao,$categoria){
 
             $con = $conexao->conectar();
 
-            $query = "SELECT tipo from tipo where id_categoria = $categoria";
+            $query = "SELECT tipo FROM tipo WHERE id_categoria = $categoria";
+
             $stmt = $con->prepare($query);
-            
             return $stmt->execute();
         }
 
