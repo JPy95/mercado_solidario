@@ -138,7 +138,7 @@
                                                         </div>
                                                         <div class="col-xl-5">
                                                             <label for="causa" class="subtitle_register">Causa:</label>
-                                                            <select name="causa" id="causa" class="format_select">
+                                                            <select name="causa" id="causa" class="select_causa">
                                                                 <option value="0" class="">Qual a Causa Social:</option>
                                                                 <option value="1" class="">Saúde</option>
                                                                 <option value="2" class="">Crianças</option>
