@@ -1,5 +1,6 @@
 <?php
-    //ADD REQUEIRED
+require_once('..\Conexao\Conexao.php');
+
 class Carrinho
 {
 

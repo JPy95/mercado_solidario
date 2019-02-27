@@ -95,7 +95,6 @@ class PessoaFisica extends Pessoa
         return $IdUser;
     }
 
-
     /**
      * Get the value of cpf
      */

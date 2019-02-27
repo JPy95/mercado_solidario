@@ -3,7 +3,7 @@
         Resumo da Tela:
 
         Idt_venda - Compo que identifica se o item foi vendido. Utilizaremos este indetificador para retirarmos o item da tela de anuncios para
-        outro usuario. Também utilizaremos para informar ao vendedor qual produto deverá passar para o processo de entrega, faremos isto com o 
+        outros usuarios. Também utilizaremos para informar ao vendedor qual produto deverá passar para o processo de entrega, faremos isto com o 
         o idCompra.
 
         tipo_anuncio - este campo irá nos informar qual o tipo de anuncio o vendedor optou para publicar seu produto.
@@ -19,5 +19,9 @@
         3) Dinamizar o Solidariu's King. E corrigir o titulo desta barra de experiencia kkkk o ingles não esta correto.
     */
 
+    include_once('..\Entidades\Compras.php');
+    include_once('..\Entidades\Produtos.php');
+
+    
 
 ?>

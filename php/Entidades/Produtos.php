@@ -7,19 +7,20 @@ class Produto
     private $pctDoacao;
     private $descricao;
     private $tipoAnuncio;
-    private $urlImg;
+    private $idtVenda;
     private $idTipo;
     private $idCategoria;
     private $idVendedor;
+    private $urlImg;
 
-    public function __construct($nomePdt, $vlrPdt, $pctDoacao, $descricao, $tipo, $urlImg, $idTipo, $idCategoria, $idVendedor)
+    public function __construct($nomePdt, $vlrPdt, $pctDoacao, $descricao, $tipo, $idtVenda, $idTipo, $idCategoria, $idVendedor,$urlImg)
     {
         $this->nomePdt = $nomePdt;
         $this->vlrPdt = $vlrPdt;
         $this->pctDoacao = $pctDoacao;
         $this->descricao = $descricao;
         $this->tipo = $tipo;
-        $this->urlImg = $urlImg;
+        $this->idtVenda = $idtVenda;
         $this->idTipo = $idTipo;
         $this->idCategoria = $idCategoria;
         $this->idVendedor = $idVendedor;
@@ -28,14 +29,14 @@ class Produto
     public function insert($conexao)
     {
         $con = $conexao->conectar();
-        $query = "INSERT INTO produto (nome_pdt,vlr_pdt,vlr_doacao,descricao,tipo_anuncio,url_img_pdt,id_tipo,id_categoria,id_vendedor) 
+        $query = "INSERT INTO produto (nome_pdt,vlr_pdt,vlr_doacao,descricao,tipo_anuncio,idt_venda,id_tipo,id_categoria,id_vendedor) 
                     values(
                         '" . $this->getNomePdt() . "',
                         '" . $this->getVlrPdt() . "',
                         '" . $this->getPctDoacao() . "',
                         '" . $this->getDescricao() . "',
                         '" . $this->getTipoAnuncioi() . "',
-                        '" . $this->getUrlImg() . "',
+                        '" . $this->getIdtVenda() . "',
                         '" . $this->getIdTipo() . "',
                         '" . $this->getIdCategoria() . "',
                         '" . $this->getIdVendedor() . "'                   
@@ -78,10 +79,10 @@ class Produto
         return $stmt->execute();
     }
 
-    public function selectEspecificoPdt($idCat, $conexao)
+    public function selectProdutoCategoria($idCat, $conexao)
     {
         $con = $conexao->conectar();
-        $query = "SELECT * FROM produto WHERE id_categoria = '$idUsuario'";
+        $query = "SELECT * FROM produto WHERE id_categoria = '$idCat'";
 
         $stmt = $con->prepare($query);
         return $stmt->execute();
@@ -264,6 +265,26 @@ class Produto
     public function setTipoAnuncio($tipoAnuncio)
     {
         $this->tipoAnuncio = $tipoAnuncio;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idtVenda
+     */ 
+    public function getIdtVenda()
+    {
+        return $this->idtVenda;
+    }
+
+    /**
+     * Set the value of idtVenda
+     *
+     * @return  self
+     */ 
+    public function setIdtVenda($idtVenda)
+    {
+        $this->idtVenda = $idtVenda;
 
         return $this;
     }
